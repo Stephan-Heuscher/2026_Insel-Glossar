@@ -97,7 +97,7 @@ export default function HomePage() {
               className={`badge ${filterContext === ctx.name ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
               onClick={() => setFilterContext(filterContext === ctx.name ? '' : ctx.name)}
             >
-              {ctx.name}
+              {ctx.name} ({ctx.count})
             </button>
           ))}
         </div>

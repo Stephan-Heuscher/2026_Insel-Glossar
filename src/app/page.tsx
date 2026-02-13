@@ -22,9 +22,11 @@ export default function HomePage() {
 
   const filtered = mounted ? getFilteredTerms() : [];
 
-  // Derive unique contexts from all terms
+  // Derive unique contexts sorted by number of entries (most popular first)
   const contexts = mounted
-    ? Array.from(new Set(terms.map(t => t.context).filter(Boolean))).sort()
+    ? Array.from(new Set(terms.map(t => t.context).filter(Boolean)))
+      .map(ctx => ({ name: ctx, count: terms.filter(t => t.context === ctx).length }))
+      .sort((a, b) => b.count - a.count)
     : [];
 
   if (!mounted) return <div className="flex justify-center py-20"><div className="spinner" /></div>;
@@ -82,7 +84,7 @@ export default function HomePage() {
 
       {/* Context filter chips */}
       {contexts.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 overflow-hidden max-h-8">
           <button
             className={`badge ${filterContext === '' ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
             onClick={() => setFilterContext('')}
@@ -91,11 +93,11 @@ export default function HomePage() {
           </button>
           {contexts.map(ctx => (
             <button
-              key={ctx}
-              className={`badge ${filterContext === ctx ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
-              onClick={() => setFilterContext(filterContext === ctx ? '' : ctx)}
+              key={ctx.name}
+              className={`badge ${filterContext === ctx.name ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
+              onClick={() => setFilterContext(filterContext === ctx.name ? '' : ctx.name)}
             >
-              {ctx}
+              {ctx.name}
             </button>
           ))}
         </div>

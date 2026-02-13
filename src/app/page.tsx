@@ -1,65 +1,174 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useState } from 'react';
+import { useGlossaryStore } from '@/store/glossaryStore';
+import { useAuthStore } from '@/store/authStore';
+import { Search, BookOpen, Users, Brain, ChevronRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
+import type { GlossaryTerm } from '@/lib/types';
+
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+export default function HomePage() {
+  const { terms, loading, searchQuery, filterLetter, setSearchQuery, setFilterLetter, getFilteredTerms, subscribeToTerms } = useGlossaryStore();
+  const { user } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const unsub = subscribeToTerms();
+    return unsub;
+  }, []);
+
+  const filtered = mounted ? getFilteredTerms() : [];
+
+  if (!mounted) return <div className="flex justify-center py-20"><div className="spinner" /></div>;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="space-y-8 animate-in">
+      {/* Hero */}
+      <div className="hero-gradient rounded-2xl p-8 sm:p-12 text-center space-y-4">
+        <div className="flex justify-center mb-4">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-3xl shadow-lg">
+            📖
+          </div>
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <span className="text-white">Insel</span>
+          <span className="text-teal-400">Glossar</span>
+        </h1>
+        <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          Das gemeinschaftliche Fachbegriffe-Glossar des Inselspitals Bern.
+          Wissen teilen, lernen und testen.
+        </p>
+
+        {/* Stats */}
+        <div className="flex justify-center gap-8 mt-6">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-teal-400">{terms.length}</div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider">Begriffe</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-amber-400">
+              {terms.filter(t => t.eselsleitern?.length > 0).length}
+            </div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider">Eselsleitern</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-purple-400">
+              {terms.filter(t => t.einfacheSprache).length}
+            </div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider">Einfache Sprache</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Search */}
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+        <input
+          type="text"
+          placeholder="Begriffe suchen..."
+          className="input-field pl-11 text-base"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+      </div>
+
+      {/* Alphabet nav */}
+      <div className="alpha-nav">
+        <button
+          className={`alpha-btn ${filterLetter === '' ? 'active' : ''}`}
+          onClick={() => setFilterLetter('')}
+        >
+          Alle
+        </button>
+        {ALPHABET.map(letter => (
+          <button
+            key={letter}
+            className={`alpha-btn ${filterLetter === letter ? 'active' : ''}`}
+            onClick={() => setFilterLetter(filterLetter === letter ? '' : letter)}
+          >
+            {letter}
+          </button>
+        ))}
+      </div>
+
+      {/* Results info */}
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-slate-500">
+          {filtered.length} {filtered.length === 1 ? 'Begriff' : 'Begriffe'} gefunden
+        </p>
+        {user && (
+          <Link href="/add" className="btn-primary text-sm no-underline">
+            <Plus size={14} /> Neuer Begriff
+          </Link>
+        )}
+      </div>
+
+      {/* Term list */}
+      {loading ? (
+        <div className="flex justify-center py-20"><div className="spinner" /></div>
+      ) : filtered.length === 0 ? (
+        <div className="text-center py-16 space-y-4">
+          <div className="text-5xl">🔍</div>
+          <h3 className="text-lg font-semibold text-slate-300">Keine Begriffe gefunden</h3>
+          <p className="text-slate-500">
+            {searchQuery
+              ? `Keine Ergebnisse für "${searchQuery}"`
+              : 'Noch keine Begriffe vorhanden.'}
           </p>
+          {user && (
+            <Link href="/add" className="btn-primary inline-flex no-underline mt-4">
+              <Sparkles size={16} /> Ersten Begriff hinzufügen
+            </Link>
+          )}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      ) : (
+        <div className="grid gap-3 stagger">
+          {filtered.map((term) => (
+            <TermCard key={term.id} term={term} />
+          ))}
         </div>
-      </main>
+      )}
     </div>
+  );
+}
+
+function TermCard({ term }: { term: GlossaryTerm }) {
+  return (
+    <Link href={`/term/${term.id}`} className="no-underline">
+      <div className="glass-card p-5 flex items-start justify-between gap-4 group cursor-pointer">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap mb-1">
+            <h3 className="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
+              {term.term}
+            </h3>
+            {term.status === 'pending' && <span className="badge badge-amber">Entwurf</span>}
+            {term.eselsleitern?.length > 0 && <span className="badge badge-amber">🐴 Eselsleiter</span>}
+            {term.einfacheSprache && <span className="badge badge-purple">💬 Einfache Sprache</span>}
+          </div>
+          {term.context && (
+            <p className="text-xs text-teal-400/70 mb-1">{term.context}</p>
+          )}
+          <p className="text-sm text-slate-400 line-clamp-2">
+            {term.definitionDe || term.definitionEn}
+          </p>
+          <div className="flex items-center gap-3 mt-2 text-xs text-slate-600">
+            <span>von {term.createdByName}</span>
+            {term.source && <span>• Quelle vorhanden</span>}
+          </div>
+        </div>
+        <ChevronRight className="text-slate-600 group-hover:text-teal-400 transition-colors mt-1 flex-shrink-0" size={18} />
+      </div>
+    </Link>
+  );
+}
+
+function Plus({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
   );
 }

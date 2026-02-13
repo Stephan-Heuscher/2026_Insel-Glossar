@@ -130,9 +130,16 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                     <label className="label">Begriff *</label>
                     <input className="input-field" value={form.term} onChange={e => setForm({ ...form, term: e.target.value })} onBlur={handleTermBlur} required placeholder="z.B. Anamnese" />
                     {duplicate && (
-                        <div className="mt-2 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm flex items-center gap-2">
-                            <AlertTriangle size={16} />
-                            Dieser Begriff existiert bereits! <Link href={`/term?id=${duplicate.id}`} className="underline">Ansehen</Link>
+                        <div className="mt-2 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm">
+                            <div className="flex items-center gap-2 font-bold">
+                                <AlertTriangle size={16} />
+                                <span>Existiert bereits{duplicate.context ? ` (Kontext: ${duplicate.context})` : ''}</span>
+                            </div>
+                            <div className="ml-6 mt-1 text-amber-400/80">
+                                <Link href={`/term?id=${duplicate.id}`} className="underline hover:text-amber-300">Zum existierenden Eintrag</Link>
+                                <span className="mx-2">•</span>
+                                <span>Du kannst den Begriff für einen neuen Kontext trotzdem hinzufügen.</span>
+                            </div>
                         </div>
                     )}
                 </div>
@@ -194,7 +201,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
             {/* Submit */}
             <div className="flex gap-3 justify-end">
                 <Link href="/" className="btn-secondary no-underline">Abbrechen</Link>
-                <button type="submit" className="btn-primary" disabled={submitting || !!duplicate}>
+                <button type="submit" className="btn-primary" disabled={submitting}>
                     {submitting ? <div className="spinner" style={{ width: 18, height: 18 }} /> : (
                         <><Sparkles size={16} /> Begriff hinzufügen</>
                     )}

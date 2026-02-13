@@ -6,15 +6,14 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getFunctions } from "firebase/functions";
 
-// TODO: Replace with your new Firebase project config after creating it at https://console.firebase.google.com
 const firebaseConfig = {
-    apiKey: "AIzaSyAi_3oab6vLxNfDiyH8UNkR3sKO8hARQkk",
-    authDomain: "geburtstags-wimmelbuch.firebaseapp.com",
-    projectId: "geburtstags-wimmelbuch",
-    storageBucket: "geburtstags-wimmelbuch.firebasestorage.app",
-    messagingSenderId: "187010280270",
-    appId: "1:187010280270:web:4c02dcb7a401de3f908c1f",
-    measurementId: "G-6P9G7L95P3"
+    apiKey: "AIzaSyCW34kPaNI7ruFlEfy9j4X6DPM0mgRunKw",
+    authDomain: "insel-glossar.firebaseapp.com",
+    projectId: "insel-glossar",
+    storageBucket: "insel-glossar.firebasestorage.app",
+    messagingSenderId: "1049814310953",
+    appId: "1:1049814310953:web:578b810852e38396b27c38",
+    measurementId: "G-3NXPJR6C0H"
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];

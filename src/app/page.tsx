@@ -65,11 +65,11 @@ export default function HomePage() {
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+        <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
         <input
           type="text"
           placeholder="Begriffe suchen..."
-          className="input-field pl-11 text-base"
+          className="input-field pr-11 text-base"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />

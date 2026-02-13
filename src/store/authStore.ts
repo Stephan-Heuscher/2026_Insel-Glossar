@@ -17,7 +17,7 @@ interface AuthState {
     profile: UserProfile | null;
     loading: boolean;
     error: string | null;
-    signUp: (email: string, password: string, displayName: string) => Promise<void>;
+    signUp: (email: string, password: string, displayName: string, avatarId?: string) => Promise<void>;
     signIn: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
     updateProfile: (data: Partial<UserProfile>) => Promise<void>;
@@ -30,7 +30,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     loading: true,
     error: null,
 
-    signUp: async (email: string, password: string, displayName: string) => {
+    signUp: async (email: string, password: string, displayName: string, avatarId?: string) => {
         try {
             set({ error: null });
             if (!email.endsWith('@insel.ch')) {
@@ -41,7 +41,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 uid: cred.user.uid,
                 displayName,
                 email,
-                avatarId: 'doctor',
+                avatarId: avatarId || 'doctor',
                 createdAt: serverTimestamp(),
             };
             await setDoc(doc(db, 'users', cred.user.uid), profile);

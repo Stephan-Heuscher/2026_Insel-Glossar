@@ -67,7 +67,7 @@ export default function ProfilePage() {
             {/* Profile card */}
             <div className="glass-card p-6 space-y-6">
                 <div>
-                    <label className="label">Anzeigename</label>
+                    <label className="label">Pseudonym</label>
                     <input className="input-field" value={displayName} onChange={e => setDisplayName(e.target.value)} />
                 </div>
 
@@ -122,10 +122,10 @@ export default function ProfilePage() {
                             <div key={result.id} className="glass-card p-4 flex items-center justify-between gap-4">
                                 <div className="flex items-center gap-4">
                                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg ${(result.score / result.totalQuestions) >= 0.8
-                                            ? 'bg-green-500/15 text-green-400'
-                                            : (result.score / result.totalQuestions) >= 0.5
-                                                ? 'bg-amber-500/15 text-amber-400'
-                                                : 'bg-red-500/15 text-red-400'
+                                        ? 'bg-green-500/15 text-green-400'
+                                        : (result.score / result.totalQuestions) >= 0.5
+                                            ? 'bg-amber-500/15 text-amber-400'
+                                            : 'bg-red-500/15 text-red-400'
                                         }`}>
                                         {result.score}/{result.totalQuestions}
                                     </div>

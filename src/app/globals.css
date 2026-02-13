@@ -63,6 +63,7 @@ body::before {
   box-shadow: var(--shadow-card);
   transition: all 0.3s ease;
 }
+
 .glass-card:hover {
   border-color: var(--border-glow);
   box-shadow: var(--shadow-glow), var(--shadow-card);
@@ -84,11 +85,13 @@ body::before {
   align-items: center;
   gap: 0.5rem;
 }
+
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
   box-shadow: 0 0 20px rgba(13, 148, 136, 0.3);
   transform: translateY(-1px);
 }
+
 .btn-primary:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -109,6 +112,7 @@ body::before {
   align-items: center;
   gap: 0.5rem;
 }
+
 .btn-secondary:hover {
   background: rgba(148, 163, 184, 0.15);
   border-color: var(--border-glow);
@@ -128,6 +132,7 @@ body::before {
   align-items: center;
   gap: 0.5rem;
 }
+
 .btn-accent:hover {
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
   transform: translateY(-1px);
@@ -144,6 +149,7 @@ body::before {
   cursor: pointer;
   transition: all 0.25s ease;
 }
+
 .btn-danger:hover {
   background: rgba(239, 68, 68, 0.25);
 }
@@ -160,12 +166,30 @@ body::before {
   transition: all 0.25s ease;
   outline: none;
 }
+
 .input-field:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
 }
+
 .input-field::placeholder {
   color: var(--text-muted);
+}
+
+/* Email suffix badge */
+.email-suffix {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  color: var(--color-primary-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 textarea.input-field {
@@ -194,26 +218,31 @@ textarea.input-field {
   font-size: 0.75rem;
   font-weight: 600;
 }
+
 .badge-teal {
   background: rgba(13, 148, 136, 0.15);
   color: var(--color-primary-light);
   border: 1px solid rgba(13, 148, 136, 0.3);
 }
+
 .badge-amber {
   background: rgba(245, 158, 11, 0.15);
   color: var(--color-accent-light);
   border: 1px solid rgba(245, 158, 11, 0.3);
 }
+
 .badge-purple {
   background: rgba(168, 85, 247, 0.15);
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
+
 .badge-green {
   background: rgba(34, 197, 94, 0.15);
   color: #4ade80;
   border: 1px solid rgba(34, 197, 94, 0.3);
 }
+
 .badge-red {
   background: rgba(239, 68, 68, 0.15);
   color: #f87171;
@@ -227,6 +256,7 @@ textarea.input-field {
   gap: 0.25rem;
   justify-content: center;
 }
+
 .alpha-btn {
   width: 2rem;
   height: 2rem;
@@ -242,10 +272,12 @@ textarea.input-field {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .alpha-btn:hover {
   background: rgba(13, 148, 136, 0.1);
   color: var(--color-primary-light);
 }
+
 .alpha-btn.active {
   background: var(--color-primary);
   color: white;
@@ -276,10 +308,12 @@ textarea.input-field {
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
+
 .avatar-circle:hover {
   border-color: var(--color-primary-light);
   box-shadow: 0 0 16px rgba(13, 148, 136, 0.3);
 }
+
 .avatar-circle.selected {
   border-color: var(--color-accent);
   box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
@@ -298,15 +332,18 @@ textarea.input-field {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .quiz-answer:hover {
   background: rgba(13, 148, 136, 0.1);
   border-color: var(--border-glow);
 }
+
 .quiz-answer.correct {
   background: rgba(34, 197, 94, 0.15);
   border-color: #4ade80;
   color: #4ade80;
 }
+
 .quiz-answer.incorrect {
   background: rgba(239, 68, 68, 0.15);
   border-color: #f87171;
@@ -340,28 +377,54 @@ textarea.input-field {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate-in {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
 /* Stagger children */
-.stagger > * {
+.stagger>* {
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
 }
-.stagger > *:nth-child(1) { animation-delay: 0ms; }
-.stagger > *:nth-child(2) { animation-delay: 60ms; }
-.stagger > *:nth-child(3) { animation-delay: 120ms; }
-.stagger > *:nth-child(4) { animation-delay: 180ms; }
-.stagger > *:nth-child(5) { animation-delay: 240ms; }
-.stagger > *:nth-child(6) { animation-delay: 300ms; }
-.stagger > *:nth-child(7) { animation-delay: 360ms; }
-.stagger > *:nth-child(8) { animation-delay: 420ms; }
+
+.stagger>*:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.stagger>*:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+.stagger>*:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.stagger>*:nth-child(4) {
+  animation-delay: 180ms;
+}
+
+.stagger>*:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+.stagger>*:nth-child(6) {
+  animation-delay: 300ms;
+}
+
+.stagger>*:nth-child(7) {
+  animation-delay: 360ms;
+}
+
+.stagger>*:nth-child(8) {
+  animation-delay: 420ms;
+}
 
 /* Progress bar */
 .progress-bar {
@@ -370,6 +433,7 @@ textarea.input-field {
   background: rgba(148, 163, 184, 0.1);
   overflow: hidden;
 }
+
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
@@ -386,6 +450,7 @@ textarea.input-field {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 .upload-zone:hover,
 .upload-zone.dragover {
   border-color: var(--color-primary);
@@ -396,13 +461,16 @@ textarea.input-field {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.2);
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.3);
 }
@@ -415,6 +483,7 @@ textarea.input-field {
   border-radius: 14px;
   padding: 0.25rem;
 }
+
 .tab-btn {
   padding: 0.5rem 1.25rem;
   border-radius: 12px;
@@ -426,6 +495,7 @@ textarea.input-field {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .tab-btn.active {
   background: var(--color-primary);
   color: white;
@@ -440,8 +510,11 @@ textarea.input-field {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive */
@@ -449,6 +522,7 @@ textarea.input-field {
   .alpha-nav {
     gap: 0.125rem;
   }
+
   .alpha-btn {
     width: 1.75rem;
     height: 1.75rem;

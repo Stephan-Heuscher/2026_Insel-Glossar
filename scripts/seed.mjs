@@ -38,7 +38,7 @@ for (const line of lines) {
         continue;
     }
 
-    const [term, context, definitionDe, definitionEn, einfacheSprache, eselsleiter, source] = parts;
+    const [term, context, definitionDe, definitionEn, einfacheSprache, eselsleiter, source, sourceUrl] = parts;
 
     const doc = {
         term: term.trim(),
@@ -48,6 +48,7 @@ for (const line of lines) {
         einfacheSprache: einfacheSprache?.trim() || '',
         eselsleitern: eselsleiter?.trim() ? [eselsleiter.trim()] : [],
         source: source?.trim() || '',
+        sourceUrl: sourceUrl?.trim() || '',
         createdAt: new Date(),
         createdBy: 'seed-script',
     };

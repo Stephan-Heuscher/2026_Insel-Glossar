@@ -7,6 +7,7 @@ export interface GlossaryTerm {
     einfacheSprache: string;
     eselsleitern: string[];
     source: string;
+    sourceUrl?: string;
     status: 'pending' | 'approved';
     createdBy: string;
     createdByName: string;

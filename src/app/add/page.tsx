@@ -64,6 +64,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
         einfacheSprache: '',
         eselsleitern: [''],
         source: '',
+        sourceUrl: '',
     });
     const [duplicate, setDuplicate] = useState<GlossaryTerm | null>(null);
     const [submitting, setSubmitting] = useState(false);
@@ -88,6 +89,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                 einfacheSprache: form.einfacheSprache,
                 eselsleitern: form.eselsleitern.filter(e => e.trim()),
                 source: form.source,
+                sourceUrl: form.sourceUrl,
                 status: 'pending',
                 createdBy: user.uid,
                 createdByName: profile?.displayName || 'Anonym',
@@ -193,9 +195,15 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
             </div>
 
             {/* Source */}
-            <div className="glass-card p-6">
-                <label className="label">📎 Quelle (Link)</label>
-                <input className="input-field" value={form.source} onChange={e => setForm({ ...form, source: e.target.value })} placeholder="https://..." />
+            <div className="glass-card p-6 space-y-4">
+                <div>
+                    <label className="label">📎 Quellenname</label>
+                    <input className="input-field" value={form.source} onChange={e => setForm({ ...form, source: e.target.value })} placeholder="z.B. Neuro Pocket 2023" />
+                </div>
+                <div>
+                    <label className="label">🔗 Quellen-Link</label>
+                    <input className="input-field" value={form.sourceUrl} onChange={e => setForm({ ...form, sourceUrl: e.target.value })} placeholder="https://..." />
+                </div>
             </div>
 
             {/* Submit */}
@@ -258,6 +266,7 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
             einfacheSprache: term.einfacheSprache || '',
             eselsleitern: term.eselsleitern || [],
             source: term.source || '',
+            sourceUrl: term.sourceUrl || '',
             status: 'pending',
             createdBy: user.uid,
             createdByName: profile?.displayName || 'Anonym',

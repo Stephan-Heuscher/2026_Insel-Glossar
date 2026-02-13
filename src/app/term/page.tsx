@@ -63,6 +63,7 @@ function TermPageContent() {
             einfacheSprache: term?.einfacheSprache,
             eselsleitern: term?.eselsleitern || [],
             source: term?.source,
+            sourceUrl: term?.sourceUrl,
         });
         setEditing(true);
     };
@@ -204,15 +205,30 @@ function TermPageContent() {
             </div>
 
             {/* Source */}
-            {(editing ? true : term.source) && (
-                <div className="glass-card p-6">
+            {(editing ? true : (term.source || term.sourceUrl)) && (
+                <div className="glass-card p-6 space-y-3">
                     <h2 className="label">📎 Quelle</h2>
                     {editing ? (
-                        <input className="input-field" value={editData.source || ''} onChange={e => setEditData({ ...editData, source: e.target.value })} placeholder="https://..." />
+                        <div className="space-y-3">
+                            <div>
+                                <span className="text-xs text-slate-500 mb-1 block">Quellenname</span>
+                                <input className="input-field" value={editData.source || ''} onChange={e => setEditData({ ...editData, source: e.target.value })} placeholder="z.B. Neuro Pocket 2023" />
+                            </div>
+                            <div>
+                                <span className="text-xs text-slate-500 mb-1 block">Quellen-Link</span>
+                                <input className="input-field" value={editData.sourceUrl || ''} onChange={e => setEditData({ ...editData, sourceUrl: e.target.value })} placeholder="https://..." />
+                            </div>
+                        </div>
                     ) : (
-                        <a href={term.source} target="_blank" rel="noopener" className="flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors">
-                            <ExternalLink size={14} /> {term.source}
-                        </a>
+                        <div className="flex items-center gap-2">
+                            {term.sourceUrl ? (
+                                <a href={term.sourceUrl} target="_blank" rel="noopener" className="flex items-center gap-2 text-teal-400 hover:text-teal-300 transition-colors">
+                                    <ExternalLink size={14} /> {term.source || term.sourceUrl}
+                                </a>
+                            ) : (
+                                <span className="text-slate-300">{term.source}</span>
+                            )}
+                        </div>
                     )}
                 </div>
             )}

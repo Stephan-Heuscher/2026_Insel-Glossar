@@ -21,6 +21,7 @@ const terms = lines.map(line => {
         einfacheSprache: parts[4].trim(),
         eselsleitern: [parts[5].trim()], // Converted to array as per type
         source: parts[6].trim(),
+        sourceUrl: (parts[7] || '').trim(),
         status: 'approved',
         createdBy: 'system',
         createdByName: 'System Import',

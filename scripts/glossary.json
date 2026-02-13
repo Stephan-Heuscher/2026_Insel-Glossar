@@ -1,0 +1,2688 @@
+[
+  {
+    "term": "Absence",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Ein generalisierter Anfall, bei dem der Patient kurzzeitig das Bewusstsein verliert, ohne zu stürzen oder krampfhafte Symptome zu zeigen.",
+    "definitionEn": "A generalized seizure during which the patient briefly loses consciousness without falling or exhibiting convulsive symptoms.",
+    "einfacheSprache": "Ein kurzer Ausfall des Bewusstseins. Die Person starrt ins Leere, fällt aber nicht um.",
+    "eselsleitern": [
+      "Absence = Abwesend."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Absenceepilepsie",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Ein Epilepsiesyndrom, bei dem die dominierende Anfallsform die Absence ist, oft abhängig vom Erkrankungsalter.",
+    "definitionEn": "An epilepsy syndrome where the dominant form of seizure is the absence, often classified by age of onset.",
+    "einfacheSprache": "Eine Krankheit, bei der man oft für kurze Zeit geistig abwesend ist.",
+    "eselsleitern": [
+      "Alltägliches Abschalten."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Alpha-Rhythmus",
+    "context": "Neurologie / Diagnostik",
+    "definitionDe": "Das vorherrschende Wellenmuster im EEG bei einem gesunden Menschen im entspannten Wachzustand.",
+    "definitionEn": "The predominant wave pattern seen on an EEG in a healthy person during a relaxed waking state.",
+    "einfacheSprache": "Die normalen Strom-Wellen im Gehirn, wenn man wach und ganz entspannt ist.",
+    "eselsleitern": [
+      "Alpha = Alles Antspannt."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Amnesie",
+    "context": "Neurologie / Psychiatrie",
+    "definitionDe": "Eine Form von Gedächtnisverlust, der retrograd oder anterograd auftreten kann.",
+    "definitionEn": "A form of memory loss, which can occur retrogradely or anterogradely.",
+    "einfacheSprache": "Man hat sein Gedächtnis verloren. Man kann sich nicht mehr an Dinge erinnern.",
+    "eselsleitern": [
+      "Amnesie = Alles Mal Nicht Erinnert."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Atonischer Anfall",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Ein Anfallstyp mit plötzlichem Verlust der Muskelspannung, was oft zu Stürzen führt.",
+    "definitionEn": "A seizure involving a sudden loss of muscle tension, often causing the patient to fall.",
+    "einfacheSprache": "Ein Krampf-Anfall, bei dem man plötzlich alle Kraft in den Muskeln verliert und hinfällt.",
+    "eselsleitern": [
+      "Atonisch = Alle Tension Ohne Nachweis (Keine Spannung)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Aura",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Der bewusst erlebte Beginn eines epileptischen Anfalls, oft als aufsteigendes Wärmegefühl, Enge oder Kribbeln wahrgenommen.",
+    "definitionEn": "The consciously experienced onset of an epileptic seizure, often presenting as a rising sensation of warmth, tightness, or tingling.",
+    "einfacheSprache": "Ein besonderes Gefühl, das einen Krampf-Anfall ankündigt. Zum Beispiel ein Kribbeln im Bauch.",
+    "eselsleitern": [
+      "Anfall Untrüglich Registriert Anfangs."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Automatismen",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Stereotype Bewegungsmuster wie Nesteln, Kauen oder Schlucken während eines komplex-fokalen Anfalls.",
+    "definitionEn": "Repetitive, stereotypic movement patterns such as picking at clothes, swallowing, or chewing during certain seizures.",
+    "einfacheSprache": "Unbewusste, immer gleiche Bewegungen während eines Anfalls, wie zum Beispiel Schmatzen.",
+    "eselsleitern": [
+      "Automatismen laufen automatisch ab, wie bei einem Roboter."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "BNS-Anfälle",
+    "context": "Pädiatrische Neurologie",
+    "definitionDe": "Blitz-Nick-Salaam-Anfälle; eine spezifische Anfallsart, die mit dem West-Syndrom im frühen Kindesalter assoziiert ist.",
+    "definitionEn": "A specific type of seizure associated with West Syndrome, occurring in early childhood.",
+    "einfacheSprache": "Krampf-Anfälle bei Babys, bei denen sie plötzlich nicken und die Arme hochwerfen.",
+    "eselsleitern": [
+      "Blitzschnell Nicken und Salaam sagen."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Delir",
+    "context": "Intensivmedizin / Psychiatrie",
+    "definitionDe": "Ein akuter Zustand von Verwirrtheit, Desorientierung und kognitiver Beeinträchtigung.",
+    "definitionEn": "An acute state of confusion, disorientation, and cognitive impairment.",
+    "einfacheSprache": "Ein plötzlicher Zustand, in dem man sehr verwirrt ist und Dinge nicht mehr richtig versteht.",
+    "eselsleitern": [
+      "Denken Ernsthaft Leicht Irritiert & Rastlos."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "EEG",
+    "context": "Diagnostik / Neurologie",
+    "definitionDe": "Elektroenzephalogramm; Methode zur Aufzeichnung der elektrischen Aktivität des Gehirns über auf der Kopfhaut platzierte Elektroden.",
+    "definitionEn": "Electroencephalogram; a method for recording the electrical activity of the brain using electrodes placed on the scalp.",
+    "einfacheSprache": "Ein Test, der die Strom-Wellen im Gehirn misst. Er zeigt, ob das Gehirn gesund arbeitet.",
+    "eselsleitern": [
+      "Elektrische Entladungen vom Gehirn."
+    ],
+    "source": "Neuro Pocket 2023, Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Einfach-fokaler Anfall",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Ein fokaler Anfall, bei dem es zu keiner Bewusstseinsstörung kommt.",
+    "definitionEn": "A focal seizure during which the patient does not experience a loss of consciousness.",
+    "einfacheSprache": "Ein Krampf-Anfall nur in einem Teil vom Gehirn. Man bleibt dabei voll bei Bewusstsein.",
+    "eselsleitern": [
+      "Einfach = Erinnerung ist noch foll aktiv, claudia hört."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Fieberkrämpfe",
+    "context": "Pädiatrische Neurologie",
+    "definitionDe": "Epileptische Anfälle bei Säuglingen und Kleinkindern, die durch einen raschen Fieberanstieg ausgelöst werden.",
+    "definitionEn": "Seizures triggered by fever in infants and small children, usually at the beginning of an infection.",
+    "einfacheSprache": "Ein Krampf-Anfall bei kleinen Kindern. Er passiert, wenn das Kind plötzlich hohes Fieber bekommt.",
+    "eselsleitern": [
+      "Das Gehirn kocht über vor Hitze."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "FNS",
+    "context": "Neurologie / Psychiatrie",
+    "definitionDe": "Funktionelle neurologische Störungen, diagnostiziert durch positive klinische Zeichen wie das Hoover-Zeichen.",
+    "definitionEn": "Functional Neurological Disorders, diagnosed based on positive clinical signs such as Hoover's sign.",
+    "einfacheSprache": "Körperliche Beschwerden wie Lähmungen, für die man keine kranke Stelle im Nerven-System findet.",
+    "eselsleitern": [
+      "Fehler im Nerven-System (funktionell, nicht strukturell)."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Frontallappen",
+    "context": "Anatomie / Neurologie",
+    "definitionDe": "Der vordere Bereich der Großhirnrinde, zuständig für motorische Funktionen und komplexe Verhaltensweisen.",
+    "definitionEn": "The frontal region of the cerebral cortex, responsible for motor functions and complex behaviors.",
+    "einfacheSprache": "Der vordere Teil vom Gehirn direkt hinter der Stirn. Hier wird das Denken und Bewegen gesteuert.",
+    "eselsleitern": [
+      "Front = Vorne an der Denk-Front."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "GBS",
+    "context": "Neurologie / Immunologie",
+    "definitionDe": "Guillain-Barré-Syndrom; eine akute inflammatorische demyelinisierende Polyneuropathie des peripheren Nervensystems.",
+    "definitionEn": "Guillain-Barré Syndrome; an acute inflammatory demyelinating polyneuropathy of the peripheral nervous system.",
+    "einfacheSprache": "Eine Krankheit, bei der das eigene Immun-System die Nerven angreift. Das führt zu Lähmungen in den Beinen.",
+    "eselsleitern": [
+      "Geht von unten nach oben (Beine zu Schultern)."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Generalisierter Anfall",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Ein Anfallstyp, bei dem von Beginn an beide Hälften des Großhirns von der Anfallsaktivität erfasst werden.",
+    "definitionEn": "A seizure type where both hemispheres of the cerebrum are involved in the seizure activity from the onset.",
+    "einfacheSprache": "Ein Krampf-Anfall, der sofort das ganze Gehirn betrifft. Man wird dabei bewusstlos.",
+    "eselsleitern": [
+      "Generalisiert = Das Ganze Gehirn gewittert."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Grand mal",
+    "context": "Neurologie / Epileptologie",
+    "definitionDe": "Veraltete Bezeichnung für einen generalisierten tonisch-klonischen Anfall.",
+    "definitionEn": "Outdated but common term for a generalized tonic-clonic seizure.",
+    "einfacheSprache": "Ein sehr schwerer Krampf-Anfall am ganzen Körper. Das alte Wort dafür ist Grand mal.",
+    "eselsleitern": [
+      "Grand = Groß, Mal = Krankheit (Großer Krampf)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "HIE",
+    "context": "Intensivmedizin / Neurologie",
+    "definitionDe": "Hypoxisch-ischämische Enzephalopathie; Hirnschädigung durch reduzierten Blutfluss und Sauerstoffmangel.",
+    "definitionEn": "Hypoxic-Ischemic Encephalopathy; brain damage caused by reduced blood flow and lack of oxygen.",
+    "einfacheSprache": "Ein Gehirn-Schaden. Er entsteht, weil das Gehirn zu wenig Blut und Sauerstoff bekommen hat.",
+    "eselsleitern": [
+      "Hirn Ist Erstickt."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Lennox-Gastaut-Syndrom",
+    "context": "Pädiatrische Neurologie",
+    "definitionDe": "Eine schwere Form der Epilepsie mit Beginn im 4. bis 8. Lebensjahr, charakterisiert durch Sturzanfälle und geistige Behinderung.",
+    "definitionEn": "A severe form of epilepsy beginning between the fourth and eighth year of life, characterized by drop attacks and mental disability.",
+    "einfacheSprache": "Eine sehr schwere Form der Fallsucht bei Kindern. Die Kinder fallen oft plötzlich um und lernen schwerer.",
+    "eselsleitern": [
+      "Lernschwäche Gepaart mit Stürzen."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "NCSE",
+    "context": "Neurologie / Intensivmedizin",
+    "definitionDe": "Non-convulsiver Status epilepticus; Anfallsaktivität im EEG ohne offensichtliche motorische Krampfphänomene.",
+    "definitionEn": "Non-convulsive Status Epilepticus; seizure activity on the EEG without obvious clinical motor manifestations.",
+    "einfacheSprache": "Ein langer Krampf-Anfall im Gehirn, den man von außen fast nicht sieht, weil der Körper nicht zuckt.",
+    "eselsleitern": [
+      "Nicht Claudia Sieht Etwas (unsichtbarer Krampf)."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Nystagmen",
+    "context": "Neurologie / Ophthalmologie",
+    "definitionDe": "Unwillkürliche, rhythmische Augenbewegungen, die auf Störungen im Gleichgewichtsorgan oder Gehirn hindeuten können.",
+    "definitionEn": "Involuntary eye movements that can indicate disorders in the vestibular system or brain.",
+    "einfacheSprache": "Ein unruhiges Augenzucken. Die Augen wackeln hin und her, ohne dass man das will.",
+    "eselsleitern": [
+      "Nicht ynter Steuerung: Tanzende Augen gehen meist ein nach."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Status epilepticus",
+    "context": "Notfallmedizin / Neurologie",
+    "definitionDe": "Ein lebensbedrohlicher Zustand anhaltender epileptischer Anfälle oder einer Serie von Anfällen ohne zwischenzeitliche Erholung.",
+    "definitionEn": "A dangerous state of continuous seizures or frequent seizures with no full recovery in between, requiring immediate medical help.",
+    "einfacheSprache": "Ein sehr langer Krampf-Anfall, der nicht von alleine aufhört. Man muss sofort den Not-Arzt rufen.",
+    "eselsleitern": [
+      "Status = Stillstand der Erholung."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "TLOC",
+    "context": "Notfallmedizin / Neurologie",
+    "definitionDe": "Transiente Bewusstseinsstörung (Transient Loss of Consciousness).",
+    "definitionEn": "Transient Loss of Consciousness.",
+    "einfacheSprache": "Man wird für einen kurzen Moment ohnmächtig und wacht dann wieder auf.",
+    "eselsleitern": [
+      "Total Leeres Obenrum Curzzeitig."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "West-Syndrom",
+    "context": "Pädiatrische Neurologie",
+    "definitionDe": "Eine im frühen Kindesalter auftretende Epilepsieform, die durch BNS-Anfälle gekennzeichnet ist.",
+    "definitionEn": "An epilepsy form occurring in early childhood characterized by infantile spasms.",
+    "einfacheSprache": "Eine schwere Krankheit mit Krampf-Anfällen bei ganz kleinen Babys.",
+    "eselsleitern": [
+      "West = Weinen, Erschrecken, Salaam-krampf, Tränen."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Arrhythmie",
+    "context": "Kardiologie",
+    "definitionDe": "Eine Herzschlagfolge, die unregelmäßig ist.",
+    "definitionEn": "A heartbeat sequence that is irregular.",
+    "einfacheSprache": "Das Herz schlägt unregelmäßig. Mal schlägt es schnell, mal langsam, mal stolpert es.",
+    "eselsleitern": [
+      "Außer Rhythmus."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Arteriosklerose",
+    "context": "Innere Medizin / Angiologie",
+    "definitionDe": "Veränderungen in den Blutgefäßen, die zu deren Versteifung und Verkalkung führen.",
+    "definitionEn": "Changes within the blood vessels that result in their stiffening and calcification.",
+    "einfacheSprache": "Die Adern im Körper werden hart und eng. Man nennt das auch Arterien-Verkalkung.",
+    "eselsleitern": [
+      "Arterio = Ader, Sklerose = Stein-hart."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "AV-Block",
+    "context": "Kardiologie",
+    "definitionDe": "Eine Blockade in der Reizleitung von den Vorhöfen zu den Herzkammern, die zum Ausfall der Kammererregung führen kann.",
+    "definitionEn": "A blockage in the conduction of electrical impulses from the atria to the ventricles.",
+    "einfacheSprache": "Der Strom im Herzen fließt nicht richtig. Dadurch schlägt das Herz oft viel zu langsam.",
+    "eselsleitern": [
+      "Atrompf Verhindert."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Belastungs-EKG",
+    "context": "Diagnostik / Kardiologie",
+    "definitionDe": "Ein EKG, das unter körperlicher Anstrengung durchgeführt wird, um Herzfehler zu finden, die nur unter Belastung auftreten.",
+    "definitionEn": "An electrocardiogram performed under physical stress to identify heart defects that manifest during exertion.",
+    "einfacheSprache": "Ein Herz-Test auf dem Fahrrad. Der Arzt schaut, wie das Herz arbeitet, wenn man sich anstrengt.",
+    "eselsleitern": [
+      "Belastung = Strampeln auf dem Fahrrad."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Bradykardie",
+    "context": "Kardiologie",
+    "definitionDe": "Eine Herzfrequenz, die ungewöhnlich langsam ist (üblicherweise unter 60 Schlägen pro Minute bei Erwachsenen).",
+    "definitionEn": "A medical condition in which the heart rate is abnormally slow (typically under 60 beats per minute in adults).",
+    "einfacheSprache": "Das Herz schlägt viel zu langsam.",
+    "eselsleitern": [
+      "Bradykardie = Bremsendes Herz."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Defibrillation",
+    "context": "Notfallmedizin / Kardiologie",
+    "definitionDe": "Elektrische Beseitigung von lebensbedrohlichen Herzrhythmusstörungen, meist unter Narkose oder im Notfall direkt.",
+    "definitionEn": "The electrical elimination of cardiac arrhythmias, typically performed under anesthesia or directly in emergencies.",
+    "einfacheSprache": "Ein starker Strom-Schlag für das Herz. Der Strom-Schlag soll helfen, dass das Herz wieder normal schlägt.",
+    "eselsleitern": [
+      "Defibrillation = Den Flimmer-Rhythmus Beenden."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Diastolischer Blutdruck",
+    "context": "Kardiologie / Innere Medizin",
+    "definitionDe": "Der untere Blutdruckwert, der den Basisdruck darstellt, der vor und nach einer Druckwelle des Herzens im Gefäßsystem herrscht.",
+    "definitionEn": "The lower blood pressure value, representing the base pressure that exists before and after a pressure wave from the heart.",
+    "einfacheSprache": "Der untere Wert beim Blut-Druck messen. Er zeigt den Druck in den Adern, wenn das Herz gerade eine Pause macht.",
+    "eselsleitern": [
+      "Diastole = Der Druck Danach (in der Pause)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "EKG",
+    "context": "Diagnostik / Kardiologie",
+    "definitionDe": "Elektrokardiogramm; ein Gerät und Verfahren zur Aufzeichnung der elektrischen Herzströme zur Diagnose von Rhythmusstörungen.",
+    "definitionEn": "Electrocardiogram; a device and procedure for recording the electrical currents of the heart to diagnose rhythm disturbances.",
+    "einfacheSprache": "Ein Test für das Herz. Kleine Kabel messen den Strom am Herzen. So sieht der Arzt, ob das Herz gesund schlägt.",
+    "eselsleitern": [
+      "Elektrische Kontrolle vom Ganzem Herzen."
+    ],
+    "source": "Neuro Pocket 2023, Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Embolie",
+    "context": "Innere Medizin / Angiologie",
+    "definitionDe": "Das Auftreten von Blutgerinnseln, die durch die Blutbahn geschwemmt werden und Gefäße verschließen können, z.B. bei Vorhofflimmern.",
+    "definitionEn": "The occurrence of blood clots that travel through the bloodstream and can block vessels, leading to strokes.",
+    "einfacheSprache": "Ein Blut-Pfropf verstopft eine Ader im Körper. Wenn das im Kopf passiert, gibt es einen Schlag-Anfall.",
+    "eselsleitern": [
+      "Embolie = Ein Mobiler Pfropf."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Extrasystole",
+    "context": "Kardiologie",
+    "definitionDe": "Ein zusätzlicher Herzschlag außerhalb der Reihe, der sich oft als Herzstolpern äußert.",
+    "definitionEn": "An additional heartbeat occurring outside of the normal sequence, often felt as heart palpitations.",
+    "einfacheSprache": "Das Herz macht einen extra Schlag zwischendurch. Das fühlt sich an wie ein Stolpern in der Brust.",
+    "eselsleitern": [
+      "Extra = Ein Schlag zu viel."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Herzschrittmacher",
+    "context": "Kardiologie / Chirurgie",
+    "definitionDe": "Ein elektrisches Gerät, das bei zu langsamem Puls für einen regelmäßigen Herzschlag sorgt.",
+    "definitionEn": "An electrical device that ensures a regular heartbeat for those with a slow pulse.",
+    "einfacheSprache": "Ein kleiner Apparat, der unter die Haut operiert wird. Er gibt kleine Strom-Stöße, damit das Herz nicht zu langsam schlägt.",
+    "eselsleitern": [
+      "Der Schrittmacher gibt den Takt vor."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Hypertonie",
+    "context": "Innere Medizin",
+    "definitionDe": "Der medizinische Fachausdruck für zu hohen Blutdruck.",
+    "definitionEn": "The technical term for high blood pressure.",
+    "einfacheSprache": "Der Blut-Druck im Körper ist zu hoch. Das ist auf Dauer schlecht für das Herz und die Adern.",
+    "eselsleitern": [
+      "Hyper = Hoch, Tonus = Druck."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Hyponatriämie",
+    "context": "Labormedizin / Innere Medizin",
+    "definitionDe": "Ein Natriummangel im Blut (Na+ < 135 mmol/l), der als Nebenwirkung bestimmter Medikamente auftreten kann.",
+    "definitionEn": "A deficiency of sodium in the blood (Na+ < 135 mmol/l), which can occur as a side effect of certain medications.",
+    "einfacheSprache": "Zu wenig Salz im Blut. Das kann gefährlich sein und kommt manchmal von bestimmten Tabletten.",
+    "eselsleitern": [
+      "Hypo = Weniger, Natrium = Salz."
+    ],
+    "source": "Neuro Pocket 2023, Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Systolischer Blutdruck",
+    "context": "Kardiologie / Innere Medizin",
+    "definitionDe": "Der obere Blutdruckwert, der durch den Auswurf des Herzens entsteht und als Puls tastbar ist.",
+    "definitionEn": "The upper blood pressure value created by the ejection of blood from the heart, palpable as a pulse.",
+    "einfacheSprache": "Der obere Wert beim Blut-Druck messen. Er entsteht, wenn das Herz das Blut kräftig in den Körper pumpt.",
+    "eselsleitern": [
+      "Systole = Spannung / Stoß des Herzens."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Tachykardie",
+    "context": "Kardiologie",
+    "definitionDe": "Eine Herzfrequenz, die ungewöhnlich schnell ist (üblicherweise über 100 Schläge pro Minute bei Erwachsenen).",
+    "definitionEn": "A medical condition in which the heart rate is abnormally fast (typically over 100 beats per minute in adults).",
+    "einfacheSprache": "Das Herz schlägt viel zu schnell. Man spürt oft ein starkes Herz-Klopfen.",
+    "eselsleitern": [
+      "Tachy = Tempo (schnell)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Vorhofflimmern",
+    "context": "Kardiologie",
+    "definitionDe": "Unkoordinierte Bewegungen des Herzvorhofs, die zum Ausfall der Vorhoffunktion führen und das Risiko für Blutgerinnsel erhöhen.",
+    "definitionEn": "Uncoordinated movements of the heart's atrium, leading to a loss of atrial function and increasing the risk of blood clots.",
+    "einfacheSprache": "Die Vor-Kammer vom Herzen zuckt nur noch, statt richtig zu pumpen. Dabei können Blut-Klumpen entstehen.",
+    "eselsleitern": [
+      "Das Vor-Herz flimmert statt zu schlagen."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Adenokarzinom",
+    "context": "Onkologie / Pathologie",
+    "definitionDe": "Ein bösartiger Tumor (Krebsgeschwulst), der aus drüsenbildendem Gewebe hervorgeht.",
+    "definitionEn": "A malignant tumor (cancer) that originates from glandular-forming tissue.",
+    "einfacheSprache": "Eine Art von Krebs. Er entsteht aus Zellen, die im Körper Flüssigkeiten herstellen, zum Beispiel in der Bauch-Speicheldrüse.",
+    "eselsleitern": [
+      "Adeno = Drüse, Karzinom = Krebs."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Adenom",
+    "context": "Urologie / Endokrinologie",
+    "definitionDe": "Eine gutartige Gewebeneubildung, die aus Drüsengewebe entsteht (z.B. Prostatahyperplasie).",
+    "definitionEn": "A benign (non-cancerous) enlargement or tumor originating from glandular tissue.",
+    "einfacheSprache": "Ein Knoten aus Gewebe. Der Knoten ist gut-artig. Das heißt, es ist kein Krebs.",
+    "eselsleitern": [
+      "Adenom = Angenehm (weil gutartig im Vergleich zum Karzinom)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Biopsie",
+    "context": "Diagnostik / Chirurgie",
+    "definitionDe": "Die Entnahme einer Gewebeprobe am lebenden Organismus zur mikroskopischen Untersuchung.",
+    "definitionEn": "The removal of a tissue sample from a living organism for microscopic diagnostic examination.",
+    "einfacheSprache": "Der Arzt nimmt ein winziges Stück Gewebe aus dem Körper. Das Stück wird unter dem Mikroskop genau untersucht.",
+    "eselsleitern": [
+      "Bio = Leben, Psie = Sehen (Ins lebende Gewebe sehen)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Chemotherapie",
+    "context": "Onkologie",
+    "definitionDe": "Behandlung mit Medikamenten (Zytostatika), die das Zellwachstum hemmen und die Zellteilung blockieren.",
+    "definitionEn": "Treatment with drugs (cytostatics) that inhibit cell growth, reduce cell reproduction, or block cellular functions.",
+    "einfacheSprache": "Eine Behandlung gegen Krebs mit starken Medikamenten. Die Medikamente sollen die Krebs-Zellen zerstören.",
+    "eselsleitern": [
+      "Chemo = Chemie gegen den Krebs."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Computertomographie (CT)",
+    "context": "Radiologie",
+    "definitionDe": "Spezielles Röntgenverfahren, bei dem Messwerte einer Körperregion computergestützt in Schichtbilder umgewandelt werden.",
+    "definitionEn": "A specialized X-ray method where measurements from a body region are converted by a computer into cross-sectional images.",
+    "einfacheSprache": "Eine besondere Röntgen-Untersuchung. Ein Computer macht genaue Bilder vom Inneren des Körpers. Man sieht den Körper in Scheiben.",
+    "eselsleitern": [
+      "Computer Teilt den Körper in Scheiben."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Endoskopie",
+    "context": "Viszeralchirurgie / Gastroenterologie",
+    "definitionDe": "Ausleuchtung und Inspektion von Hohlräumen und Hohlorganen mithilfe eines beweglichen Schlauchs mit optischem System.",
+    "definitionEn": "Inspecting body cavities and hollow organs using a flexible tube equipped with a light and camera system.",
+    "einfacheSprache": "Eine Untersuchung von Magen oder Darm. Der Arzt benutzt dafür einen dünnen, weichen Schlauch mit einer kleinen Kamera.",
+    "eselsleitern": [
+      "Endo = Innen, Skopie = Schauen (Hineinschauen)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Grading",
+    "context": "Pathologie / Onkologie",
+    "definitionDe": "Die Beurteilung des Bösartigkeitsgrades einer Krebsgeschwulst, oft anhand der Zellteilungsrate.",
+    "definitionEn": "The assessment of the degree of malignancy of a cancer, often based on the cell division rate.",
+    "einfacheSprache": "Der Arzt teilt den Krebs in Stufen ein. So sieht man, wie schnell und gefährlich der Krebs wächst.",
+    "eselsleitern": [
+      "Grade = Grad der Gefahr."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Koloskopie",
+    "context": "Gastroenterologie / Chirurgie",
+    "definitionDe": "Die endoskopische Untersuchung des Kolons (Dickdarms).",
+    "definitionEn": "An endoscopy or examination of the large intestine.",
+    "einfacheSprache": "Eine Darm-Spiegelung. Der Arzt schaut mit einem dünnen Schlauch den ganzen Dick-Darm von innen an.",
+    "eselsleitern": [
+      "Kolo = Kolon (Darm), Skopie = Schauen."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Magnetresonanztomographie (MRT)",
+    "context": "Radiologie",
+    "definitionDe": "Ein Untersuchungsverfahren, das Magnetfelder nutzt, um zweidimensionale Schichtbilder von Gehirn oder Organen zu erstellen.",
+    "definitionEn": "An examination procedure that uses magnetic fields to create two-dimensional sectional images of the brain or other organs.",
+    "einfacheSprache": "Ein Gerät wie eine große Röhre. Es macht mit Magneten genaue Bilder vom Körper, ganz ohne Röntgen-Strahlen.",
+    "eselsleitern": [
+      "Magnet-Röhren-Test."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Maligne",
+    "context": "Onkologie / Pathologie",
+    "definitionDe": "Medizinischer Fachbegriff für \"bösartig\", verwendet zur Beschreibung von Krebsgeschwüren.",
+    "definitionEn": "A term meaning malignant, used to describe the severity of a cancerous growth.",
+    "einfacheSprache": "Bös-artig. Das Wort benutzt der Arzt, wenn ein Knoten wirklich Krebs ist.",
+    "eselsleitern": [
+      "Maligne = Miese, aggressive Läsion."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Metastase",
+    "context": "Onkologie",
+    "definitionDe": "Ein sekundärer Krankheitsherd, der durch die Streuung von Tumorzellen aus einem Primärtumor entsteht (Tochtergeschwulst).",
+    "definitionEn": "A secondary disease focus resulting from the spread of tumor cells from a primary tumor.",
+    "einfacheSprache": "Eine Tochter-Geschwulst. Der Krebs hat sich im Körper ausgebreitet und an einer neuen Stelle angefangen zu wachsen.",
+    "eselsleitern": [
+      "Meta = Mit-gereist (vom Ursprungsort weg)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "PET",
+    "context": "Radiologie / Nuklearmedizin",
+    "definitionDe": "Positronen-Emissions-Tomographie; ein Diagnoseverfahren zur Messung des Hirn- oder Tumorstoffwechsels durch kurzlebige Strahlung.",
+    "definitionEn": "Positron Emission Tomography; a diagnostic procedure used to measure metabolism through radiation from elementary particles.",
+    "einfacheSprache": "Ein besonderes Bild vom Körper. Man bekommt ein leicht strahlendes Mittel gespritzt, damit man den Krebs auf dem Bild leuchten sieht.",
+    "eselsleitern": [
+      "Positronen Entlarven Tumore."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Polyp",
+    "context": "Gastroenterologie / Viszeralchirurgie",
+    "definitionDe": "Eine meist gestielte und gutartige Vorwölbung der Darmschleimhaut, die entarten kann.",
+    "definitionEn": "A protrusion of the mucous membrane of the large intestine wall that is usually stalked and benign.",
+    "einfacheSprache": "Ein kleiner Knoten im Darm, der wie ein Pilz aussieht. Er ist meistens gut-artig, sollte aber entfernt werden.",
+    "eselsleitern": [
+      "Polyp = Pilz-artiger Pickel."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Primärtumor",
+    "context": "Onkologie",
+    "definitionDe": "Der zuerst entstandene Tumor, von dem Metastasen ausgehen können.",
+    "definitionEn": "The first tumor to develop, which can be the source of originating metastases.",
+    "einfacheSprache": "Der erste Krebs-Knoten im Körper. Von hier aus kann der Krebs streuen.",
+    "eselsleitern": [
+      "Primär = Der Erste."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Prostatahyperplasie",
+    "context": "Urologie",
+    "definitionDe": "Gutartige Vergrößerung der Vorsteherdrüse (Prostata), die schleichend mit zunehmendem Alter entsteht.",
+    "definitionEn": "Benign enlargement of the prostate gland, which typically develops gradually with advancing age.",
+    "einfacheSprache": "Die Vorsteher-Drüse beim Mann ist größer geworden. Das ist normal im Alter und ist kein Krebs.",
+    "eselsleitern": [
+      "Hyper = Mehr, Plasie = Bildung (Mehr Gewebebildung)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Prostatakrebs",
+    "context": "Urologie / Onkologie",
+    "definitionDe": "Ein bösartiger Tumor der Vorsteherdrüse, der sich oft ohne Frühsymptome entwickelt.",
+    "definitionEn": "A malignant tumor of the prostate gland, often developing without initial symptoms.",
+    "einfacheSprache": "Krebs in der Vorsteher-Drüse beim Mann. Er wächst oft sehr langsam und man spürt lange nichts davon.",
+    "eselsleitern": [
+      "Prostatakarzinom = Bösartiger Knoten."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Zytostatika",
+    "context": "Pharmakologie / Onkologie",
+    "definitionDe": "Medikamente, die vorzugsweise das Wachstum von Tumorzellen hemmen, indem sie die Zellteilung unterbinden.",
+    "definitionEn": "Medications used to preferentially inhibit the growth of tumor cells, frequently by preventing cell division.",
+    "einfacheSprache": "Starke Medikamente gegen Krebs. Sie stoppen das Wachsen der Krebs-Zellen. Sie werden bei einer Chemo-Therapie gegeben.",
+    "eselsleitern": [
+      "Zyto = Zelle, Statik = Stillstand (Zellen werden gestoppt)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.737Z",
+    "updatedAt": "2026-02-13T21:34:55.737Z"
+  },
+  {
+    "term": "Antibiotika",
+    "context": "Pharmakologie / Infektiologie",
+    "definitionDe": "Medikamente zur Behandlung von Infektionen, die durch Bakterien verursacht werden.",
+    "definitionEn": "Medications used to treat infections caused by bacteria, requiring physician prescription.",
+    "einfacheSprache": "Medikamente, die Bakterien töten. Sie helfen bei Entzündungen wie einer Lungen-Entzündung. Sie helfen nicht bei Viren.",
+    "eselsleitern": [
+      "Anti = Gegen, Bio = Leben (Gegen das Bakterienleben)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Antiepileptika",
+    "context": "Pharmakologie / Neurologie",
+    "definitionDe": "Medikamente, die speziell zur Behandlung von epileptischen Anfällen eingesetzt werden.",
+    "definitionEn": "Medications specifically used for the treatment of epileptic seizures.",
+    "einfacheSprache": "Medikamente gegen Krampf-Anfälle. Sie sollen das Gewitter im Gehirn verhindern.",
+    "eselsleitern": [
+      "Anti = Gegen, Epilepsie = Krämpfe."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Antihypertensivum",
+    "context": "Pharmakologie / Innere Medizin",
+    "definitionDe": "Ein Medikament, das in der Lage ist, hohe Blutdruckwerte zu senken.",
+    "definitionEn": "A medication capable of lowering high blood pressure values.",
+    "einfacheSprache": "Ein Medikament gegen hohen Blut-Druck.",
+    "eselsleitern": [
+      "Anti = Gegen, Hypertonie = Hochdruck."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "AT1-Blocker",
+    "context": "Pharmakologie / Kardiologie",
+    "definitionDe": "Eine Gruppe neuerer Substanzen, die den Blutdruck effektiv senken und sich durch gute Verträglichkeit auszeichnen.",
+    "definitionEn": "A group of relatively new substances that effectively lower blood pressure with good tolerability.",
+    "einfacheSprache": "Moderne Tabletten gegen hohen Blut-Druck, die man meistens sehr gut verträgt.",
+    "eselsleitern": [
+      "Blockiert die Anspannung in den Adern."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Bisphosphonate",
+    "context": "Pharmakologie / Osteologie",
+    "definitionDe": "Medikamente zur Behandlung von Knochenerkrankungen (wie Osteoporose), die den Knochenabbau durch Osteoklasten hemmen.",
+    "definitionEn": "A group of medications used to treat osteological diseases by inhibiting osteoclasts.",
+    "einfacheSprache": "Medikamente, die die Knochen hart machen. Sie helfen gegen Knochen-Schwund bei älteren Menschen.",
+    "eselsleitern": [
+      "Bis = Zwei, Phosphon = Knochen-Baustein."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CBZ",
+    "context": "Pharmakologie / Neurologie",
+    "definitionDe": "Carbamazepin; ein anfallssupprimierendes Medikament, dessen Metabolismus über Cytochrom P450 abläuft.",
+    "definitionEn": "Carbamazepine; an antiseizure medication metabolized via the Cytochrome P450 pathway.",
+    "einfacheSprache": "Ein Medikament gegen Krampf-Anfälle. Es beruhigt die Nerven im Gehirn.",
+    "eselsleitern": [
+      "CaBt Zuckungen (Kappt Zuckungen)."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ESL",
+    "context": "Pharmakologie / Neurologie",
+    "definitionDe": "Eslicarbazepin; ein Antiepileptikum mit langsamer Kinetik, das Allergien und Herzprobleme auslösen kann.",
+    "definitionEn": "Eslicarbazepine; an antiseizure medication with potential cardiac and allergic side effects.",
+    "einfacheSprache": "Ein spezielles Medikament gegen Krampf-Anfälle. Der Arzt muss dabei das Herz kontrollieren.",
+    "eselsleitern": [
+      "ES Lähmt Anfälle."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Glukokortikoide",
+    "context": "Pharmakologie / Endokrinologie",
+    "definitionDe": "Chemische Verbindungen ähnlich dem Cortisol, hochwirksam bei chronisch entzündlichen Erkrankungen, können jedoch Osteoporose verursachen.",
+    "definitionEn": "Chemical compounds similar to cortisol, used for chronic inflammatory diseases but potentially causing osteoporosis long-term.",
+    "einfacheSprache": "Medikamente wie Kortison. Sie helfen super gegen Entzündungen, können aber auf Dauer die Knochen weich machen.",
+    "eselsleitern": [
+      "Gluko = Zucker, Kortiko = Rinde (Nebennierenrinde)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "LVT (LEV)",
+    "context": "Pharmakologie / Neurologie",
+    "definitionDe": "Levetiracetam; ein breitbandiges Antiepileptikum zur Behandlung fokaler und generalisierter Anfälle.",
+    "definitionEn": "Levetiracetam; a broad-spectrum antiepileptic drug used to treat focal and generalized seizures.",
+    "einfacheSprache": "Ein sehr bekanntes Medikament gegen Krampf-Anfälle.",
+    "eselsleitern": [
+      "Lässt Viele Ticks verschwinden."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PB",
+    "context": "Pharmakologie / Neurologie",
+    "definitionDe": "Phenobarbital; ein Barbiturat zur Monotherapie oder Entzugstherapie, mit Risiko für Porphyrie.",
+    "definitionEn": "Phenobarbital; a barbiturate used for monotherapy or withdrawal therapy, carrying a risk of porphyria.",
+    "einfacheSprache": "Ein altes, aber starkes Medikament gegen Krampf-Anfälle. Es macht oft sehr müde.",
+    "eselsleitern": [
+      "PhenoBarbital = Pennt Bald (macht extrem müde)."
+    ],
+    "source": "Neuro Pocket 2023",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Phytotherapeutika",
+    "context": "Pharmakologie / Komplementärmedizin",
+    "definitionDe": "Arzneimittel, die aus Pflanzenteilen wie Wurzeln, Blättern oder Samen hergestellt werden.",
+    "definitionEn": "Medicinal products manufactured primarily from plant parts and their active ingredients.",
+    "einfacheSprache": "Pflanzliche Medizin. Sie wird aus Blumen, Blättern oder Wurzeln gemacht.",
+    "eselsleitern": [
+      "Phyto = Pflanze, Therapie = Behandlung."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Plazebo",
+    "context": "Pharmakologie",
+    "definitionDe": "Ein unwirksames Scheinmedikament, das in Aussehen und Geschmack einem echten Medikament gleicht.",
+    "definitionEn": "An ineffective sham drug that resembles a real medicinal product in characteristics such as appearance and taste.",
+    "einfacheSprache": "Eine Pille ohne echten Wirk-Stoff. Man nennt sie auch Schein-Medikament.",
+    "eselsleitern": [
+      "Plazebo = Ich werde gefallen (Latein)."
+    ],
+    "source": "Zentiva Glossar",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Allgemeine Abteilung",
+    "context": "Administration / Tarife",
+    "definitionDe": "Die Standard-Versicherungsklasse für stationäre Aufenthalte, bei der die Kosten durch die Grundversicherung gedeckt sind.",
+    "definitionEn": "The standard insurance class for inpatient stays, where costs are covered by basic health insurance.",
+    "einfacheSprache": "Das normale Zimmer im Krankenhaus. Meistens liegen hier mehrere Patienten zusammen in einem Raum. Die Grund-Kasse bezahlt das.",
+    "eselsleitern": [
+      "Allgemein = Alle (Zimmer für alle Kassenpatienten)."
+    ],
+    "source": "Patientenwegleitung Inselspital",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Anna-Seiler-Haus",
+    "context": "Campus Navigation",
+    "definitionDe": "Das im Jahr 2023 eröffnete neue Hauptgebäude und Herzstück des Insel-Areals (Freiburgstrasse 41C, Eingang 2).",
+    "definitionEn": "The new main building and centerpiece of the Inselspital campus, opened in 2023 (Freiburgstrasse 41C, Entrance 2).",
+    "einfacheSprache": "Das größte und neueste Haus im Insel-Spital. Es steht in der Mitte vom Gelände.",
+    "eselsleitern": [
+      "Anna Seiler = Alles Schön und neu."
+    ],
+    "source": "Jahresbericht Insel Gruppe",
+    "sourceUrl": "https://inselgruppe.ch/fileadmin/Insel_Gruppe/Dokumente/Medienmitteilungen/2024/Jahresbericht_2023_Insel_Gruppe_AG-1.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Bettenhochhaus (BHH)",
+    "context": "Campus Navigation",
+    "definitionDe": "Ein zentrales Hochhaus auf dem Insel-Areal (Freiburgstrasse 18, Eingang 33), das die Hauptinformation beherbergt.",
+    "definitionEn": "A central high-rise building on the Insel campus housing the main information desk.",
+    "einfacheSprache": "Ein sehr hohes Gebäude im Insel-Spital. Dort gibt es sehr viele Zimmer für Patienten und den Haupt-Eingang.",
+    "eselsleitern": [
+      "BettenHochHaus = Bis Hoch in den Himmel."
+    ],
+    "source": "Patientenwegleitung Inselspital",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Frauenklinik",
+    "context": "Campus Navigation",
+    "definitionDe": "Ein Gebäude auf dem Insel-Areal an der Effingerstrasse 102, Eingang 17.",
+    "definitionEn": "A building on the Insel campus located at Effingerstrasse 102, Entrance 17.",
+    "einfacheSprache": "Das Haus speziell für die Gesundheit von Frauen. Auch Babys kommen hier zur Welt.",
+    "eselsleitern": [
+      "Frauen-Klinik = Für Frauen und Babys."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "IIC",
+    "context": "Administration",
+    "definitionDe": "Insel International Center; die Abteilung für Patienten ohne Schweizer Krankenversicherung und für Diplomaten.",
+    "definitionEn": "Insel International Center; the department responsible for patients without Swiss health insurance and for diplomats.",
+    "einfacheSprache": "Das Büro für Patienten aus anderen Ländern. Es hilft Menschen, die keine Schweizer Kranken-Kasse haben.",
+    "eselsleitern": [
+      "IIC = International In Charge."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "INO",
+    "context": "Campus Navigation",
+    "definitionDe": "Intensiv-, Notfall- und Operationszentrum des Inselspitals (Freiburgstrasse 16C, Eingang 56).",
+    "definitionEn": "The Intensive Care, Emergency, and Surgery Center of the Inselspital (Freiburgstrasse 16C, Entrance 56).",
+    "einfacheSprache": "Das Gebäude für absolute Notfälle. Hier finden schwere Operationen statt und hier gibt es die Intensiv-Station.",
+    "eselsleitern": [
+      "Immer Notfälle und Operationen."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Kinderkliniken",
+    "context": "Campus Navigation",
+    "definitionDe": "Gebäude auf dem Insel-Areal (Freiburgstrasse 15, Eingänge 31 und 31A) für die pädiatrische Versorgung.",
+    "definitionEn": "Children's clinics located at Freiburgstrasse 15, Entrances 31 and 31A.",
+    "einfacheSprache": "Die Gebäude nur für kranke Babys und Kinder. Hier arbeiten spezielle Ärzte für Kinder.",
+    "eselsleitern": [
+      "Kinder-Klinik = Wo die kleinen Patienten hingehen."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Kostendeckung",
+    "context": "Administration / Finanzen",
+    "definitionDe": "Die Klärung, ob eine Versicherung oder der Wohnkanton die Behandlungskosten im Spital übernimmt.",
+    "definitionEn": "The clarification of whether an insurance provider or canton will cover the hospital treatment costs.",
+    "einfacheSprache": "Die Frage, wer das Krankenhaus bezahlt. Meistens ist das die Kranken-Kasse.",
+    "eselsleitern": [
+      "Deckung = Ein Dach über den Kosten."
+    ],
+    "source": "Patientenwegleitung Inselspital",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Kostengutsprache",
+    "context": "Administration / Finanzen",
+    "definitionDe": "Eine formelle Bestätigung der Krankenversicherung oder des Wohnkantons, die Kosten für eine geplante Behandlung zu übernehmen.",
+    "definitionEn": "A formal guarantee of payment issued by a health insurance provider or canton for a scheduled medical treatment.",
+    "einfacheSprache": "Ein Brief von der Versicherung. Darin steht, dass die Versicherung die Behandlung im Krankenhaus bezahlt.",
+    "eselsleitern": [
+      "Gutsprache = Gut, wir sprechen dir das Geld zu."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Patienten-Ombudsstelle",
+    "context": "Recht / Ethik",
+    "definitionDe": "Eine unabhängige Beschwerdestelle im Inselspital zur Vermittlung zwischen Patienten und dem Klinikpersonal bei Konflikten.",
+    "definitionEn": "An independent ombudsman's office at the hospital for mediating conflicts between patients and clinical staff.",
+    "einfacheSprache": "Ein Büro, das Patienten hilft, wenn sie sich über etwas im Krankenhaus ärgern oder beschweren möchten.",
+    "eselsleitern": [
+      "Ombud = Organisiert menschliche Belange und Diskussionen."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Patienten-Onlineaufnahme",
+    "context": "Administration / IT",
+    "definitionDe": "Ein digitaler Administrationsprozess, der es Patienten ermöglicht, ihre Eintrittsdaten vorab über das Patientenportal \"myInsel\" zu erfassen.",
+    "definitionEn": "A digital admission process allowing patients to enter their admission data in advance via the \"myInsel\" patient portal.",
+    "einfacheSprache": "Die Anmeldung für das Krankenhaus über das Internet. Man kann das schon zu Hause am Computer machen.",
+    "eselsleitern": [
+      "Online-Aufnahme = Ohne Warten am Schalter."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Vorauskasse",
+    "context": "Administration / Finanzen",
+    "definitionDe": "Eine Vorabzahlung, die für geplante Behandlungen verlangt wird, wenn keine Kostendeckung durch eine Versicherung vorliegt.",
+    "definitionEn": "Advance payment required for planned treatments when there is no cost coverage by an insurance provider.",
+    "einfacheSprache": "Man muss das Geld für die Behandlung schon vorher bezahlen. Erst danach wird man im Krankenhaus behandelt.",
+    "eselsleitern": [
+      "Vorauskasse = Vorher aus der Kasse."
+    ],
+    "source": "Patientenwegleitung",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Anfechtbare Verfügung",
+    "context": "Recht / Soziales",
+    "definitionDe": "Ein behördliches Schreiben, in dem ein Entscheid (z.B. der Fürsorgebehörde) begründet wird und gegen das Rechtsmittel eingelegt werden können.",
+    "definitionEn": "An official administrative decision that provides reasons for an action and against which legal appeals can be lodged.",
+    "einfacheSprache": "Ein Brief vom Amt. Darin steht, was das Amt entschieden hat. Wenn man damit nicht einverstanden ist, kann man sich wehren.",
+    "eselsleitern": [
+      "Anfechtbar = Man kann dagegen fechten (kämpfen)."
+    ],
+    "source": "(https://www.sz.ch/public/upload/assets/62724/Merkblatt_ueber_die_Sozialhilfe_leichte_Sprache.pdf?fp=3)",
+    "sourceUrl": "https://www.sz.ch/public/upload/assets/62724/Merkblatt_ueber_die_Sozialhilfe_leichte_Sprache.pdf?fp=3",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Berufsgeheimnis",
+    "context": "Recht / Ethik",
+    "definitionDe": "Die gesetzliche Schweigepflicht des medizinischen Personals über alle Patientendaten und Behandlungsdetails.",
+    "definitionEn": "The legal obligation of professional secrecy and confidentiality binding medical staff regarding all patient data.",
+    "einfacheSprache": "Die Schweige-Pflicht. Der Arzt darf niemandem verraten, was Sie ihm erzählen oder welche Krankheit Sie haben.",
+    "eselsleitern": [
+      "Geheimnis = Geht niemand anderen etwas an."
+    ],
+    "source": "Patientenwegleitung Inselspital",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Patientenverfügung",
+    "context": "Recht / Ethik",
+    "definitionDe": "Eine schriftliche Willenserklärung für den Fall der Urteilsunfähigkeit, in der medizinische Behandlungswünsche im Voraus festgelegt werden.",
+    "definitionEn": "A living will or advance directive that specifies healthcare treatment wishes in the event of incapacitation.",
+    "einfacheSprache": "Ein Brief für den Arzt. Darin steht, welche Behandlung man möchte, wenn man schwer krank ist und nicht mehr selbst sprechen kann.",
+    "eselsleitern": [
+      "Verfügung = Ich verfüge (bestimme) heute für morgen."
+    ],
+    "source": "(https://www.justiz.bayern.de/media/pdf/broschueren/240617_stmj_patientenverfuegung_leichtesprache.pdf)",
+    "sourceUrl": "https://www.justiz.bayern.de/media/pdf/broschueren/240617_stmj_patientenverfuegung_leichtesprache.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Urteilsunfähigkeit",
+    "context": "Recht / Psychiatrie",
+    "definitionDe": "Der rechtliche Zustand, in dem eine Person nicht mehr in der Lage ist, vernunftgemäß zu handeln oder Tragweiten von medizinischen Entscheidungen zu erfassen.",
+    "definitionEn": "The legal state of being incapable of judgment, meaning a person cannot act reasonably or understand the consequences of medical decisions.",
+    "einfacheSprache": "Man ist so krank, dass man nicht mehr selbst entscheiden kann. Man versteht nicht mehr, was um einen herum passiert.",
+    "eselsleitern": [
+      "Urteilsunfähig = Kann kein Urteil mehr fällen."
+    ],
+    "source": "Patientenwegleitung Inselspital",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ABCDE-Schema",
+    "context": "Notfallmedizin",
+    "definitionDe": "Ein strukturierter Ansatz zur Erstversorgung kritisch kranker oder verletzter Patienten.",
+    "definitionEn": "A structured approach to the initial assessment and treatment of critically ill or injured patients.",
+    "einfacheSprache": "Ein Plan für Not-Ärzte. Er sagt dem Arzt, in welcher Reihen-Folge er den Patienten untersuchen muss, um sein Leben zu retten.",
+    "eselsleitern": [
+      "Airway, Breathing, Circulation, Disability, Exposure."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "FAST-HUGS",
+    "context": "Intensivmedizin",
+    "definitionDe": "Eine tägliche Checkliste auf der Intensivstation zur Überprüfung der grundlegenden Patientenversorgung.",
+    "definitionEn": "A daily checklist used in intensive care units to ensure comprehensive basic patient care.",
+    "einfacheSprache": "Eine Check-Liste für Ärzte auf der Intensiv-Station. Sie hilft dabei, jeden Tag an alle wichtigen Behandlungen zu denken.",
+    "eselsleitern": [
+      "Feeding, Analgesia, Sedation, Thromboembolic prophylaxis, Head of bed, Ulcer prophylaxis, Glucose control, Spontaneous breathing trial."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Intercostalraum-Leitungen",
+    "context": "Anatomie / Chirurgie",
+    "definitionDe": "Die anatomische Anordnung der Blutgefäße und Nerven am Unterrand der Rippen.",
+    "definitionEn": "The anatomical arrangement of blood vessels and nerves along the lower edge of the ribs.",
+    "einfacheSprache": "Die Reihen-Folge, wie Adern und Nerven unter einer Rippe liegen. Wichtig für den Arzt, damit er beim Stechen nichts verletzt.",
+    "eselsleitern": [
+      "OVAN: Oben = Vene, Arterie, Nerv."
+    ],
+    "source": "Praktischarzt Eselsbrücken",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "Milzgröße",
+    "context": "Anatomie / Sonographie",
+    "definitionDe": "Die durchschnittlichen physiologischen Abmessungen der menschlichen Milz.",
+    "definitionEn": "The average physiological dimensions of the human spleen.",
+    "einfacheSprache": "Die normale Größe von der Milz im Körper. Sie ist etwa 4 mal 7 mal 11 Zentimeter groß.",
+    "eselsleitern": [
+      "4711 (Wie das Kölnisch Wasser): 4cm x 7cm x 11cm."
+    ],
+    "source": "Praktischarzt Eselsbrücken",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MUDPILES",
+    "context": "Notfallmedizin / Nephrologie",
+    "definitionDe": "Differenzialdiagnosen für eine metabolische Azidose mit vergrößerter Anionenlücke.",
+    "definitionEn": "Differential diagnoses for high anion gap metabolic acidosis.",
+    "einfacheSprache": "Eine Liste von Gründen, warum das Blut plötzlich zu sauer wird. Meistens sind Vergiftungen oder kranke Nieren schuld.",
+    "eselsleitern": [
+      "Methanol, Uremia, DKA, Paraldehyde, Isoniazid, Lactic acidosis, Ethylene glycol, Salicylates."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "NAVeL",
+    "context": "Anatomie / Chirurgie",
+    "definitionDe": "Die anatomische Anordnung der Strukturen in der Leistenregion (Nervus, Arteria, Vena, leeres Fach, Ligamentum lacunare).",
+    "definitionEn": "The anatomical arrangement of structures in the femoral triangle/groin area.",
+    "einfacheSprache": "Die Reihen-Folge von Adern und Nerven in der Leiste. Das muss der Arzt beim Einlegen eines Katheters wissen.",
+    "eselsleitern": [
+      "Nerve, Artery, Vein, empty space, Lymphatics."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "OPQRST",
+    "context": "Notfallmedizin",
+    "definitionDe": "Ein Akronym zur strukturierten Schmerzanamnese beim Patienten.",
+    "definitionEn": "A mnemonic used to investigate the symptoms of a patient experiencing pain.",
+    "einfacheSprache": "Ein Frage-Katalog für den Arzt. Er fragt damit genau ab, wie und wo der Schmerz beim Patienten ist.",
+    "eselsleitern": [
+      "Onset, Provocation, Quality, Radiation, Severity, Time."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SAD PERSONS",
+    "context": "Psychiatrie / Notfallmedizin",
+    "definitionDe": "Eine Skala zur Einschätzung des Suizidrisikos eines Patienten.",
+    "definitionEn": "A scale used to assess the suicide risk of a patient.",
+    "einfacheSprache": "Eine Liste für den Arzt, um zu prüfen, ob ein Patient sich selbst verletzen möchte.",
+    "eselsleitern": [
+      "Sex, Age, Depression, Previous attempt, Ethanol abuse, Rational thought loss, Social supports lacking, Organized plan, No spouse, Sickness."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SIG E CAPS",
+    "context": "Psychiatrie",
+    "definitionDe": "Diagnostische Kriterien für eine schwere depressive Episode.",
+    "definitionEn": "Diagnostic criteria for a major depressive episode.",
+    "einfacheSprache": "Eine Merk-Hilfe für den Arzt. Damit erkennt er, ob jemand eine schwere Depression hat.",
+    "eselsleitern": [
+      "Sleep, Interest, Guilt, Energy, Concentration, Appetite, Psycho-motor, Suicide."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SOAP",
+    "context": "Klinikorganisation",
+    "definitionDe": "Das standardisierte Format für die Dokumentation von Behandlungsverläufen in der Krankenakte.",
+    "definitionEn": "The standard format for documenting patient progress notes in medical records.",
+    "einfacheSprache": "Die Art und Weise, wie Ärzte ihre Berichte über die Patienten aufschreiben.",
+    "eselsleitern": [
+      "Subjective, Objective, Assessment, Plan."
+    ],
+    "source": "Med Mnemonics Video",
+    "sourceUrl": "https://www.praktischarzt.de/medizinstudium/merksaetze-in-der-medizin-eselsbruecken/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ASH",
+    "context": "Campus Navigation",
+    "definitionDe": "Anna-Seiler-Haus (Freiburgstrasse 41C, Eingang 2)",
+    "definitionEn": "Main building",
+    "einfacheSprache": "Das neueste Haus im Insel-Spital.",
+    "eselsleitern": [
+      "Anna Seiler Haus = Alles Schön Hier."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "BHH",
+    "context": "Campus Navigation",
+    "definitionDe": "Bettenhochhaus (Freiburgstrasse 18, Eingang 33)",
+    "definitionEn": "High-rise ward building",
+    "einfacheSprache": "Ein sehr hohes Gebäude mit vielen Zimmern.",
+    "eselsleitern": [
+      "BettenHochHaus = Bis Hoch in den Himmel."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CTU",
+    "context": "Administration",
+    "definitionDe": "Clinical Trials Unit (Finkenhubelweg 11)",
+    "definitionEn": "Clinical Trials Unit",
+    "einfacheSprache": "Das Büro für medizinische Forschung.",
+    "eselsleitern": [
+      "Clinical Trials Unit."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "DIPR",
+    "context": "Radiology",
+    "definitionDe": "Universitätsinstitut für Diagnostische, Interventionelle und Pädiatrische Radiologie (Freiburgstrasse 10)",
+    "definitionEn": "University Institute of Diagnostic, Interventional and Pediatric Radiology",
+    "einfacheSprache": "Die Abteilung für Röntgen und Ultraschall.",
+    "eselsleitern": [
+      "Durchleuchten Im Pädiatrischen Raum."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://radiologie.insel.ch/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "FTN",
+    "context": "Emergency",
+    "definitionDe": "Fast Track Notfallzentrum (Freiburgstrasse 16C, Eingang 56)",
+    "definitionEn": "Fast Track Emergency Center",
+    "einfacheSprache": "Die schnelle Not-Aufnahme für leichtere Fälle.",
+    "eselsleitern": [
+      "Fix Therapierter Notfall."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "GG",
+    "context": "Administration / Insurance",
+    "definitionDe": "Geburtsgebrechen",
+    "definitionEn": "Birth defects",
+    "einfacheSprache": "Krankheiten, die man schon bei der Geburt hat.",
+    "eselsleitern": [
+      "Geburts-Gefahr."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "HNO",
+    "context": "Clinic Navigation",
+    "definitionDe": "Hals-, Nasen- und Ohrenkrankheiten (Freiburgstrasse 20)",
+    "definitionEn": "Ear, Nose, and Throat (ENT)",
+    "einfacheSprache": "Ärzte für Hals, Nase und Ohren.",
+    "eselsleitern": [
+      "Hört, Niest, Orientiert."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "IIC",
+    "context": "Administration",
+    "definitionDe": "Insel International Center",
+    "definitionEn": "Insel International Center",
+    "einfacheSprache": "Büro für Patienten aus dem Ausland.",
+    "eselsleitern": [
+      "International In Charge."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "INO",
+    "context": "Campus Navigation",
+    "definitionDe": "Intensivbehandlungs-, Notfall- und Operationszentrum (Freiburgstrasse 16C, Eingang 56)",
+    "definitionEn": "Intensive Care, Emergency and Surgery Center",
+    "einfacheSprache": "Das Zentrum für Notfälle und Operationen.",
+    "eselsleitern": [
+      "Immer Notfälle und Operationen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "IV",
+    "context": "Administration / Insurance",
+    "definitionDe": "Invalidenversicherung",
+    "definitionEn": "Disability insurance",
+    "einfacheSprache": "Die Kasse für Menschen, die nicht arbeiten können.",
+    "eselsleitern": [
+      "Invaliden-Vorsorge."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "OPO",
+    "context": "Campus Navigation",
+    "definitionDe": "Operationstrakt Ost (Freiburgstrasse 16)",
+    "definitionEn": "Surgery Wing East",
+    "einfacheSprache": "Die Operations-Säle im Osten vom Spital.",
+    "eselsleitern": [
+      "Operieren Perfekt im Osten."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SU",
+    "context": "Neurology",
+    "definitionDe": "Stroke Unit",
+    "definitionEn": "Stroke Unit",
+    "einfacheSprache": "Spezial-Station für Schlag-Anfälle.",
+    "eselsleitern": [
+      "Schlaganfall Unterstützung."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SWEZ",
+    "context": "Clinic Navigation",
+    "definitionDe": "Schlaf-Wach-Epilepsie-Zentrum (Freiburgstrasse 18)",
+    "definitionEn": "Sleep-Wake-Epilepsy-Center",
+    "einfacheSprache": "Zentrum für Schlaf-Probleme und Krampf-Anfälle.",
+    "eselsleitern": [
+      "Schlafen, Wachen, Epilepsie Zähmen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "UDEM",
+    "context": "Clinic Navigation",
+    "definitionDe": "Universitätsklinik für Diabetologie, Endokrinologie, Ernährungsmedizin und Metabolismus (Freiburgstrasse 15)",
+    "definitionEn": "University Clinic for Diabetology, Endocrinology, Nutritional Medicine and Metabolism",
+    "einfacheSprache": "Abteilung für Zucker-Krankheit und Hormone.",
+    "eselsleitern": [
+      "Unser Diabetes Experten Medizin."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://udem.insel.ch/de/",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "UKN",
+    "context": "Neurology",
+    "definitionDe": "Universitäre Klinik für Neurologie",
+    "definitionEn": "University Clinic of Neurology",
+    "einfacheSprache": "Die Klinik für Nerven-Krankheiten.",
+    "eselsleitern": [
+      "Unser Kopf-Netzwerk."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "WG",
+    "context": "Campus Navigation",
+    "definitionDe": "Wirtschaftsgebäude (Freiburgstrasse 16A)",
+    "definitionEn": "Utility/Economic Building",
+    "einfacheSprache": "Das Haus für das Personal und das Essen.",
+    "eselsleitern": [
+      "Wo Gekocht wird."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ZMK",
+    "context": "Campus Navigation",
+    "definitionDe": "Zahnmedizinische Kliniken (Freiburgstrasse 7)",
+    "definitionEn": "Dental Clinics",
+    "einfacheSprache": "Die Klinik für die Zähne.",
+    "eselsleitern": [
+      "Zahn-Medizinische Klinik."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://palliativzentrum.insel.ch/fileadmin/Palliativzentrum/Dokumente/Flyer/Flyer_Patientenwegleitung_Inselspital.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ACN",
+    "context": "Nursing / Personnel",
+    "definitionDe": "Acute Care Nurse",
+    "definitionEn": "Acute Care Nurse",
+    "einfacheSprache": "Eine speziell ausgebildete Kranken-Schwester für Notfälle.",
+    "eselsleitern": [
+      "Acute Care Ninja."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ARDS",
+    "context": "Intensive Care",
+    "definitionDe": "Acute Respiratory Distress Syndrome",
+    "definitionEn": "Acute Respiratory Distress Syndrome",
+    "einfacheSprache": "Ein plötzliches und schweres Versagen der Lunge.",
+    "eselsleitern": [
+      "Atem-Reserven Drastisch Schlecht."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "BE",
+    "context": "Diagnostics",
+    "definitionDe": "Blutentnahme",
+    "definitionEn": "Blood sampling",
+    "einfacheSprache": "Der Arzt nimmt Blut aus einer Ader ab.",
+    "eselsleitern": [
+      "Blut Entfernen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "DBS",
+    "context": "Neurology",
+    "definitionDe": "Deep Brain Stimulation",
+    "definitionEn": "Deep Brain Stimulation",
+    "einfacheSprache": "Ein Schrittmacher tief im Gehirn.",
+    "eselsleitern": [
+      "Draht Bewegt Strukturen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "DIC",
+    "context": "Intensive Care",
+    "definitionDe": "Disseminated Intravascular Coagulation",
+    "definitionEn": "Disseminated Intravascular Coagulation",
+    "einfacheSprache": "Das Blut gerinnt plötzlich überall im Körper.",
+    "eselsleitern": [
+      "Die Innere Coagulation."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "IVT",
+    "context": "Emergency / Neurology",
+    "definitionDe": "Intravenöse Thrombolyse",
+    "definitionEn": "Intravenous thrombolysis",
+    "einfacheSprache": "Ein Medikament, das ein Blut-Gerinnsel auflöst.",
+    "eselsleitern": [
+      "In Vene Tropfen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "LP",
+    "context": "Diagnostics",
+    "definitionDe": "Liquorpunktion",
+    "definitionEn": "Lumbar puncture",
+    "einfacheSprache": "Der Arzt entnimmt Nerven-Wasser aus dem Rücken.",
+    "eselsleitern": [
+      "Liquor Probieren."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MH",
+    "context": "Anesthesia",
+    "definitionDe": "Maligne Hyperthermie",
+    "definitionEn": "Malignant hyperthermia",
+    "einfacheSprache": "Ein sehr gefährliches Fieber während einer Narkose.",
+    "eselsleitern": [
+      "Macht Hitze."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MNS",
+    "context": "Psychiatry",
+    "definitionDe": "Malignes Neuroleptika-Syndrom",
+    "definitionEn": "Malignant neuroleptic syndrome",
+    "einfacheSprache": "Eine sehr schwere Reaktion auf Medikamente.",
+    "eselsleitern": [
+      "Medikamente Nerven Schlimm."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MRI",
+    "context": "Diagnostics",
+    "definitionDe": "Magnetresonanztomographie",
+    "definitionEn": "Magnetic resonance imaging",
+    "einfacheSprache": "Eine Röhre, die mit Magneten Bilder vom Körper macht.",
+    "eselsleitern": [
+      "Magnet-Röhren-Inspektion."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MS",
+    "context": "Neurology",
+    "definitionDe": "Multiple Sklerose",
+    "definitionEn": "Multiple sclerosis",
+    "einfacheSprache": "Eine chronische Entzündung im Nerven-System.",
+    "eselsleitern": [
+      "Meist Schubförmig."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "OA",
+    "context": "Personnel",
+    "definitionDe": "Oberarzt",
+    "definitionEn": "Attending physician",
+    "einfacheSprache": "Ein erfahrener Arzt, der andere Ärzte leitet.",
+    "eselsleitern": [
+      "Oberster Arzt."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PRES",
+    "context": "Neurology",
+    "definitionDe": "(Posteriores) reversibles Enzephalopathie Syndrom",
+    "definitionEn": "Posterior reversible encephalopathy syndrome",
+    "einfacheSprache": "Eine vorübergehende Schwellung im Gehirn.",
+    "eselsleitern": [
+      "Plötzliche Reversible Erkrankung."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "TTM",
+    "context": "Intensive Care",
+    "definitionDe": "Targeted Temperature Management",
+    "definitionEn": "Targeted temperature management",
+    "einfacheSprache": "Eine Kühlung des Körpers, um das Gehirn zu schützen.",
+    "eselsleitern": [
+      "Temperatur Therapeutisch Modulieren."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "BRV",
+    "context": "Pharmacology",
+    "definitionDe": "Brivaracetam",
+    "definitionEn": "Brivaracetam",
+    "einfacheSprache": "Ein Medikament gegen Krampf-Anfälle.",
+    "eselsleitern": [
+      "Bremst Rasch Verzögerungen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CBD",
+    "context": "Pharmacology",
+    "definitionDe": "Cannabidiol",
+    "definitionEn": "Cannabidiol",
+    "einfacheSprache": "Ein Stoff aus Hanf gegen Krämpfe, ohne Rausch.",
+    "eselsleitern": [
+      "Cannabis Beruhigt Dauerhaft."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CK",
+    "context": "Lab Values",
+    "definitionDe": "Creatine Kinase",
+    "definitionEn": "Creatine kinase",
+    "einfacheSprache": "Ein Blut-Wert, der Verletzungen im Muskel zeigt.",
+    "eselsleitern": [
+      "Checkt Kraft-Muskeln."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CLB",
+    "context": "Pharmacology",
+    "definitionDe": "Clobazam",
+    "definitionEn": "Clobazam",
+    "einfacheSprache": "Ein starkes Beruhigungs-Mittel gegen Anfälle.",
+    "eselsleitern": [
+      "Chillt Leicht Bald."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CLZ",
+    "context": "Pharmacology",
+    "definitionDe": "Clonazepam",
+    "definitionEn": "Clonazepam",
+    "einfacheSprache": "Ein Medikament, das Muskeln entspannt.",
+    "eselsleitern": [
+      "Chillt Lange Zeit."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CNB",
+    "context": "Pharmacology",
+    "definitionDe": "Cenobamat",
+    "definitionEn": "Cenobamate",
+    "einfacheSprache": "Ein neues Mittel bei starken Anfällen.",
+    "eselsleitern": [
+      "Controlliert Neue Blitze."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "CYP",
+    "context": "Lab / Metabolism",
+    "definitionDe": "Cytochrome P450",
+    "definitionEn": "Cytochrome P450",
+    "einfacheSprache": "Ein Eiweiss in der Leber, das Tabletten abbaut.",
+    "eselsleitern": [
+      "Cleant Your Poison."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ESM",
+    "context": "Pharmacology",
+    "definitionDe": "Ethosuximid",
+    "definitionEn": "Ethosuximide",
+    "einfacheSprache": "Ein Mittel gegen kurze geistige Abwesenheiten.",
+    "eselsleitern": [
+      "Eliminiert Sekunden-Momente."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "FBM",
+    "context": "Pharmacology",
+    "definitionDe": "Felbamat",
+    "definitionEn": "Felbamate",
+    "einfacheSprache": "Ein sehr starkes Mittel für schwere Krampf-Anfälle.",
+    "eselsleitern": [
+      "Für Böse Momente."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "GBT",
+    "context": "Pharmacology",
+    "definitionDe": "Gabapentin",
+    "definitionEn": "Gabapentin",
+    "einfacheSprache": "Ein Mittel gegen brennende Nerven-Schmerzen.",
+    "eselsleitern": [
+      "Gegen Brennende Torturen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "LCM",
+    "context": "Pharmacology",
+    "definitionDe": "Lacosamid",
+    "definitionEn": "Lacosamide",
+    "einfacheSprache": "Ein Mittel, das die Nerven-Zellen langsam beruhigt.",
+    "eselsleitern": [
+      "Lähmt Cell-Motoren."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "LTG",
+    "context": "Pharmacology",
+    "definitionDe": "Lamotrigin",
+    "definitionEn": "Lamotrigine",
+    "einfacheSprache": "Ein Medikament gegen Krämpfe und für gute Stimmung.",
+    "eselsleitern": [
+      "Löst Tägliche Gefahren."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "MAOI",
+    "context": "Pharmacology",
+    "definitionDe": "Monoaminooxidase-Hemmer",
+    "definitionEn": "Monoamine oxidase inhibitor",
+    "einfacheSprache": "Ein starkes Medikament gegen schwere Traurigkeit.",
+    "eselsleitern": [
+      "Macht Alle Oft Interessiert."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "OXC",
+    "context": "Pharmacology",
+    "definitionDe": "Oxcarbazepin",
+    "definitionEn": "Oxcarbazepine",
+    "einfacheSprache": "Ein Mittel gegen Krämpfe, ähnlich wie Carbamazepin.",
+    "eselsleitern": [
+      "Ohne eXtreme Crämpfe."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PER",
+    "context": "Pharmacology",
+    "definitionDe": "Perampanel",
+    "definitionEn": "Perampanel",
+    "einfacheSprache": "Ein Mittel, das Teile im Gehirn blockiert.",
+    "eselsleitern": [
+      "Perfekt Eingedämmtes Risiko."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PGB",
+    "context": "Pharmacology",
+    "definitionDe": "Pregabalin",
+    "definitionEn": "Pregabalin",
+    "einfacheSprache": "Ein Medikament gegen Nerven-Schmerzen und Angst.",
+    "eselsleitern": [
+      "Panische Gedanken Beruhigt."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PHT",
+    "context": "Pharmacology",
+    "definitionDe": "Phenytoin",
+    "definitionEn": "Phenytoin",
+    "einfacheSprache": "Ein älteres Medikament gegen Krampf-Anfälle.",
+    "eselsleitern": [
+      "Präzise Hemmung von Ticks."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "RUF",
+    "context": "Pharmacology",
+    "definitionDe": "Rufinamid",
+    "definitionEn": "Rufinamide",
+    "einfacheSprache": "Ein spezielles Krampf-Mittel für Kinder.",
+    "eselsleitern": [
+      "Ruhig Und Friedlich."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SNRI",
+    "context": "Pharmacology",
+    "definitionDe": "Serotonin-Noradrenalin-Wiederaufnahmehemmer",
+    "definitionEn": "Serotonin-norepinephrine reuptake inhibitor",
+    "einfacheSprache": "Ein Mittel gegen Depressionen und Schmerzen.",
+    "eselsleitern": [
+      "Schmerz Nimmt Rasch Inhalt."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SSRI",
+    "context": "Pharmacology",
+    "definitionDe": "Selektive Serotonin-Wiederaufnahmehemmer",
+    "definitionEn": "Selective serotonin reuptake inhibitor",
+    "einfacheSprache": "Die bekanntesten Tabletten gegen starke Traurigkeit.",
+    "eselsleitern": [
+      "Serotonin Stoppt Risikohafte Irrwege."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "TPM",
+    "context": "Pharmacology",
+    "definitionDe": "Topiramat",
+    "definitionEn": "Topiramate",
+    "einfacheSprache": "Ein Mittel gegen Krämpfe und Kopf-Schmerzen (Migräne).",
+    "eselsleitern": [
+      "Top Prophylaxe Migräne."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "UGT",
+    "context": "Lab / Metabolism",
+    "definitionDe": "Uridine 5'-diphospho-glucuronosyltransferase",
+    "definitionEn": "UDP-glucuronosyltransferase",
+    "einfacheSprache": "Ein Stoff im Körper, der beim Ausscheiden von Tabletten hilft.",
+    "eselsleitern": [
+      "Unser Gift-Transporter."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "VGB",
+    "context": "Pharmacology",
+    "definitionDe": "Vigabatrin",
+    "definitionEn": "Vigabatrin",
+    "einfacheSprache": "Ein Mittel, das die bremsenden Stoffe im Gehirn stärkt.",
+    "eselsleitern": [
+      "Verdreifacht Gegebene Bremsen."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "VPA",
+    "context": "Pharmacology",
+    "definitionDe": "Valproat",
+    "definitionEn": "Valproate",
+    "einfacheSprache": "Ein wichtiges Mittel gegen viele Krampf-Anfälle.",
+    "eselsleitern": [
+      "Verhindert Plötzliche Anfälle."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ZNS",
+    "context": "Pharmacology",
+    "definitionDe": "Zonisamid",
+    "definitionEn": "Zonisamide",
+    "einfacheSprache": "Ein Mittel gegen Krämpfe und Schüttel-Krankheit.",
+    "eselsleitern": [
+      "Zähmt Neurologische Schocks."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://neurologie.insel.ch/fileadmin/Neurologie/Dokumente/Notfall/DE_Neuro_Pocket_2023_web_version.pdf",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "ADE",
+    "context": "Clinical Trials",
+    "definitionDe": "Adverse Device Effect",
+    "definitionEn": "Adverse Device Effect",
+    "einfacheSprache": "Ein medizinisches Gerät macht Probleme.",
+    "eselsleitern": [
+      "Apparat Defekt Erkannt."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "AE",
+    "context": "Clinical Trials",
+    "definitionDe": "Adverse Event",
+    "definitionEn": "Adverse Event",
+    "einfacheSprache": "Ein unerwünschtes Ereignis bei einer Behandlung.",
+    "eselsleitern": [
+      "Andere Erwartung."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "GCP",
+    "context": "Clinical Trials",
+    "definitionDe": "Good Clinical Practice",
+    "definitionEn": "Good Clinical Practice",
+    "einfacheSprache": "Strenge Regeln für medizinische Studien.",
+    "eselsleitern": [
+      "Gute Clinische Praxis."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "PI",
+    "context": "Clinical Trials",
+    "definitionDe": "Principal Investigator",
+    "definitionEn": "Principal Investigator",
+    "einfacheSprache": "Der Haupt-Verantwortliche für eine ärztliche Studie.",
+    "eselsleitern": [
+      "Projekt Initiator."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SADE",
+    "context": "Clinical Trials",
+    "definitionDe": "Serious Adverse Device Effect",
+    "definitionEn": "Serious Adverse Device Effect",
+    "einfacheSprache": "Ein sehr schweres Problem durch ein Gerät.",
+    "eselsleitern": [
+      "Schwerer Apparat Defekt Erkannt."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SAE",
+    "context": "Clinical Trials",
+    "definitionDe": "Serious Adverse Event",
+    "definitionEn": "Serious Adverse Event",
+    "einfacheSprache": "Ein sehr ernster Zwischenfall bei einer Behandlung.",
+    "eselsleitern": [
+      "Schweres Abweichendes Ereignis."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  },
+  {
+    "term": "SUSAR",
+    "context": "Clinical Trials",
+    "definitionDe": "Suspected unexpected Serious Adverse Reaction",
+    "definitionEn": "Suspected unexpected serious adverse reaction",
+    "einfacheSprache": "Eine schwere, unerwartete Neben-Wirkung in einer Studie.",
+    "eselsleitern": [
+      "Schlimme Unerwartete Situation Alarmierend Registriert."
+    ],
+    "source": "User Augmentation",
+    "sourceUrl": "https://vademecum.insel.ch/de/glossar",
+    "status": "approved",
+    "createdBy": "system",
+    "createdByName": "System Import",
+    "createdAt": "2026-02-13T21:34:55.738Z",
+    "updatedAt": "2026-02-13T21:34:55.738Z"
+  }
+]

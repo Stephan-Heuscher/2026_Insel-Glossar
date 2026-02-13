@@ -24,8 +24,10 @@ interface GlossaryState {
     loading: boolean;
     searchQuery: string;
     filterLetter: string;
+    filterContext: string;
     setSearchQuery: (q: string) => void;
     setFilterLetter: (l: string) => void;
+    setFilterContext: (c: string) => void;
     addTerm: (term: Omit<GlossaryTerm, 'id' | 'createdAt' | 'updatedAt'>) => Promise<string>;
     updateTerm: (id: string, data: Partial<GlossaryTerm>) => Promise<void>;
     deleteTerm: (id: string) => Promise<void>;
@@ -43,13 +45,18 @@ export const useGlossaryStore = create<GlossaryState>((set, get) => ({
     loading: true,
     searchQuery: '',
     filterLetter: '',
+    filterContext: '',
 
     setSearchQuery: (q) => set({ searchQuery: q }),
     setFilterLetter: (l) => set({ filterLetter: l }),
+    setFilterContext: (c) => set({ filterContext: c }),
 
     getFilteredTerms: () => {
-        const { terms, searchQuery, filterLetter } = get();
+        const { terms, searchQuery, filterLetter, filterContext } = get();
         let filtered = terms;
+        if (filterContext) {
+            filtered = filtered.filter(t => t.context.toLowerCase() === filterContext.toLowerCase());
+        }
         if (filterLetter) {
             filtered = filtered.filter(t => t.term.toUpperCase().startsWith(filterLetter));
         }

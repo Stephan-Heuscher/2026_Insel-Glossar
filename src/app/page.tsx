@@ -3,14 +3,14 @@
 import { useEffect, useState } from 'react';
 import { useGlossaryStore } from '@/store/glossaryStore';
 import { useAuthStore } from '@/store/authStore';
-import { Search, BookOpen, Users, Brain, ChevronRight, Sparkles } from 'lucide-react';
+import { Search, BookOpen, Users, Brain, ChevronRight, Sparkles, Filter } from 'lucide-react';
 import Link from 'next/link';
 import type { GlossaryTerm } from '@/lib/types';
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 export default function HomePage() {
-  const { terms, loading, searchQuery, filterLetter, setSearchQuery, setFilterLetter, getFilteredTerms, subscribeToTerms } = useGlossaryStore();
+  const { terms, loading, searchQuery, filterLetter, filterContext, setSearchQuery, setFilterLetter, setFilterContext, getFilteredTerms, subscribeToTerms } = useGlossaryStore();
   const { user } = useAuthStore();
   const [mounted, setMounted] = useState(false);
 
@@ -21,6 +21,11 @@ export default function HomePage() {
   }, []);
 
   const filtered = mounted ? getFilteredTerms() : [];
+
+  // Derive unique contexts from all terms
+  const contexts = mounted
+    ? Array.from(new Set(terms.map(t => t.context).filter(Boolean))).sort()
+    : [];
 
   if (!mounted) return <div className="flex justify-center py-20"><div className="spinner" /></div>;
 
@@ -74,6 +79,27 @@ export default function HomePage() {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
+
+      {/* Context filter chips */}
+      {contexts.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          <button
+            className={`badge ${filterContext === '' ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
+            onClick={() => setFilterContext('')}
+          >
+            <Filter size={12} /> Alle
+          </button>
+          {contexts.map(ctx => (
+            <button
+              key={ctx}
+              className={`badge ${filterContext === ctx ? 'badge-teal' : ''} cursor-pointer transition-all hover:opacity-80`}
+              onClick={() => setFilterContext(filterContext === ctx ? '' : ctx)}
+            >
+              {ctx}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Alphabet nav */}
       <div className="alpha-nav">

@@ -38,10 +38,10 @@ jobs:
           channelId: live
           projectId: insel-glossar
 
-      - name: Deploy Functions
+      - name: Deploy Functions and Rules
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
         run: |
           echo "$FIREBASE_SERVICE_ACCOUNT" > "${{ runner.temp }}/gcp-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${{ runner.temp }}/gcp-key.json"
-          npx firebase-tools deploy --project insel-glossar --only functions --force
+          npx firebase-tools deploy --project insel-glossar --only functions,firestore:rules,storage --force

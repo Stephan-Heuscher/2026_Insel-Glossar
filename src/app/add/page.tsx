@@ -106,7 +106,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
             }
 
             setSuccess(true);
-            setTimeout(() => router.push(`/term/${id}`), 1500);
+            setTimeout(() => router.push(`/term?id=${id}`), 1500);
         } finally {
             setSubmitting(false);
         }
@@ -132,7 +132,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                     {duplicate && (
                         <div className="mt-2 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm flex items-center gap-2">
                             <AlertTriangle size={16} />
-                            Dieser Begriff existiert bereits! <Link href={`/term/${duplicate.id}`} className="underline">Ansehen</Link>
+                            Dieser Begriff existiert bereits! <Link href={`/term?id=${duplicate.id}`} className="underline">Ansehen</Link>
                         </div>
                     )}
                 </div>

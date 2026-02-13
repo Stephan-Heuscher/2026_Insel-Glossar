@@ -137,7 +137,7 @@ export default function HomePage() {
 
 function TermCard({ term }: { term: GlossaryTerm }) {
   return (
-    <Link href={`/term/${term.id}`} className="no-underline">
+    <Link href={`/term?id=${term.id}`} className="no-underline">
       <div className="glass-card p-5 flex items-start justify-between gap-4 group cursor-pointer">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1">

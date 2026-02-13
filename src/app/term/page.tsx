@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useAuthStore } from '@/store/authStore';
@@ -10,8 +10,17 @@ import { GlossaryTerm } from '@/lib/types';
 import { ArrowLeft, ExternalLink, Edit3, Trash2, Check, X } from 'lucide-react';
 import Link from 'next/link';
 
-export default function TermDetailPage() {
-    const params = useParams();
+export default function TermPage() {
+    return (
+        <Suspense fallback={<div className="flex justify-center py-20"><div className="spinner" /></div>}>
+            <TermPageContent />
+        </Suspense>
+    );
+}
+
+function TermPageContent() {
+    const searchParams = useSearchParams();
+    const termId = searchParams.get('id');
     const router = useRouter();
     const { user } = useAuthStore();
     const { updateTerm, deleteTerm } = useGlossaryStore();
@@ -22,15 +31,15 @@ export default function TermDetailPage() {
 
     useEffect(() => {
         async function load() {
-            if (!params.id) return;
-            const snap = await getDoc(doc(db, 'glossary', params.id as string));
+            if (!termId) { setLoading(false); return; }
+            const snap = await getDoc(doc(db, 'glossary', termId));
             if (snap.exists()) {
                 setTerm({ id: snap.id, ...snap.data() } as GlossaryTerm);
             }
             setLoading(false);
         }
         load();
-    }, [params.id]);
+    }, [termId]);
 
     const handleDelete = async () => {
         if (!term?.id || !confirm('Diesen Begriff wirklich löschen?')) return;

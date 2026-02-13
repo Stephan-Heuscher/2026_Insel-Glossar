@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "firebase": "^12.9.0",
-    "firebase-admin": "^13.6.1",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -18,12 +17,14 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@opentelemetry/api": "^1.9.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "firebase-admin": "^13.6.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

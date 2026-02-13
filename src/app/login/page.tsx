@@ -11,7 +11,6 @@ export default function LoginPage() {
     const { signIn, signUp, error, clearError, loading } = useAuthStore();
     const router = useRouter();
     const [isSignUp, setIsSignUp] = useState(false);
-    const [email, setEmail] = useState('');
     const [emailPrefix, setEmailPrefix] = useState('');
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
@@ -30,11 +29,11 @@ export default function LoginPage() {
         setSubmitting(true);
 
         try {
+            const fullEmail = emailPrefix.trim() + '@insel.ch';
             if (isSignUp) {
-                const fullEmail = emailPrefix.trim() + '@insel.ch';
                 await signUp(fullEmail, password, displayName, avatarId);
             } else {
-                await signIn(email, password);
+                await signIn(fullEmail, password);
             }
             // If no error was set, auth was successful
             router.push('/');
@@ -84,36 +83,20 @@ export default function LoginPage() {
 
                     <div>
                         <label className="label">E-Mail</label>
-                        {isSignUp ? (
-                            /* Registration: prefix-only input with @insel.ch suffix */
-                            <div className="relative flex">
-                                <div className="relative flex-1">
-                                    <Mail className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500" size={16} />
-                                    <input
-                                        type="text"
-                                        className="input-field pr-10 rounded-r-none border-r-0"
-                                        placeholder="vorname.nachname"
-                                        value={emailPrefix}
-                                        onChange={(e) => setEmailPrefix(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <span className="email-suffix">@insel.ch</span>
-                            </div>
-                        ) : (
-                            /* Login: full email input */
-                            <div className="relative">
+                        <div className="relative flex">
+                            <div className="relative flex-1">
                                 <Mail className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500" size={16} />
                                 <input
-                                    type="email"
-                                    className="input-field pr-10"
-                                    placeholder="vorname.nachname@insel.ch"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="text"
+                                    className="input-field pr-10 rounded-r-none border-r-0"
+                                    placeholder="vorname.nachname"
+                                    value={emailPrefix}
+                                    onChange={(e) => setEmailPrefix(e.target.value)}
                                     required
                                 />
                             </div>
-                        )}
+                            <span className="email-suffix">@insel.ch</span>
+                        </div>
                     </div>
 
                     <div>
@@ -136,7 +119,7 @@ export default function LoginPage() {
                     {isSignUp && (
                         <div>
                             <label className="label">Avatar wählen</label>
-                            <div className="grid grid-cols-6 gap-2 mt-1">
+                            <div className="flex flex-wrap gap-2 mt-1">
                                 {AVATARS.map(a => (
                                     <button
                                         key={a.id}

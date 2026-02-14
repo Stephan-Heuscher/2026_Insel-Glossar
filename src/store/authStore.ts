@@ -18,6 +18,7 @@ interface AuthState {
     profile: UserProfile | null;
     loading: boolean;
     error: string | null;
+    errorCode: string | null;
     signUp: (email: string, password: string, displayName: string, avatarId?: string) => Promise<void>;
     signIn: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
@@ -30,10 +31,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     profile: null,
     loading: true,
     error: null,
+    errorCode: null,
 
     signUp: async (email: string, password: string, displayName: string, avatarId?: string) => {
         try {
-            set({ error: null });
+            set({ error: null, errorCode: null });
             if (!email.endsWith('@insel.ch')) {
                 throw new Error('Nur @insel.ch E-Mail-Adressen sind erlaubt.');
             }
@@ -60,6 +62,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         } catch (err: any) {
             console.error("Signup error:", err);
             let msg = 'Ein unbekannter Fehler ist aufgetreten.';
+            let code = err.code || 'unknown';
 
             if (err.code === 'auth/email-already-in-use') {
                 msg = 'Diese E-Mail-Adresse wird bereits verwendet. Bitte melde dich an.';
@@ -71,36 +74,46 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 msg = err.message;
             }
 
-            set({ error: msg });
+            set({ error: msg, errorCode: code });
         }
     },
 
     signIn: async (email: string, password: string) => {
         try {
-            set({ error: null });
+            set({ error: null, errorCode: null });
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
             if (!userCredential.user.emailVerified) {
+                // Attempt to resend verification email
+                try {
+                    await sendEmailVerification(userCredential.user);
+                } catch (resendErr) {
+                    console.error("Failed to resend verification email", resendErr);
+                }
+
                 await signOut(auth);
-                throw new Error('Bitte bestätige deine E-Mail-Adresse, bevor du dich anmeldest.');
+                const err = new Error('E-Mail nicht bestätigt. Wir haben dir einen neuen Bestätigungslink gesendet.');
+                (err as any).code = 'auth/unverified-email';
+                throw err;
             }
         } catch (err: any) {
             console.error("Sign in error:", err);
             let msg = 'Ein unbekannter Fehler ist aufgetreten.';
+            let code = err.code || 'unknown';
 
-            if (err.message === 'Bitte bestätige deine E-Mail-Adresse, bevor du dich anmeldest.') {
+            if (code === 'auth/unverified-email') {
                 msg = err.message;
-            } else if (err.code === 'auth/invalid-email') {
+            } else if (code === 'auth/invalid-email') {
                 msg = 'Die E-Mail-Adresse ist ungültig.';
-            } else if (err.code === 'auth/user-disabled') {
+            } else if (code === 'auth/user-disabled') {
                 msg = 'Dieses Konto wurde deaktiviert.';
-            } else if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+            } else if (code === 'auth/user-not-found' || code === 'auth/wrong-password' || code === 'auth/invalid-credential') {
                 msg = 'E-Mail oder Passwort ist falsch.';
             } else if (err.message) {
                 msg = err.message;
             }
 
-            set({ error: msg });
+            set({ error: msg, errorCode: code });
         }
     },
 
@@ -116,7 +129,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         set(state => ({ profile: state.profile ? { ...state.profile, ...data } : null }));
     },
 
-    clearError: () => set({ error: null }),
+    clearError: () => set({ error: null, errorCode: null }),
 }));
 
 // Initialize auth listener

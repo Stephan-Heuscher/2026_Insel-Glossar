@@ -7,7 +7,7 @@ import { AVATARS } from '@/lib/types';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 
 export default function LoginPage() {
-    const { signIn, signUp, error, clearError } = useAuthStore();
+    const { signIn, signUp, error, errorCode, clearError } = useAuthStore();
     const router = useRouter();
     const [isSignUp, setIsSignUp] = useState(false);
     const [emailPrefix, setEmailPrefix] = useState('');
@@ -93,8 +93,16 @@ export default function LoginPage() {
                 </div>
 
                 {error && (
-                    <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-                        {error}
+                    <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm space-y-2">
+                        <p>{error}</p>
+                        {errorCode === 'auth/email-already-in-use' && isSignUp && (
+                            <button
+                                onClick={() => { setIsSignUp(false); clearError(); }}
+                                className="text-xs bg-red-500/20 hover:bg-red-500/30 text-red-300 px-3 py-1 rounded-lg transition-colors w-full"
+                            >
+                                Zum Login wechseln
+                            </button>
+                        )}
                     </div>
                 )}
 

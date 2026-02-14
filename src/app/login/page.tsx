@@ -21,25 +21,61 @@ export default function LoginPage() {
         []
     );
     const [avatarId, setAvatarId] = useState(randomAvatarId);
+    const [verificationSent, setVerificationSent] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         clearError();
         setSubmitting(true);
+        setVerificationSent(false);
 
         try {
             const fullEmail = emailPrefix.trim() + '@insel.ch';
             if (isSignUp) {
                 await signUp(fullEmail, password, displayName, avatarId);
+                // Check if an error occurred during sign up (since store catches errors)
+                const currentError = useAuthStore.getState().error;
+                if (!currentError) {
+                    setVerificationSent(true);
+                }
             } else {
                 await signIn(fullEmail, password);
+                const currentError = useAuthStore.getState().error;
+                if (!currentError) {
+                    router.push('/');
+                }
             }
-            // If no error was set, auth was successful
-            router.push('/');
         } finally {
             setSubmitting(false);
         }
     };
+
+    if (verificationSent) {
+        return (
+            <div className="max-w-md mx-auto mt-12 animate-in">
+                <div className="glass-card p-8 text-center space-y-6">
+                    <div className="text-5xl mb-4">📧</div>
+                    <h2 className="text-2xl font-bold text-white">E-Mail bestätigen</h2>
+                    <p className="text-slate-300">
+                        Wir haben eine Bestätigungs-E-Mail an <strong>{emailPrefix}@insel.ch</strong> gesendet.
+                    </p>
+                    <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl text-sm text-blue-200">
+                        Bitte klicke auf den Link in der E-Mail, um dein Konto zu aktivieren.
+                    </div>
+                    <button
+                        onClick={() => {
+                            setVerificationSent(false);
+                            setIsSignUp(false);
+                            clearError();
+                        }}
+                        className="btn-primary w-full justify-center"
+                    >
+                        Zum Login
+                    </button>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="max-w-md mx-auto mt-12 animate-in">

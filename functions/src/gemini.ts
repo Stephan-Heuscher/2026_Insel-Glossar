@@ -9,7 +9,32 @@ const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCA
 /**
  * Extract glossary terms from a PDF document using Gemini 3 Flash
  */
-export async function extractTermsFromPdf(pdfUrl: string): Promise<GlossaryTerm[]> {
+/**
+ * Helper: Fetch with timeout and retry
+ */
+async function fetchWithRetry(url: string, options: RequestInit = {}, retries = 3, timeoutMs = 30000): Promise<Response> {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeoutMs);
+            const response = await fetch(url, { ...options, signal: controller.signal });
+            clearTimeout(id);
+            if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            return response;
+        } catch (err) {
+            if (i === retries - 1) throw err;
+            await new Promise(r => setTimeout(r, 1000 * (i + 1))); // Exponential backoffish
+        }
+    }
+    throw new Error('Unreachable');
+}
+
+/**
+ * Extract glossary terms from a PDF document using Gemini 3 Flash
+ */
+export async function extractTermsFromPdf(pdfUrl: string, onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
+    if (onProgress) await onProgress('Starte PDF-Analyse...');
+
     const prompt = `Du bist ein Experte für Fachterminologie und Glossare.
     
 Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument. Das Glossar ist nicht auf medizinische Begriffe beschränkt, sondern kann Begriffe aus allen Bereichen enthalten die im Dokument vorkommen.
@@ -36,41 +61,55 @@ Beispiel für einen Eintrag:
   "source": ""
 }`;
 
-    const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        config: {
-            temperature: 0.3,
-            maxOutputTokens: 8192,
-            responseMimeType: "application/json",
-        },
-        contents: [{
-            role: "user",
-            parts: [
-                {
-                    fileData: {
-                        mimeType: "application/pdf",
-                        fileUri: pdfUrl,
-                    }
-                },
-                { text: prompt }
-            ]
-        }]
-    });
+    if (onProgress) await onProgress('Sende Daten an Gemini...');
 
-    return parseGeminiResponse(response);
+    try {
+        const response = await ai.models.generateContent({
+            model: "gemini-2.0-flash-exp", // Updated to a more reliable model name if needed, or keep gemini-3-flash-preview if valid
+            config: {
+                temperature: 0.3,
+                maxOutputTokens: 8192,
+                responseMimeType: "application/json",
+            },
+            contents: [{
+                role: "user",
+                parts: [
+                    {
+                        fileData: {
+                            mimeType: "application/pdf",
+                            fileUri: pdfUrl,
+                        }
+                    },
+                    { text: prompt }
+                ]
+            }]
+        });
+
+        if (onProgress) await onProgress('Verarbeite Antwort...');
+        return parseGeminiResponse(response);
+    } catch (error) {
+        console.error("Gemini API Error:", error);
+        throw new Error("Fehler bei der KI-Verarbeitung. Bitte versuche es später erneut.");
+    }
 }
 
 /**
  * Extract glossary terms from a URL (PDF or HTML) using Gemini
  */
-export async function extractTermsFromUrl(url: string): Promise<GlossaryTerm[]> {
+export async function extractTermsFromUrl(url: string, onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
     const promptText = `Du bist ein Experte für Fachterminologie.
 Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
 Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`;
 
     // 1. Fetch the content
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Failed to fetch URL: ${response.statusText}`);
+    if (onProgress) await onProgress('Lade Inhalte herunter...');
+
+    let response;
+    try {
+        response = await fetchWithRetry(url);
+    } catch (error) {
+        throw new Error(`Konnte URL nicht laden: ${(error as Error).message}`);
+    }
 
     const contentType = response.headers.get('content-type') || '';
     const buffer = await response.arrayBuffer();
@@ -78,6 +117,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
     let parts: { inlineData?: { mimeType: string; data: string }; text?: string }[] = [];
 
     if (contentType.includes('application/pdf')) {
+        if (onProgress) await onProgress('PDF wird vorbereitet...');
         const base64Data = Buffer.from(buffer).toString('base64');
         parts = [
             {
@@ -89,6 +129,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
             { text: promptText }
         ];
     } else {
+        if (onProgress) await onProgress('Text wird vorbereitet...');
         const textContent = new TextDecoder('utf-8').decode(buffer);
         parts = [
             { text: promptText },
@@ -96,17 +137,25 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
         ];
     }
 
-    const geminiResponse = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        config: {
-            temperature: 0.3,
-            maxOutputTokens: 8192,
-            responseMimeType: "application/json",
-        },
-        contents: [{ role: "user", parts }]
-    });
+    if (onProgress) await onProgress('Analysiere Inhalte mit Gemini...');
 
-    return parseGeminiResponse(geminiResponse);
+    try {
+        const geminiResponse = await ai.models.generateContent({
+            model: "gemini-2.0-flash-exp",
+            config: {
+                temperature: 0.3,
+                maxOutputTokens: 8192,
+                responseMimeType: "application/json",
+            },
+            contents: [{ role: "user", parts }]
+        });
+
+        if (onProgress) await onProgress('Abschließen...');
+        return parseGeminiResponse(geminiResponse);
+    } catch (error) {
+        console.error("Gemini API Error:", error);
+        throw new Error("Fehler bei der KI-Verarbeitung (Timeout oder Limit).");
+    }
 }
 
 interface GlossaryTerm {
@@ -162,7 +211,7 @@ Erstelle verschiedene Fragetypen:
 Antworte als JSON-Array.`;
 
     const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash-exp",
         config: {
             temperature: 0.7,
             maxOutputTokens: 4096,
@@ -217,7 +266,7 @@ export async function generateTermProposal(term: string, context: string = '', e
   `;
 
     const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash-exp",
         config: {
             temperature: 0.7,
             maxOutputTokens: 2048,

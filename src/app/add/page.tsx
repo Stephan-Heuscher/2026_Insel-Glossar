@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 import { useGlossaryStore } from '@/store/glossaryStore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage, functions } from '@/lib/firebase';
+import { storage, functions, db } from '@/lib/firebase';
 import { httpsCallable } from 'firebase/functions';
+import { onSnapshot, doc } from 'firebase/firestore';
 import { Upload, FileText, Plus, Check, X, AlertTriangle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { User } from 'firebase/auth';
@@ -295,6 +296,7 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
     const [url, setUrl] = useState('');
     const [dragOver, setDragOver] = useState(false);
     const [extracting, setExtracting] = useState(false);
+    const [progress, setProgress] = useState('');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [extracted, setExtracted] = useState<any[]>([]);
     const [error, setError] = useState('');
@@ -318,6 +320,19 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
 
         setExtracting(true);
         setError('');
+        setProgress('Initialisiere...');
+
+        // Generate a random Request ID
+        const requestId = `req_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+
+        // Subscribe to progress updates
+        const unsubscribe = onSnapshot(doc(db, 'extractionStatus', requestId), (doc) => {
+            if (doc.exists()) {
+                const data = doc.data();
+                if (data?.message) setProgress(data.message);
+            }
+        });
+
         try {
             let result;
             if (mode === 'file' && file) {
@@ -328,11 +343,11 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
 
                 // Call Cloud Function to extract terms
                 const extractPdfFn = httpsCallable(functions, 'extractTermsFromPdfFn');
-                result = await extractPdfFn({ pdfUrl: downloadUrl });
+                result = await extractPdfFn({ pdfUrl: downloadUrl, requestId });
             } else {
                 // URL mode
                 const extractUrlFn = httpsCallable(functions, 'extractTermsFromUrlFn');
-                result = await extractUrlFn({ url });
+                result = await extractUrlFn({ url, requestId });
             }
 
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -347,7 +362,9 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
             const message = err instanceof Error ? err.message : 'Unknown error';
             setError('Fehler bei der Extraktion: ' + message);
         } finally {
+            unsubscribe();
             setExtracting(false);
+            setProgress('');
         }
     };
 
@@ -454,7 +471,7 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
             {((mode === 'file' && file) || (mode === 'url' && url)) && extracted.length === 0 && (
                 <button onClick={handleExtract} className="btn-primary w-full justify-center" disabled={extracting}>
                     {extracting ? (
-                        <><div className="spinner" style={{ width: 18, height: 18 }} /> Begriffe werden extrahiert...</>
+                        <><div className="spinner" style={{ width: 18, height: 18 }} /> {progress || 'Begriffe werden extrahiert...'}</>
                     ) : (
                         <><Sparkles size={16} /> Begriffe extrahieren</>
                     )}

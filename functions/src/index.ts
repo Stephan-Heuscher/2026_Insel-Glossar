@@ -25,21 +25,53 @@ export const extractTermsFromPdfFn = onCall(
     { cors: true, invoker: 'public', timeoutSeconds: 540, region: 'europe-west1' },
     async (request) => {
         const userId = requireAuth(request);
-        logger.info("PDF extraction requested", { userId });
+        const { pdfUrl, requestId } = request.data;
 
-        const { pdfUrl } = request.data;
+        logger.info("PDF extraction requested", { userId, requestId });
+
         if (!pdfUrl) {
             throw new HttpsError('invalid-argument', 'PDF URL ist erforderlich.');
         }
 
+        const updateProgress = async (message: string) => {
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'processing',
+                    message,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+        };
+
         try {
             logger.info("Extracting terms from PDF...", { pdfUrl: pdfUrl.substring(0, 100) });
-            const terms = await extractTermsFromPdf(pdfUrl);
+            await updateProgress('Starte PDF-Analyse...');
+
+            const terms = await extractTermsFromPdf(pdfUrl, updateProgress);
+
             logger.info("Extraction complete", { termCount: terms.length });
+
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'completed',
+                    message: `Fertig! ${terms.length} Begriffe gefunden.`,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+
             return { terms };
         } catch (error) {
             logger.error("Error extracting terms", error);
-            const msg = error instanceof Error ? error.message : 'Unknown error';
+            const msg = error instanceof Error ? error.message : 'Unbekannter Fehler';
+
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'error',
+                    message: `Fehler: ${msg}`,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+
             throw new HttpsError('internal', `Fehler bei der Extraktion: ${msg}`);
         }
     }
@@ -52,21 +84,53 @@ export const extractTermsFromUrlFn = onCall(
     { cors: true, invoker: 'public', timeoutSeconds: 540, region: 'europe-west1' },
     async (request) => {
         const userId = requireAuth(request);
-        logger.info("URL extraction requested", { userId });
+        const { url, requestId } = request.data;
 
-        const { url } = request.data;
+        logger.info("URL extraction requested", { userId, requestId });
+
         if (!url) {
             throw new HttpsError('invalid-argument', 'URL ist erforderlich.');
         }
 
+        const updateProgress = async (message: string) => {
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'processing',
+                    message,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+        };
+
         try {
             logger.info("Extracting terms from URL...", { url });
-            const terms = await extractTermsFromUrl(url); // Use the new function from gemini.ts
+            await updateProgress('Lade URL...');
+
+            const terms = await extractTermsFromUrl(url, updateProgress);
+
             logger.info("Extraction complete", { termCount: terms.length });
+
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'completed',
+                    message: `Fertig! ${terms.length} Begriffe gefunden.`,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+
             return { terms };
         } catch (error) {
             logger.error("Error extracting terms from URL", error);
-            const msg = error instanceof Error ? error.message : 'Unknown error';
+            const msg = error instanceof Error ? error.message : 'Unbekannter Fehler';
+
+            if (requestId) {
+                await db.collection('extractionStatus').doc(requestId).set({
+                    state: 'error',
+                    message: `Fehler: ${msg}`,
+                    updatedAt: new Date()
+                }, { merge: true });
+            }
+
             throw new HttpsError('internal', `Fehler bei der Extraktion: ${msg}`);
         }
     }

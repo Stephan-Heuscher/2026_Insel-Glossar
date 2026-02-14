@@ -1,14 +1,14 @@
 import { GoogleGenAI } from "@google/genai";
+import { DEFAULT_CONTEXTS } from "./data/contexts";
 
 // Initialize Vertex AI with project info
 const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || "insel-glossar";
 const LOCATION = "us-central1";
 
 const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCATION });
+// WARNING: DO NOT DOWNGRADE TO GEMINI 2. GEMINI 3 IS REQUIRED.
+const MODEL_NAME = "gemini-3.0-flash";
 
-/**
- * Extract glossary terms from a PDF document using Gemini 3 Flash
- */
 /**
  * Helper: Fetch with timeout and retry
  */
@@ -30,27 +30,37 @@ async function fetchWithRetry(url: string, options: RequestInit = {}, retries = 
 }
 
 /**
- * Extract glossary terms from a PDF document using Gemini 3 Flash
+ * Extract glossary terms from a PDF document using Gemini 3
  */
-export async function extractTermsFromPdf(pdfUrl: string, onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
+export async function extractTermsFromPdf(pdfUrl: string, existingContexts: string[] = [], onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
     if (onProgress) await onProgress('Starte PDF-Analyse...');
+
+    // Use provided contexts or fall back to default list
+    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextList = contextsToUse.join(', ');
 
     const prompt = `Du bist ein Experte für Fachterminologie und Glossare.
     
-Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument. Das Glossar ist nicht auf medizinische Begriffe beschränkt, sondern kann Begriffe aus allen Bereichen enthalten die im Dokument vorkommen.
+Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument.
+Das Glossar ist nicht auf medizinische Begriffe beschränkt, sondern kann Begriffe aus allen Bereichen enthalten die im Dokument vorkommen (z.B. Administration, IT, Pflege).
+
+WICHTIG: Ordne jeden Begriff einem der folgenden existierenden Kontexte zu, wenn möglich:
+${contextList}
+
+Falls ein Begriff absolut nicht in diese Kategorien passt, darfst du eine neue, passende Kategorie erfinden.
 
 Für jeden Begriff erstelle einen JSON-Eintrag mit:
 - "term": der Begriff/die Abkürzung
-- "context": der Fachbereich (z.B. Kardiologie, Pflege, Administration)
+- "context": der Fachbereich (wähle aus der Liste oben oder neu)
 - "definitionDe": deutsche Definition/Beschreibung  
 - "definitionEn": englische Übersetzung/Definition (falls möglich)
-- "einfacheSprache": Erklärung in einfacher Sprache, die auch Laien verstehen
-- "eselsleitern": Array mit Merkhilfen/Eselsbrücken (falls passend, sonst leeres Array)
-- "source": Quellenangabe aus dem Dokument
+- "einfacheSprache": Erklärung in einfacher Sprache, die auch Laien verstehen (sehr einfach!)
+- "eselsleitern": Array mit 1-2 kreativen Merkhilfen/Eselsbrücken (falls passend, sonst leeres Array)
+- "source": Quellenangabe aus dem Dokument (z.B. Dokumenttitel oder Seite)
 
 Antworte als JSON-Array. Extrahiere mindestens alle erkennbaren Fachbegriffe.
 
-Beispiel für einen Eintrag:
+Beispiel:
 {
   "term": "Anamnese",
   "context": "Allgemeinmedizin",
@@ -58,14 +68,14 @@ Beispiel für einen Eintrag:
   "definitionEn": "Medical history - the process of gathering a patient's medical background through conversation.",
   "einfacheSprache": "Das Gespräch, in dem der Arzt fragt, was einem fehlt und welche Krankheiten man früher hatte.",
   "eselsleitern": ["ANA = Alles Nochmal Abfragen"],
-  "source": ""
+  "source": "Seite 3"
 }`;
 
     if (onProgress) await onProgress('Sende Daten an Gemini...');
 
     try {
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash-exp", // Updated to a more reliable model name if needed, or keep gemini-3-flash-preview if valid
+            model: MODEL_NAME,
             config: {
                 temperature: 0.3,
                 maxOutputTokens: 8192,
@@ -96,9 +106,19 @@ Beispiel für einen Eintrag:
 /**
  * Extract glossary terms from a URL (PDF or HTML) using Gemini
  */
-export async function extractTermsFromUrl(url: string, onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
+export async function extractTermsFromUrl(url: string, existingContexts: string[] = [], onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
+    // Use provided contexts or fall back to default list
+    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextList = contextsToUse.join(', ');
+
     const promptText = `Du bist ein Experte für Fachterminologie.
 Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
+
+WICHTIG: Ordne jeden Begriff einem der folgenden existierenden Kontexte zu, wenn möglich:
+${contextList}
+
+Falls keiner passt, wähle einen neuen, präzisen Kontext.
+
 Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`;
 
     // 1. Fetch the content
@@ -141,7 +161,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
 
     try {
         const geminiResponse = await ai.models.generateContent({
-            model: "gemini-2.0-flash-exp",
+            model: MODEL_NAME,
             config: {
                 temperature: 0.3,
                 maxOutputTokens: 8192,
@@ -211,7 +231,7 @@ Erstelle verschiedene Fragetypen:
 Antworte als JSON-Array.`;
 
     const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash-exp",
+        model: MODEL_NAME,
         config: {
             temperature: 0.7,
             maxOutputTokens: 4096,
@@ -239,7 +259,8 @@ export interface TermProposal {
 }
 
 export async function generateTermProposal(term: string, context: string = '', existingContexts: string[] = []): Promise<TermProposal> {
-    const contextList = existingContexts.join(', ');
+    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextList = contextsToUse.join(', ');
 
     const prompt = `
     You are a medical and glossary expert.
@@ -266,7 +287,7 @@ export async function generateTermProposal(term: string, context: string = '', e
   `;
 
     const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash-exp",
+        model: MODEL_NAME,
         config: {
             temperature: 0.7,
             maxOutputTokens: 2048,
@@ -284,5 +305,3 @@ export async function generateTermProposal(term: string, context: string = '', e
         throw new Error("Failed to parse JSON response");
     }
 }
-
-

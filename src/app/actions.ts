@@ -11,9 +11,8 @@ export async function generateTermProposal(term: string, context: string = '', e
 
   const genAI = new GoogleGenerativeAI(apiKey);
   // Using a model that is likely to exist or fallback. 
-  // User mentioned "Gemini 3" in 2026 context, but for real execution we use a valid model ID.
-  // We'll use a standard one.
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  // WARNING: DO NOT DOWNGRADE TO GEMINI 2. GEMINI 3 IS REQUIRED.
+  const model = genAI.getGenerativeModel({ model: 'gemini-3.0-flash' });
 
   const contextList = existingContexts.join(', ');
 

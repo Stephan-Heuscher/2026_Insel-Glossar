@@ -34,7 +34,7 @@ export default function AddPage() {
         <div className="max-w-3xl mx-auto space-y-6 animate-in">
             <div>
                 <h1 className="text-2xl font-extrabold text-white">Begriff beitragen</h1>
-                <p className="text-slate-400 mt-1">Einzelner Eintrag oder PDF-Import mit KI-Extraktion</p>
+                <p className="text-slate-400 mt-1">Einzelner Eintrag oder LinkPDF-Import mit KI-Extraktion</p>
             </div>
 
             {/* Tabs */}
@@ -43,7 +43,7 @@ export default function AddPage() {
                     <Plus size={14} className="inline mr-1.5" /> Einzelner Begriff
                 </button>
                 <button className={`tab-btn ${tab === 'pdf' ? 'active' : ''}`} onClick={() => setTab('pdf')}>
-                    <Upload size={14} className="inline mr-1.5" /> PDF-Import
+                    <Upload size={14} className="inline mr-1.5" /> Link/PDF-Import
                 </button>
             </div>
 

@@ -42,7 +42,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             const cred = await createUserWithEmailAndPassword(auth, email, password);
 
             // Send verification email
+            console.log("Attempting to send verification email to:", cred.user.email);
             await sendEmailVerification(cred.user);
+            console.log("Verification email sent successfully.");
 
             const profileData = {
                 uid: cred.user.uid,
@@ -86,7 +88,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             if (!userCredential.user.emailVerified) {
                 // Attempt to resend verification email
                 try {
+                    console.log("Attempting to RESEND verification email to:", userCredential.user.email);
                     await sendEmailVerification(userCredential.user);
+                    console.log("Verification email resent successfully.");
                 } catch (resendErr) {
                     console.error("Failed to resend verification email", resendErr);
                 }

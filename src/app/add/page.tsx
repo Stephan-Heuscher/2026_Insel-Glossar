@@ -4,13 +4,14 @@ import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 import { useGlossaryStore } from '@/store/glossaryStore';
-import { GlossaryTerm } from '@/lib/types';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '@/lib/firebase';
+import { storage, functions } from '@/lib/firebase';
 import { httpsCallable } from 'firebase/functions';
-import { functions } from '@/lib/firebase';
 import { Upload, FileText, Plus, Check, X, AlertTriangle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { User } from 'firebase/auth';
+import { UserProfile, GlossaryTerm, QuizQuestion } from '@/lib/types';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 export default function AddPage() {
     const { user, profile } = useAuthStore();
@@ -55,7 +56,18 @@ export default function AddPage() {
     );
 }
 
-function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuestion, router }: any) {
+
+
+interface SingleEntryFormProps {
+    user: User;
+    profile: UserProfile | null;
+    addTerm: (term: Omit<GlossaryTerm, 'id' | 'createdAt' | 'updatedAt'>) => Promise<string>;
+    checkDuplicate: (term: string) => Promise<GlossaryTerm | null>;
+    addQuizQuestion: (question: Omit<QuizQuestion, 'id' | 'createdAt'>) => Promise<void>;
+    router: AppRouterInstance;
+}
+
+function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuestion, router }: SingleEntryFormProps) {
     const [form, setForm] = useState({
         term: '',
         context: '',
@@ -219,12 +231,20 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
     );
 }
 
-function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
+interface PdfImportProps {
+    user: User;
+    profile: UserProfile | null;
+    addTerm: (term: Omit<GlossaryTerm, 'id' | 'createdAt' | 'updatedAt'>) => Promise<string>;
+    checkDuplicate: (term: string) => Promise<GlossaryTerm | null>;
+}
+
+function PdfImport({ user, profile, addTerm }: PdfImportProps) {
     const [mode, setMode] = useState<'file' | 'url'>('file');
     const [file, setFile] = useState<File | null>(null);
     const [url, setUrl] = useState('');
     const [dragOver, setDragOver] = useState(false);
     const [extracting, setExtracting] = useState(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [extracted, setExtracted] = useState<any[]>([]);
     const [error, setError] = useState('');
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -264,6 +284,7 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
                 result = await extractUrlFn({ url });
             }
 
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const data = result.data as any;
             setExtracted(data.terms || []);
 
@@ -271,13 +292,15 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
                 setError('Keine Begriffe gefunden. Versuche es mit einer anderen Datei/URL.');
             }
 
-        } catch (err: any) {
-            setError('Fehler bei der Extraktion: ' + (err.message || 'Unbekannter Fehler'));
+        } catch (err: unknown) {
+            const message = err instanceof Error ? err.message : 'Unknown error';
+            setError('Fehler bei der Extraktion: ' + message);
         } finally {
             setExtracting(false);
         }
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleAcceptTerm = async (term: any, index: number) => {
         await addTerm({
             term: term.term,
@@ -344,7 +367,7 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
                                     <div className="flex items-center justify-center gap-2 text-teal-400 font-medium">
                                         <FileText size={18} /> {file.name}
                                     </div>
-                                    <p className="text-slate-500 text-sm">Klicke auf "Begriffe extrahieren" um fortzufahren</p>
+                                    <p className="text-slate-500 text-sm">Klicke auf &quot;Begriffe extrahieren&quot; um fortzufahren</p>
                                 </div>
                             ) : (
                                 <div className="space-y-2">

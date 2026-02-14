@@ -11,8 +11,8 @@ export interface GlossaryTerm {
     status: 'pending' | 'approved';
     createdBy: string;
     createdByName: string;
-    createdAt: Date | any;
-    updatedAt: Date | any;
+    createdAt: Date | { toDate: () => Date };
+    updatedAt: Date | { toDate: () => Date };
     reviewedBy?: string;
 }
 
@@ -21,7 +21,7 @@ export interface UserProfile {
     displayName: string;
     email: string;
     avatarId: string;
-    createdAt: Date | any;
+    createdAt: Date | { toDate: () => Date };
 }
 
 export interface QuizQuestion {
@@ -31,7 +31,7 @@ export interface QuizQuestion {
     correctAnswer: string;
     wrongAnswers: string[];
     category: string;
-    createdAt: Date | any;
+    createdAt: Date | { toDate: () => Date };
     generatedBy: 'llm' | 'manual';
 }
 
@@ -40,7 +40,7 @@ export interface QuizResult {
     score: number;
     totalQuestions: number;
     answers: { questionId: string; correct: boolean; userAnswer: string }[];
-    createdAt: Date | any;
+    createdAt: Date | { toDate: () => Date };
     category: string;
 }
 

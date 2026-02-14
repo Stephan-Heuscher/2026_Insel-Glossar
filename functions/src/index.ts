@@ -37,9 +37,10 @@ export const extractTermsFromPdfFn = onCall(
             const terms = await extractTermsFromPdf(pdfUrl);
             logger.info("Extraction complete", { termCount: terms.length });
             return { terms };
-        } catch (error: any) {
+        } catch (error) {
             logger.error("Error extracting terms", error);
-            throw new HttpsError('internal', `Fehler bei der Extraktion: ${error.message}`);
+            const msg = error instanceof Error ? error.message : 'Unknown error';
+            throw new HttpsError('internal', `Fehler bei der Extraktion: ${msg}`);
         }
     }
 );
@@ -63,9 +64,10 @@ export const extractTermsFromUrlFn = onCall(
             const terms = await extractTermsFromUrl(url); // Use the new function from gemini.ts
             logger.info("Extraction complete", { termCount: terms.length });
             return { terms };
-        } catch (error: any) {
+        } catch (error) {
             logger.error("Error extracting terms from URL", error);
-            throw new HttpsError('internal', `Fehler bei der Extraktion: ${error.message}`);
+            const msg = error instanceof Error ? error.message : 'Unknown error';
+            throw new HttpsError('internal', `Fehler bei der Extraktion: ${msg}`);
         }
     }
 );
@@ -117,9 +119,10 @@ export const generateQuizQuestionsFn = onCall(
 
             logger.info("Quiz generation complete", { questionCount: questions.length });
             return { questions };
-        } catch (error: any) {
+        } catch (error) {
             logger.error("Error generating quiz", error);
-            throw new HttpsError('internal', `Fehler bei der Quiz-Generierung: ${error.message}`);
+            const msg = error instanceof Error ? error.message : 'Unknown error';
+            throw new HttpsError('internal', `Fehler bei der Quiz-Generierung: ${msg}`);
         }
     }
 );

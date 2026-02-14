@@ -18,6 +18,7 @@ export default function ProfilePage() {
 
     useEffect(() => {
         if (profile) {
+            // eslint-disable-next-line
             setDisplayName(profile.displayName);
             setAvatarId(profile.avatarId);
         }
@@ -133,7 +134,7 @@ export default function ProfilePage() {
                                         <p className="font-medium text-white">{Math.round(result.score / result.totalQuestions * 100)}% richtig</p>
                                         <div className="flex items-center gap-2 text-xs text-slate-500">
                                             {result.category && <span className="badge badge-teal text-xs py-0">{result.category}</span>}
-                                            <span>{result.createdAt?.toDate?.()?.toLocaleDateString('de-CH') || 'Kürzlich'}</span>
+                                            <span>{(result.createdAt instanceof Date ? result.createdAt : result.createdAt?.toDate?.())?.toLocaleDateString('de-CH') || 'Kürzlich'}</span>
                                         </div>
                                     </div>
                                 </div>

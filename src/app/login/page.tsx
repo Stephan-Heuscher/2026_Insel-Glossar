@@ -4,11 +4,10 @@ import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 import { AVATARS } from '@/lib/types';
-import Link from 'next/link';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 
 export default function LoginPage() {
-    const { signIn, signUp, error, clearError, loading } = useAuthStore();
+    const { signIn, signUp, error, clearError } = useAuthStore();
     const router = useRouter();
     const [isSignUp, setIsSignUp] = useState(false);
     const [emailPrefix, setEmailPrefix] = useState('');

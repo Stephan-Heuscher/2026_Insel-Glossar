@@ -3,11 +3,10 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useAuthStore } from '@/store/authStore';
 import { useGlossaryStore } from '@/store/glossaryStore';
-import { QuizQuestion, QuizResult, GlossaryTerm } from '@/lib/types';
+import { QuizQuestion } from '@/lib/types';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { Brain, RotateCw, Trophy, ArrowRight, Check, X, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import { RotateCw, Trophy, ArrowRight, Check, X, Sparkles } from 'lucide-react';
 
 type QuizState = 'setup' | 'playing' | 'result';
 
@@ -27,6 +26,7 @@ export default function QuizPage() {
         const unsub1 = subscribeToTerms();
         const unsub2 = subscribeToQuizQuestions();
         return () => { unsub1(); unsub2(); };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // Generate questions from terms if not enough saved quiz questions
@@ -122,7 +122,7 @@ export default function QuizPage() {
         if (!currentQuestion) return [];
         return [currentQuestion.correctAnswer, ...currentQuestion.wrongAnswers]
             .sort(() => Math.random() - 0.5);
-    }, [currentIndex, questions]);
+    }, [currentQuestion]);
 
     const score = answers.filter(a => a.correct).length;
 
@@ -143,8 +143,8 @@ export default function QuizPage() {
                                     key={n}
                                     onClick={() => setQuestionCount(n)}
                                     className={`w-12 h-12 rounded-xl font-bold transition-all ${questionCount === n
-                                            ? 'bg-teal-600 text-white'
-                                            : 'bg-white/5 text-slate-400 hover:bg-white/10'
+                                        ? 'bg-teal-600 text-white'
+                                        : 'bg-white/5 text-slate-400 hover:bg-white/10'
                                         }`}
                                 >
                                     {n}

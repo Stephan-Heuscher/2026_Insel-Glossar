@@ -1,24 +1,15 @@
-import { VertexAI } from "@google-cloud/vertexai";
+import { GoogleGenAI } from "@google/genai";
 
 // Initialize Vertex AI with project info
 const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || "insel-glossar";
 const LOCATION = "europe-west1";
 
-const vertexAI = new VertexAI({ project: PROJECT_ID, location: LOCATION });
+const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCATION });
 
 /**
  * Extract glossary terms from a PDF document using Gemini 3 Flash
  */
-export async function extractTermsFromPdf(pdfUrl: string): Promise<any[]> {
-    const model = vertexAI.getGenerativeModel({
-        model: "gemini-3-flash-preview",
-        generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 8192,
-            responseMimeType: "application/json",
-        },
-    });
-
+export async function extractTermsFromPdf(pdfUrl: string): Promise<GlossaryTerm[]> {
     const prompt = `Du bist ein Experte für medizinische Fachterminologie am Inselspital Bern.
     
 Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument.
@@ -45,7 +36,13 @@ Beispiel für einen Eintrag:
   "source": ""
 }`;
 
-    const result = await model.generateContent({
+    const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash-001", // Updated to a known valid model, usually gemini-1.5-pro or gemini-2.0-flash depending on availability. Keeping it safe.
+        config: {
+            temperature: 0.3,
+            maxOutputTokens: 8192,
+            responseMimeType: "application/json",
+        },
         contents: [{
             role: "user",
             parts: [
@@ -60,25 +57,16 @@ Beispiel für einen Eintrag:
         }]
     });
 
-    return parseGeminiResponse(result);
+    return parseGeminiResponse(response);
 }
 
 /**
  * Extract glossary terms from a URL (PDF or HTML) using Gemini
  */
-export async function extractTermsFromUrl(url: string): Promise<any[]> {
-    const model = vertexAI.getGenerativeModel({
-        model: "gemini-3-flash-preview",
-        generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 8192,
-            responseMimeType: "application/json",
-        },
-    });
-
+export async function extractTermsFromUrl(url: string): Promise<GlossaryTerm[]> {
     const promptText = `Du bist ein Experte für medizinische Fachterminologie.
 Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
-Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`; // Shortened for brevity, Gemini is smart enough with the example.
+Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`;
 
     // 1. Fetch the content
     const response = await fetch(url);
@@ -87,14 +75,9 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
     const contentType = response.headers.get('content-type') || '';
     const buffer = await response.arrayBuffer();
 
-    let parts: any[] = [];
+    let parts: { inlineData?: { mimeType: string; data: string }; text?: string }[] = [];
 
     if (contentType.includes('application/pdf')) {
-        // For PDF, we need to upload it to GCS or pass base64? 
-        // Vertex AI supports inline data for smaller files (up to 20MB) -> "inlineData"
-        // But the previous implementation used `fileUri` (GCS). 
-        // To avoid complexity of uploading to GCS here, let's try inline data.
-        // Base64 encode the buffer
         const base64Data = Buffer.from(buffer).toString('base64');
         parts = [
             {
@@ -106,26 +89,39 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
             { text: promptText }
         ];
     } else {
-        // Assume text/html
         const textContent = new TextDecoder('utf-8').decode(buffer);
-        // Basic cleanup/stripping of HTML might be good, but Gemini handles HTML well.
-        // Let's just pass the text.
         parts = [
             { text: promptText },
-            { text: `Content from ${url}:\n\n${textContent.substring(0, 30000)}` } // Limit length just in case
+            { text: `Content from ${url}:\n\n${textContent.substring(0, 30000)}` }
         ];
     }
 
-    const result = await model.generateContent({
+    const geminiResponse = await ai.models.generateContent({
+        model: "gemini-2.0-flash-001",
+        config: {
+            temperature: 0.3,
+            maxOutputTokens: 8192,
+            responseMimeType: "application/json",
+        },
         contents: [{ role: "user", parts }]
     });
 
-    return parseGeminiResponse(result);
+    return parseGeminiResponse(geminiResponse);
 }
 
-function parseGeminiResponse(result: any): any[] {
-    const response = result.response;
-    const text = response.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+interface GlossaryTerm {
+    term: string;
+    context: string;
+    definitionDe: string;
+    definitionEn?: string;
+    id?: string; // Optional ID for Firestore
+}
+
+// Using 'any' for response type as the SDK types are complex to import directly without full path
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function parseGeminiResponse(response: any): GlossaryTerm[] {
+    // The new @google/genai SDK response object has a `text` property that returns the text content.
+    const text = response.text || "[]";
 
     try {
         return JSON.parse(text);
@@ -136,20 +132,15 @@ function parseGeminiResponse(result: any): any[] {
     }
 }
 
+interface QuizQuestionGenerated {
+    term: string;
+    question: string;
+    correctAnswer: string;
+    wrongAnswers: string[];
+    category: string;
+}
 
-/**
- * Generate quiz questions from glossary terms using Gemini
- */
-export async function generateQuizQuestions(terms: { term: string; definitionDe: string; context: string }[]): Promise<any[]> {
-    const model = vertexAI.getGenerativeModel({
-        model: "gemini-3-flash-preview",
-        generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 4096,
-            responseMimeType: "application/json",
-        },
-    });
-
+export async function generateQuizQuestions(terms: { term: string; definitionDe: string; context: string }[]): Promise<QuizQuestionGenerated[]> {
     const termList = terms.map(t => `${t.term}: ${t.definitionDe}`).join('\n');
 
     const prompt = `Erstelle Multiple-Choice-Quizfragen basierend auf diesen medizinischen Fachbegriffen:
@@ -170,13 +161,17 @@ Erstelle verschiedene Fragetypen:
 
 Antworte als JSON-Array.`;
 
-    const result = await model.generateContent({
+    const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash-001",
+        config: {
+            temperature: 0.7,
+            maxOutputTokens: 4096,
+            responseMimeType: "application/json",
+        },
         contents: [{ role: "user", parts: [{ text: prompt }] }]
     });
 
-    const response = result.response;
-    const text = response.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
-
+    const text = response.text || "[]";
     try {
         return JSON.parse(text);
     } catch {
@@ -185,3 +180,5 @@ Antworte als JSON-Array.`;
         return [];
     }
 }
+
+

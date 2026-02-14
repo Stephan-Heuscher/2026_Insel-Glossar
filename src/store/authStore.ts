@@ -37,17 +37,24 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 throw new Error('Nur @insel.ch E-Mail-Adressen sind erlaubt.');
             }
             const cred = await createUserWithEmailAndPassword(auth, email, password);
-            const profile: UserProfile = {
+            const profileData = {
                 uid: cred.user.uid,
                 displayName,
                 email,
                 avatarId: avatarId || 'doctor',
                 createdAt: serverTimestamp(),
             };
-            await setDoc(doc(db, 'users', cred.user.uid), profile);
+            await setDoc(doc(db, 'users', cred.user.uid), profileData);
+
+            // Use local Date for state immediately
+            const profile: UserProfile = {
+                ...profileData,
+                createdAt: new Date(),
+            } as unknown as UserProfile;
             set({ profile });
-        } catch (err: any) {
-            set({ error: err.message });
+        } catch (err) {
+            const msg = err instanceof Error ? err.message : 'Unknown error';
+            set({ error: msg });
         }
     },
 
@@ -55,8 +62,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         try {
             set({ error: null });
             await signInWithEmailAndPassword(auth, email, password);
-        } catch (err: any) {
-            set({ error: err.message });
+        } catch (err) {
+            const msg = err instanceof Error ? err.message : 'Unknown error';
+            set({ error: msg });
         }
     },
 

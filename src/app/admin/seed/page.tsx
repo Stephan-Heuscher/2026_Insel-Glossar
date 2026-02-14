@@ -71,9 +71,10 @@ export default function SeedingPage() {
 
             setStatus("Seeding complete! Database populated.");
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error("Seeding error:", error);
-            setStatus(`Error: ${error.message}`);
+            const message = error instanceof Error ? error.message : String(error);
+            setStatus(`Error: ${message}`);
         } finally {
             setIsSeeding(false);
         }

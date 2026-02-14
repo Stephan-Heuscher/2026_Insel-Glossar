@@ -32,40 +32,39 @@ export default function HomePage() {
   if (!mounted) return <div className="flex justify-center py-20"><div className="spinner" /></div>;
 
   return (
-    <div className="space-y-8 animate-in">
+    <div className="space-y-5 animate-in">
       {/* Hero */}
-      {/* Hero */}
-      <div className="hero-gradient rounded-2xl p-6 sm:p-8 text-center space-y-3">
-        <div className="flex justify-center mb-2">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-2xl shadow-lg">
+      <div className="hero-gradient rounded-2xl px-5 py-4 sm:px-6 sm:py-5 text-center space-y-2">
+        <div className="flex items-center justify-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-lg shadow-lg flex-shrink-0">
             📖
           </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            <span className="text-white">Insel</span>
+            <span className="text-teal-400">Glossar</span>
+          </h1>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-          <span className="text-white">Insel</span>
-          <span className="text-teal-400">Glossar</span>
-        </h1>
-        <p className="text-slate-400 text-base max-w-2xl mx-auto">
+        <p className="text-slate-400 text-sm max-w-2xl mx-auto">
           Das gemeinschaftliche Fachbegriffe-Glossar des Inselspitals Bern.
         </p>
-        <p className="text-slate-500 text-xs max-w-xl mx-auto border-t border-white/10 pt-3 mt-2">
+        <p className="text-slate-500 text-[11px] max-w-xl mx-auto border-t border-white/10 pt-2">
           Ein öffentlicher Service, der frei zugängliche Daten sowie das Wissen von Insel-Mitarbeitenden vereint.
         </p>
 
         {/* Stats */}
-        <div className="flex justify-center gap-6 mt-4">
+        <div className="flex justify-center gap-5 pt-1">
           <div className="text-center">
-            <div className="text-xl font-bold text-teal-400">{terms.length}</div>
+            <div className="text-lg font-bold text-teal-400">{terms.length}</div>
             <div className="text-[10px] text-slate-500 uppercase tracking-wider">Begriffe</div>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-amber-400">
+            <div className="text-lg font-bold text-amber-400">
               {terms.filter(t => t.eselsleitern?.length > 0).length}
             </div>
             <div className="text-[10px] text-slate-500 uppercase tracking-wider">Eselsleitern</div>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-purple-400">
+            <div className="text-lg font-bold text-purple-400">
               {terms.filter(t => t.einfacheSprache).length}
             </div>
             <div className="text-[10px] text-slate-500 uppercase tracking-wider">Einfache Sprache</div>

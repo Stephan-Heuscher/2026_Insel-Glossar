@@ -10,9 +10,9 @@ const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCA
  * Extract glossary terms from a PDF document using Gemini 3 Flash
  */
 export async function extractTermsFromPdf(pdfUrl: string): Promise<GlossaryTerm[]> {
-    const prompt = `Du bist ein Experte für medizinische Fachterminologie am Inselspital Bern.
+    const prompt = `Du bist ein Experte für Fachterminologie und Glossare.
     
-Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument.
+Extrahiere alle Fachbegriffe, Abkürzungen und relevanten Begriffe aus dem folgenden Dokument. Das Glossar ist nicht auf medizinische Begriffe beschränkt, sondern kann Begriffe aus allen Bereichen enthalten die im Dokument vorkommen.
 
 Für jeden Begriff erstelle einen JSON-Eintrag mit:
 - "term": der Begriff/die Abkürzung
@@ -37,7 +37,7 @@ Beispiel für einen Eintrag:
 }`;
 
     const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash-001", // Updated to a known valid model, usually gemini-1.5-pro or gemini-2.0-flash depending on availability. Keeping it safe.
+        model: "gemini-3-flash-preview",
         config: {
             temperature: 0.3,
             maxOutputTokens: 8192,
@@ -64,7 +64,7 @@ Beispiel für einen Eintrag:
  * Extract glossary terms from a URL (PDF or HTML) using Gemini
  */
 export async function extractTermsFromUrl(url: string): Promise<GlossaryTerm[]> {
-    const promptText = `Du bist ein Experte für medizinische Fachterminologie.
+    const promptText = `Du bist ein Experte für Fachterminologie.
 Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
 Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`;
 
@@ -97,7 +97,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
     }
 
     const geminiResponse = await ai.models.generateContent({
-        model: "gemini-2.0-flash-001",
+        model: "gemini-3-flash-preview",
         config: {
             temperature: 0.3,
             maxOutputTokens: 8192,
@@ -143,7 +143,7 @@ interface QuizQuestionGenerated {
 export async function generateQuizQuestions(terms: { term: string; definitionDe: string; context: string }[]): Promise<QuizQuestionGenerated[]> {
     const termList = terms.map(t => `${t.term}: ${t.definitionDe}`).join('\n');
 
-    const prompt = `Erstelle Multiple-Choice-Quizfragen basierend auf diesen medizinischen Fachbegriffen:
+    const prompt = `Erstelle Multiple-Choice-Quizfragen basierend auf diesen Fachbegriffen:
 
 ${termList}
 
@@ -162,7 +162,7 @@ Erstelle verschiedene Fragetypen:
 Antworte als JSON-Array.`;
 
     const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash-001",
+        model: "gemini-3-flash-preview",
         config: {
             temperature: 0.7,
             maxOutputTokens: 4096,
@@ -178,6 +178,61 @@ Antworte als JSON-Array.`;
         const match = text.match(/```json?\s*([\s\S]*?)\s*```/);
         if (match) return JSON.parse(match[1]);
         return [];
+    }
+}
+
+export interface TermProposal {
+    definitionDe: string;
+    definitionEn: string;
+    einfacheSprache: string;
+    eselsleitern: string[];
+    context: string;
+}
+
+export async function generateTermProposal(term: string, context: string = '', existingContexts: string[] = []): Promise<TermProposal> {
+    const contextList = existingContexts.join(', ');
+
+    const prompt = `
+    You are a medical and glossary expert.
+    Generate a proposal for the term "${term}"${context ? ` in the context of "${context}"` : ''}.
+    
+    Existing contexts in the glossary are: ${contextList}.
+    If the term fits well into one of these existing contexts, prefer using that one. Otherwise, suggest a new, appropriate context.
+
+    Please provide:
+    1. A German definition (definitionDe)
+    2. An English definition (definitionEn)
+    3. A simple language explanation (einfacheSprache) - VERY SIMPLE, for laypeople.
+    4. 3 Mnemonics / Eselsleitern (eselsleitern) - creative and helpful memory aids.
+    5. The best matching context (context).
+
+    Return ONLY raw JSON (no markdown formatting) with the following structure:
+    {
+      "definitionDe": "...",
+      "definitionEn": "...",
+      "einfacheSprache": "...",
+      "eselsleitern": ["...", "...", "..."],
+      "context": "..."
+    }
+  `;
+
+    const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        config: {
+            temperature: 0.7,
+            maxOutputTokens: 2048,
+            responseMimeType: "application/json",
+        },
+        contents: [{ role: "user", parts: [{ text: prompt }] }]
+    });
+
+    const text = response.text || "{}";
+    try {
+        return JSON.parse(text);
+    } catch {
+        const match = text.match(/```json?\s*([\s\S]*?)\s*```/);
+        if (match) return JSON.parse(match[1]);
+        throw new Error("Failed to parse JSON response");
     }
 }
 

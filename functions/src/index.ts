@@ -126,3 +126,32 @@ export const generateQuizQuestionsFn = onCall(
         }
     }
 );
+
+
+/**
+ * Generate a proposal for a single term using Gemini.
+ */
+import { generateTermProposal } from "./gemini";
+
+export const generateTermProposalFn = onCall(
+    { cors: true, invoker: 'public', timeoutSeconds: 60, region: 'europe-west1' },
+    async (request) => {
+        const userId = requireAuth(request);
+        logger.info("Term proposal requested", { userId });
+
+        const { term, context, existingContexts } = request.data;
+        if (!term) {
+            throw new HttpsError('invalid-argument', 'Term ist erforderlich.');
+        }
+
+        try {
+            const proposal = await generateTermProposal(term, context, existingContexts);
+            logger.info("Proposal generated", { term });
+            return proposal;
+        } catch (error) {
+            logger.error("Error generating proposal", error);
+            const msg = error instanceof Error ? error.message : 'Unknown error';
+            throw new HttpsError('internal', `Fehler bei der Generierung: ${msg}`);
+        }
+    }
+);

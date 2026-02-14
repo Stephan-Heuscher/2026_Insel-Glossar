@@ -11,11 +11,14 @@ import { Upload, FileText, Plus, Check, X, AlertTriangle, Sparkles } from 'lucid
 import Link from 'next/link';
 import { User } from 'firebase/auth';
 import { UserProfile, GlossaryTerm, QuizQuestion } from '@/lib/types';
+
+
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+// import { generateTermProposal } from '../actions';
 
 export default function AddPage() {
     const { user, profile } = useAuthStore();
-    const { addTerm, checkDuplicate, addQuizQuestion } = useGlossaryStore();
+    const { addTerm, checkDuplicate, addQuizQuestion, terms } = useGlossaryStore();
     const router = useRouter();
     const [tab, setTab] = useState<'single' | 'pdf'>('single');
 
@@ -48,7 +51,7 @@ export default function AddPage() {
             </div>
 
             {tab === 'single' ? (
-                <SingleEntryForm user={user} profile={profile} addTerm={addTerm} checkDuplicate={checkDuplicate} addQuizQuestion={addQuizQuestion} router={router} />
+                <SingleEntryForm user={user} profile={profile} addTerm={addTerm} checkDuplicate={checkDuplicate} addQuizQuestion={addQuizQuestion} router={router} terms={terms} />
             ) : (
                 <PdfImport user={user} profile={profile} addTerm={addTerm} checkDuplicate={checkDuplicate} />
             )}
@@ -65,9 +68,10 @@ interface SingleEntryFormProps {
     checkDuplicate: (term: string) => Promise<GlossaryTerm | null>;
     addQuizQuestion: (question: Omit<QuizQuestion, 'id' | 'createdAt'>) => Promise<void>;
     router: AppRouterInstance;
+    terms: GlossaryTerm[];
 }
 
-function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuestion, router }: SingleEntryFormProps) {
+function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuestion, router, terms }: SingleEntryFormProps) {
     const [form, setForm] = useState({
         term: '',
         context: '',
@@ -80,7 +84,40 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
     });
     const [duplicate, setDuplicate] = useState<GlossaryTerm | null>(null);
     const [submitting, setSubmitting] = useState(false);
+    const [generating, setGenerating] = useState(false);
     const [success, setSuccess] = useState(false);
+
+    const handleGenerateProposal = async () => {
+        if (!form.term.trim()) return;
+        setGenerating(true);
+        try {
+            // Extract unique contexts from existing terms
+            const existingContexts = Array.from(new Set(terms.map(t => t.context).filter(Boolean)));
+
+            const generateProposalFn = httpsCallable(functions, 'generateTermProposalFn');
+            const result = await generateProposalFn({
+                term: form.term,
+                context: form.context,
+                existingContexts
+            });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const proposal = result.data as any;
+
+            setForm(prev => ({
+                ...prev,
+                definitionEn: proposal.definitionEn || prev.definitionEn,
+                einfacheSprache: proposal.einfacheSprache || prev.einfacheSprache,
+                eselsleitern: proposal.eselsleitern && proposal.eselsleitern.length > 0 ? proposal.eselsleitern : prev.eselsleitern,
+                definitionDe: !prev.definitionDe ? proposal.definitionDe : prev.definitionDe,
+                context: proposal.context || prev.context
+            }));
+        } catch (error) {
+            console.error(error);
+            alert('Fehler beim Generieren des Vorschlags. (Cloud Function error?)');
+        } finally {
+            setGenerating(false);
+        }
+    };
 
     const handleTermBlur = async () => {
         if (form.term.trim()) {
@@ -138,10 +175,24 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
 
     return (
         <form onSubmit={handleSubmit} className="space-y-5">
+
+
             {/* Term */}
             <div className="glass-card p-6 space-y-4">
                 <div>
-                    <label className="label">Begriff *</label>
+                    <div className='flex items-center justify-between'>
+                        <label className="label">Begriff *</label>
+                        <button
+                            type="button"
+                            onClick={handleGenerateProposal}
+                            disabled={generating || !form.term.trim()}
+                            className="text-xs btn-secondary py-1 px-2 flex items-center gap-1"
+                            title="KI-Vorschlag generieren"
+                        >
+                            {generating ? <span className="animate-spin">✨</span> : <Sparkles size={12} />}
+                            {generating ? ' ' : ' Vorschlag'}
+                        </button>
+                    </div>
                     <input className="input-field" value={form.term} onChange={e => setForm({ ...form, term: e.target.value })} onBlur={handleTermBlur} required placeholder="z.B. Anamnese" />
                     {duplicate && (
                         <div className="mt-2 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm">
@@ -227,7 +278,7 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                     )}
                 </button>
             </div>
-        </form>
+        </form >
     );
 }
 

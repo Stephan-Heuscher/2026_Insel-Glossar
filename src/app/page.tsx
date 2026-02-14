@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useGlossaryStore } from '@/store/glossaryStore';
 import { useAuthStore } from '@/store/authStore';
-import { Search, BookOpen, Users, Brain, ChevronRight, Sparkles, Filter } from 'lucide-react';
+import { Search, BookOpen, Users, Brain, ChevronRight, Sparkles, Filter, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { GlossaryTerm } from '@/lib/types';
 
@@ -165,31 +165,47 @@ export default function HomePage() {
 
 function TermCard({ term }: { term: GlossaryTerm }) {
   return (
-    <Link href={`/term?id=${term.id}`} className="no-underline">
-      <div className="glass-card p-5 flex items-start justify-between gap-4 group cursor-pointer">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap mb-1">
-            <h3 className="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
+    <div className="glass-card p-5 flex items-start justify-between gap-4 group relative hover:bg-white/5 transition-colors">
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2 flex-wrap mb-1">
+          <h3 className="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
+            <Link href={`/term?id=${term.id}`} className="after:absolute after:inset-0 focus:outline-none">
               {term.term}
-            </h3>
-            {term.status === 'pending' && <span className="badge badge-amber">Entwurf</span>}
-            {term.eselsleitern?.length > 0 && <span className="badge badge-amber">🐴 Eselsleiter</span>}
-            {term.einfacheSprache && <span className="badge badge-purple">💬 Einfache Sprache</span>}
-          </div>
-          {term.context && (
-            <p className="text-xs text-teal-400/70 mb-1">{term.context}</p>
-          )}
-          <p className="text-sm text-slate-400 line-clamp-2">
-            {term.definitionDe || term.definitionEn}
-          </p>
-          <div className="flex items-center gap-3 mt-2 text-xs text-slate-600">
-            <span>von {term.createdByName}</span>
-            {term.source && <span>• Quelle vorhanden</span>}
-          </div>
+            </Link>
+          </h3>
+          {term.status === 'pending' && <span className="badge badge-amber relative z-10">Entwurf</span>}
+          {term.eselsleitern?.length > 0 && <span className="badge badge-amber relative z-10">🐴 Eselsleiter</span>}
+          {term.einfacheSprache && <span className="badge badge-purple relative z-10">💬 Einfache Sprache</span>}
         </div>
-        <ChevronRight className="text-slate-600 group-hover:text-teal-400 transition-colors mt-1 flex-shrink-0" size={18} />
+        {term.context && (
+          <p className="text-xs text-teal-400/70 mb-1 relative z-10 w-fit">{term.context}</p>
+        )}
+        <p className="text-sm text-slate-400 line-clamp-2 mb-2">
+          {term.definitionDe || term.definitionEn}
+        </p>
+        <div className="flex items-center gap-3 text-xs text-slate-600 relative z-10 pointer-events-none">
+          <span className="pointer-events-auto">von {term.createdByName}</span>
+          {(term.source || term.sourceUrl) && (
+            term.sourceUrl ? (
+              <a
+                href={term.sourceUrl}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-1 hover:text-teal-400 transition-colors pointer-events-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                • {term.source || 'Quelle'} <ExternalLink size={10} />
+              </a>
+            ) : (
+              <span className="pointer-events-auto">• {term.source || 'Quelle vorhanden'}</span>
+            )
+          )}
+        </div>
       </div>
-    </Link>
+      <div className="text-slate-600 group-hover:text-teal-400 transition-colors mt-1 flex-shrink-0 relative z-10 pointer-events-none">
+        <ChevronRight size={18} />
+      </div>
+    </div>
   );
 }
 

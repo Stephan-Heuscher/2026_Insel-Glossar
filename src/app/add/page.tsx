@@ -220,7 +220,9 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
 }
 
 function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
+    const [mode, setMode] = useState<'file' | 'url'>('file');
     const [file, setFile] = useState<File | null>(null);
+    const [url, setUrl] = useState('');
     const [dragOver, setDragOver] = useState(false);
     const [extracting, setExtracting] = useState(false);
     const [extracted, setExtracted] = useState<any[]>([]);
@@ -231,25 +233,44 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
         e.preventDefault();
         setDragOver(false);
         const f = e.dataTransfer.files[0];
-        if (f?.type === 'application/pdf') setFile(f);
-        else setError('Nur PDF-Dateien sind erlaubt.');
+        if (f?.type === 'application/pdf') {
+            setFile(f);
+            setMode('file');
+        } else {
+            setError('Nur PDF-Dateien sind erlaubt.');
+        }
     };
 
     const handleExtract = async () => {
-        if (!file) return;
+        if (mode === 'file' && !file) return;
+        if (mode === 'url' && !url) return;
+
         setExtracting(true);
         setError('');
         try {
-            // Upload PDF to Storage
-            const storageRef = ref(storage, `uploads/${user.uid}/${Date.now()}_${file.name}`);
-            await uploadBytes(storageRef, file);
-            const downloadUrl = await getDownloadURL(storageRef);
+            let result;
+            if (mode === 'file' && file) {
+                // Upload PDF to Storage
+                const storageRef = ref(storage, `uploads/${user.uid}/${Date.now()}_${file.name}`);
+                await uploadBytes(storageRef, file);
+                const downloadUrl = await getDownloadURL(storageRef);
 
-            // Call Cloud Function to extract terms
-            const extractFn = httpsCallable(functions, 'extractTermsFromPdf');
-            const result = await extractFn({ pdfUrl: downloadUrl });
+                // Call Cloud Function to extract terms
+                const extractPdfFn = httpsCallable(functions, 'extractTermsFromPdfFn');
+                result = await extractPdfFn({ pdfUrl: downloadUrl });
+            } else {
+                // URL mode
+                const extractUrlFn = httpsCallable(functions, 'extractTermsFromUrlFn');
+                result = await extractUrlFn({ url });
+            }
+
             const data = result.data as any;
             setExtracted(data.terms || []);
+
+            if (!data.terms || data.terms.length === 0) {
+                setError('Keine Begriffe gefunden. Versuche es mit einer anderen Datei/URL.');
+            }
+
         } catch (err: any) {
             setError('Fehler bei der Extraktion: ' + (err.message || 'Unbekannter Fehler'));
         } finally {
@@ -266,7 +287,7 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
             einfacheSprache: term.einfacheSprache || '',
             eselsleitern: term.eselsleitern || [],
             source: term.source || '',
-            sourceUrl: term.sourceUrl || '',
+            sourceUrl: term.sourceUrl || (mode === 'url' ? url : ''),
             status: 'pending',
             createdBy: user.uid,
             createdByName: profile?.displayName || 'Anonym',
@@ -280,28 +301,71 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
 
     return (
         <div className="space-y-6">
-            {/* Upload zone */}
-            {extracted.length === 0 && (
-                <div
-                    className={`upload-zone ${dragOver ? 'dragover' : ''}`}
-                    onDragOver={e => { e.preventDefault(); setDragOver(true); }}
-                    onDragLeave={() => setDragOver(false)}
-                    onDrop={handleDrop}
-                    onClick={() => fileInputRef.current?.click()}
+            <div className="flex gap-4 border-b border-white/10 pb-4">
+                <button
+                    onClick={() => setMode('file')}
+                    className={`text-sm font-medium transition-colors ${mode === 'file' ? 'text-teal-400' : 'text-slate-400 hover:text-white'}`}
                 >
-                    <input ref={fileInputRef} type="file" accept=".pdf" className="hidden" onChange={e => { if (e.target.files?.[0]) setFile(e.target.files[0]); }} />
-                    <Upload className="mx-auto text-slate-500 mb-4" size={40} />
-                    {file ? (
-                        <div className="space-y-2">
-                            <div className="flex items-center justify-center gap-2 text-teal-400 font-medium">
-                                <FileText size={18} /> {file.name}
-                            </div>
-                            <p className="text-slate-500 text-sm">Klicke auf "Begriffe extrahieren" um fortzufahren</p>
+                    <Upload size={16} className="inline mr-2" /> PDF-Datei hochladen
+                </button>
+                <button
+                    onClick={() => setMode('url')}
+                    className={`text-sm font-medium transition-colors ${mode === 'url' ? 'text-teal-400' : 'text-slate-400 hover:text-white'}`}
+                >
+                    <LinkIcon size={16} className="inline mr-2" /> URL importieren
+                </button>
+            </div>
+
+            {/* Disclaimer */}
+            <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm flex gap-3">
+                <AlertTriangle size={20} className="flex-shrink-0" />
+                <p>
+                    Bitte stelle sicher, dass das hochgeladene PDF oder der Link öffentlich zugänglich ist,
+                    oder du die Berechtigung hast, die Inhalte zu teilen.
+                    Dateien werden nach der Extraktion nicht dauerhaft gespeichert.
+                </p>
+            </div>
+
+            {/* Upload/Input zone */}
+            {extracted.length === 0 && (
+                <div className="space-y-4">
+                    {mode === 'file' ? (
+                        <div
+                            className={`upload-zone ${dragOver ? 'dragover' : ''}`}
+                            onDragOver={e => { e.preventDefault(); setDragOver(true); }}
+                            onDragLeave={() => setDragOver(false)}
+                            onDrop={handleDrop}
+                            onClick={() => fileInputRef.current?.click()}
+                        >
+                            <input ref={fileInputRef} type="file" accept=".pdf" className="hidden" onChange={e => { if (e.target.files?.[0]) setFile(e.target.files[0]); }} />
+                            <Upload className="mx-auto text-slate-500 mb-4" size={40} />
+                            {file ? (
+                                <div className="space-y-2">
+                                    <div className="flex items-center justify-center gap-2 text-teal-400 font-medium">
+                                        <FileText size={18} /> {file.name}
+                                    </div>
+                                    <p className="text-slate-500 text-sm">Klicke auf "Begriffe extrahieren" um fortzufahren</p>
+                                </div>
+                            ) : (
+                                <div className="space-y-2">
+                                    <p className="text-slate-300 font-medium">PDF hierher ziehen oder klicken</p>
+                                    <p className="text-slate-500 text-sm">Die KI extrahiert automatisch Fachbegriffe aus dem Dokument</p>
+                                </div>
+                            )}
                         </div>
                     ) : (
-                        <div className="space-y-2">
-                            <p className="text-slate-300 font-medium">PDF hierher ziehen oder klicken</p>
-                            <p className="text-slate-500 text-sm">Die KI extrahiert automatisch Fachbegriffe aus dem Dokument</p>
+                        <div className="glass-card p-6 space-y-4">
+                            <label className="label">Webseite oder PDF URL</label>
+                            <input
+                                type="url"
+                                className="input-field"
+                                placeholder="https://example.com/artikel oder https://.../datei.pdf"
+                                value={url}
+                                onChange={e => setUrl(e.target.value)}
+                            />
+                            <p className="text-xs text-slate-500">
+                                Die KI versucht, Inhalte von der Webseite oder dem verlinkten PDF zu extrahieren.
+                            </p>
                         </div>
                     )}
                 </div>
@@ -313,7 +377,7 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
                 </div>
             )}
 
-            {file && extracted.length === 0 && (
+            {((mode === 'file' && file) || (mode === 'url' && url)) && extracted.length === 0 && (
                 <button onClick={handleExtract} className="btn-primary w-full justify-center" disabled={extracting}>
                     {extracting ? (
                         <><div className="spinner" style={{ width: 18, height: 18 }} /> Begriffe werden extrahiert...</>
@@ -347,10 +411,22 @@ function PdfImport({ user, profile, addTerm, checkDuplicate }: any) {
                                 </div>
                             </div>
                             <p className="text-sm text-slate-400">{term.definitionDe}</p>
+                            <div className="text-xs text-slate-500 mt-2">
+                                {term.source && <span className="mr-2">Gefunden in: {term.source}</span>}
+                            </div>
                         </div>
                     ))}
                 </div>
             )}
         </div>
+    );
+}
+
+function LinkIcon({ size, className }: { size: number, className?: string }) {
+    return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+        </svg>
     );
 }

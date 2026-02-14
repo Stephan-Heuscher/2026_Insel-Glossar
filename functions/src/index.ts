@@ -2,7 +2,7 @@ import { onCall, HttpsError } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { extractTermsFromPdf, generateQuizQuestions } from "./gemini";
+import { extractTermsFromPdf, extractTermsFromUrl, generateQuizQuestions } from "./gemini";
 
 initializeApp();
 
@@ -43,6 +43,33 @@ export const extractTermsFromPdfFn = onCall(
         }
     }
 );
+
+/**
+ * Extract terms from a URL (PDF or HTML) using Gemini 3 Flash.
+ */
+export const extractTermsFromUrlFn = onCall(
+    { cors: true, invoker: 'public', timeoutSeconds: 540, region: 'europe-west1' },
+    async (request) => {
+        const userId = requireAuth(request);
+        logger.info("URL extraction requested", { userId });
+
+        const { url } = request.data;
+        if (!url) {
+            throw new HttpsError('invalid-argument', 'URL ist erforderlich.');
+        }
+
+        try {
+            logger.info("Extracting terms from URL...", { url });
+            const terms = await extractTermsFromUrl(url); // Use the new function from gemini.ts
+            logger.info("Extraction complete", { termCount: terms.length });
+            return { terms };
+        } catch (error: any) {
+            logger.error("Error extracting terms from URL", error);
+            throw new HttpsError('internal', `Fehler bei der Extraktion: ${error.message}`);
+        }
+    }
+);
+
 
 /**
  * Generate quiz questions from existing glossary terms using Gemini.

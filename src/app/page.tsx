@@ -34,38 +34,41 @@ export default function HomePage() {
   return (
     <div className="space-y-8 animate-in">
       {/* Hero */}
-      <div className="hero-gradient rounded-2xl p-8 sm:p-12 text-center space-y-4">
-        <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-3xl shadow-lg">
+      {/* Hero */}
+      <div className="hero-gradient rounded-2xl p-6 sm:p-8 text-center space-y-3">
+        <div className="flex justify-center mb-2">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-2xl shadow-lg">
             📖
           </div>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
           <span className="text-white">Insel</span>
           <span className="text-teal-400">Glossar</span>
         </h1>
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-400 text-base max-w-2xl mx-auto">
           Das gemeinschaftliche Fachbegriffe-Glossar des Inselspitals Bern.
-          Wissen teilen, lernen und testen.
+        </p>
+        <p className="text-slate-500 text-xs max-w-xl mx-auto border-t border-white/10 pt-3 mt-2">
+          Ein öffentlicher Service, der frei zugängliche Daten sowie das Wissen von Insel-Mitarbeitenden vereint.
         </p>
 
         {/* Stats */}
-        <div className="flex justify-center gap-8 mt-6">
+        <div className="flex justify-center gap-6 mt-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-teal-400">{terms.length}</div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider">Begriffe</div>
+            <div className="text-xl font-bold text-teal-400">{terms.length}</div>
+            <div className="text-[10px] text-slate-500 uppercase tracking-wider">Begriffe</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-amber-400">
+            <div className="text-xl font-bold text-amber-400">
               {terms.filter(t => t.eselsleitern?.length > 0).length}
             </div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider">Eselsleitern</div>
+            <div className="text-[10px] text-slate-500 uppercase tracking-wider">Eselsleitern</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-purple-400">
+            <div className="text-xl font-bold text-purple-400">
               {terms.filter(t => t.einfacheSprache).length}
             </div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider">Einfache Sprache</div>
+            <div className="text-[10px] text-slate-500 uppercase tracking-wider">Einfache Sprache</div>
           </div>
         </div>
       </div>

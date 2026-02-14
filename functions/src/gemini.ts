@@ -60,18 +60,82 @@ Beispiel für einen Eintrag:
         }]
     });
 
+    return parseGeminiResponse(result);
+}
+
+/**
+ * Extract glossary terms from a URL (PDF or HTML) using Gemini
+ */
+export async function extractTermsFromUrl(url: string): Promise<any[]> {
+    const model = vertexAI.getGenerativeModel({
+        model: "gemini-3-flash-preview",
+        generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 8192,
+            responseMimeType: "application/json",
+        },
+    });
+
+    const promptText = `Du bist ein Experte für medizinische Fachterminologie.
+Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
+Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`; // Shortened for brevity, Gemini is smart enough with the example.
+
+    // 1. Fetch the content
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch URL: ${response.statusText}`);
+
+    const contentType = response.headers.get('content-type') || '';
+    const buffer = await response.arrayBuffer();
+
+    let parts: any[] = [];
+
+    if (contentType.includes('application/pdf')) {
+        // For PDF, we need to upload it to GCS or pass base64? 
+        // Vertex AI supports inline data for smaller files (up to 20MB) -> "inlineData"
+        // But the previous implementation used `fileUri` (GCS). 
+        // To avoid complexity of uploading to GCS here, let's try inline data.
+        // Base64 encode the buffer
+        const base64Data = Buffer.from(buffer).toString('base64');
+        parts = [
+            {
+                inlineData: {
+                    mimeType: "application/pdf",
+                    data: base64Data
+                }
+            },
+            { text: promptText }
+        ];
+    } else {
+        // Assume text/html
+        const textContent = new TextDecoder('utf-8').decode(buffer);
+        // Basic cleanup/stripping of HTML might be good, but Gemini handles HTML well.
+        // Let's just pass the text.
+        parts = [
+            { text: promptText },
+            { text: `Content from ${url}:\n\n${textContent.substring(0, 30000)}` } // Limit length just in case
+        ];
+    }
+
+    const result = await model.generateContent({
+        contents: [{ role: "user", parts }]
+    });
+
+    return parseGeminiResponse(result);
+}
+
+function parseGeminiResponse(result: any): any[] {
     const response = result.response;
     const text = response.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
 
     try {
         return JSON.parse(text);
     } catch {
-        // Try to extract JSON from markdown code block
         const match = text.match(/```json?\s*([\s\S]*?)\s*```/);
         if (match) return JSON.parse(match[1]);
         return [];
     }
 }
+
 
 /**
  * Generate quiz questions from glossary terms using Gemini

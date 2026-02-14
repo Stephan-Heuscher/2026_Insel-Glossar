@@ -18,14 +18,40 @@ function requireAuth(request: { auth?: { uid: string } }) {
 }
 
 /**
- * Extract terms from an uploaded PDF using Gemini 3 Flash.
+ * Helper to get all unique contexts from Firestore.
+ * This ensures the LLM always has the most up-to-date list of categories.
+ */
+async function getAllContexts(): Promise<string[]> {
+    try {
+        // Projection query: only fetch the 'context' field to save bandwidth
+        const snapshot = await db.collection('glossary').select('context').get();
+        const contexts = new Set<string>();
+
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.context && typeof data.context === 'string') {
+                const trimmed = data.context.trim();
+                if (trimmed) contexts.add(trimmed);
+            }
+        });
+
+        return Array.from(contexts).sort();
+    } catch (error) {
+        logger.error("Error fetching contexts from Firestore", error);
+        // Fallback to empty array (gemini.ts has its own default fallback if needed)
+        return [];
+    }
+}
+
+/**
+ * Extract terms from an uploaded PDF using Gemini 3.
  * The PDF is uploaded to Cloud Storage first, then its download URL is passed here.
  */
 export const extractTermsFromPdfFn = onCall(
     { cors: true, invoker: 'public', timeoutSeconds: 540, region: 'europe-west1' },
     async (request) => {
         const userId = requireAuth(request);
-        const { pdfUrl, requestId } = request.data;
+        const { pdfUrl, requestId, existingContexts } = request.data;
 
         logger.info("PDF extraction requested", { userId, requestId });
 
@@ -45,9 +71,16 @@ export const extractTermsFromPdfFn = onCall(
 
         try {
             logger.info("Extracting terms from PDF...", { pdfUrl: pdfUrl.substring(0, 100) });
+            await updateProgress('Lade aktive Kontexte...');
+
+            // Fetch live contexts from DB to combine with any client-provided ones
+            const dbContexts = await getAllContexts();
+            const allContexts = Array.from(new Set([...dbContexts, ...(existingContexts || [])]));
+
             await updateProgress('Starte PDF-Analyse...');
 
-            const terms = await extractTermsFromPdf(pdfUrl, updateProgress);
+            // Pass active contexts to gemini
+            const terms = await extractTermsFromPdf(pdfUrl, allContexts, updateProgress);
 
             logger.info("Extraction complete", { termCount: terms.length });
 
@@ -78,13 +111,13 @@ export const extractTermsFromPdfFn = onCall(
 );
 
 /**
- * Extract terms from a URL (PDF or HTML) using Gemini 3 Flash.
+ * Extract terms from a URL (PDF or HTML) using Gemini 3.
  */
 export const extractTermsFromUrlFn = onCall(
     { cors: true, invoker: 'public', timeoutSeconds: 540, region: 'europe-west1' },
     async (request) => {
         const userId = requireAuth(request);
-        const { url, requestId } = request.data;
+        const { url, requestId, existingContexts } = request.data;
 
         logger.info("URL extraction requested", { userId, requestId });
 
@@ -104,9 +137,15 @@ export const extractTermsFromUrlFn = onCall(
 
         try {
             logger.info("Extracting terms from URL...", { url });
+            await updateProgress('Lade aktive Kontexte...');
+
+            // Fetch live contexts from DB
+            const dbContexts = await getAllContexts();
+            const allContexts = Array.from(new Set([...dbContexts, ...(existingContexts || [])]));
+
             await updateProgress('Lade URL...');
 
-            const terms = await extractTermsFromUrl(url, updateProgress);
+            const terms = await extractTermsFromUrl(url, allContexts, updateProgress);
 
             logger.info("Extraction complete", { termCount: terms.length });
 

@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { DEFAULT_CONTEXTS } from "./data/contexts";
+
 
 // Initialize Vertex AI with project info
 const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || "insel-glossar";
@@ -36,7 +36,7 @@ export async function extractTermsFromPdf(pdfUrl: string, existingContexts: stri
     if (onProgress) await onProgress('Starte PDF-Analyse...');
 
     // Use provided contexts or fall back to default list
-    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextsToUse = existingContexts;
     const contextList = contextsToUse.join(', ');
 
     const prompt = `Du bist ein Experte für Fachterminologie und Glossare.
@@ -108,7 +108,7 @@ Beispiel:
  */
 export async function extractTermsFromUrl(url: string, existingContexts: string[] = [], onProgress?: (status: string) => Promise<void>): Promise<GlossaryTerm[]> {
     // Use provided contexts or fall back to default list
-    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextsToUse = existingContexts;
     const contextList = contextsToUse.join(', ');
 
     const promptText = `Du bist ein Experte für Fachterminologie.
@@ -259,7 +259,7 @@ export interface TermProposal {
 }
 
 export async function generateTermProposal(term: string, context: string = '', existingContexts: string[] = []): Promise<TermProposal> {
-    const contextsToUse = existingContexts.length > 0 ? existingContexts : DEFAULT_CONTEXTS;
+    const contextsToUse = existingContexts;
     const contextList = contextsToUse.join(', ');
 
     const prompt = `

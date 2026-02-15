@@ -242,13 +242,13 @@ export const generateTermProposalFn = onCall(
         const userId = requireAuth(request);
         logger.info("Term proposal requested", { userId });
 
-        const { term, context, existingContexts } = request.data;
+        const { term, context, existingContexts, definitionDe } = request.data;
         if (!term) {
             throw new HttpsError('invalid-argument', 'Term ist erforderlich.');
         }
 
         try {
-            const proposal = await generateTermProposal(term, context, existingContexts);
+            const proposal = await generateTermProposal(term, context, existingContexts, definitionDe);
             logger.info("Proposal generated", { term });
             return proposal;
         } catch (error) {

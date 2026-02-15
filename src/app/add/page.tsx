@@ -88,18 +88,19 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
     const [generating, setGenerating] = useState(false);
     const [success, setSuccess] = useState(false);
 
+    // Memoize contexts for the dropdown
+    const uniqueContexts = Array.from(new Set(terms.map(t => t.context).filter(Boolean))).sort();
+
     const handleGenerateProposal = async () => {
         if (!form.term.trim()) return;
         setGenerating(true);
         try {
-            // Extract unique contexts from existing terms
-            const existingContexts = Array.from(new Set(terms.map(t => t.context).filter(Boolean)));
-
             const generateProposalFn = httpsCallable(functions, 'generateTermProposalFn');
             const result = await generateProposalFn({
                 term: form.term,
                 context: form.context,
-                existingContexts
+                definitionDe: form.definitionDe, // Pass the German definition
+                existingContexts: uniqueContexts
             });
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const proposal = result.data as any;
@@ -109,8 +110,10 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                 definitionEn: proposal.definitionEn || prev.definitionEn,
                 einfacheSprache: proposal.einfacheSprache || prev.einfacheSprache,
                 eselsleitern: proposal.eselsleitern && proposal.eselsleitern.length > 0 ? proposal.eselsleitern : prev.eselsleitern,
-                definitionDe: !prev.definitionDe ? proposal.definitionDe : prev.definitionDe,
-                context: proposal.context || prev.context
+                // Only update definitionDe if it was empty, otherwise keep user's input (or maybe the model refined it? Plan said keep intent)
+                // Actually, if the user provided it, we trust it. If it was empty, we take the proposal.
+                definitionDe: prev.definitionDe ? prev.definitionDe : proposal.definitionDe,
+                context: prev.context ? prev.context : (proposal.context || prev.context)
             }));
         } catch (error) {
             console.error(error);
@@ -183,16 +186,6 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                 <div>
                     <div className='flex items-center justify-between'>
                         <label className="label">Begriff *</label>
-                        <button
-                            type="button"
-                            onClick={handleGenerateProposal}
-                            disabled={generating || !form.term.trim()}
-                            className="text-xs btn-secondary py-1 px-2 flex items-center gap-1"
-                            title="KI-Vorschlag generieren"
-                        >
-                            {generating ? <span className="animate-spin">✨</span> : <Sparkles size={12} />}
-                            {generating ? ' ' : ' Vorschlag'}
-                        </button>
                     </div>
                     <input className="input-field" value={form.term} onChange={e => setForm({ ...form, term: e.target.value })} onBlur={handleTermBlur} required placeholder="z.B. Anamnese" />
                     {duplicate && (
@@ -212,7 +205,19 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
 
                 <div>
                     <label className="label">Kontext / Fachbereich</label>
-                    <input className="input-field" value={form.context} onChange={e => setForm({ ...form, context: e.target.value })} placeholder="z.B. Kardiologie, Pflege, Administration" />
+                    <input
+                        className="input-field"
+                        value={form.context}
+                        onChange={e => setForm({ ...form, context: e.target.value })}
+                        placeholder="z.B. Kardiologie, Pflege, Administration"
+                        list="context-options"
+                        autoComplete="off"
+                    />
+                    <datalist id="context-options">
+                        {uniqueContexts.map(ctx => (
+                            <option key={ctx} value={ctx} />
+                        ))}
+                    </datalist>
                 </div>
             </div>
 
@@ -222,6 +227,19 @@ function SingleEntryForm({ user, profile, addTerm, checkDuplicate, addQuizQuesti
                 <div>
                     <label className="label">🇩🇪 Deutsch *</label>
                     <textarea className="input-field" value={form.definitionDe} onChange={e => setForm({ ...form, definitionDe: e.target.value })} required rows={3} placeholder="Deutsche Definition/Beschreibung..." />
+
+                    <div className="flex justify-end mt-2">
+                        <button
+                            type="button"
+                            onClick={handleGenerateProposal}
+                            disabled={generating || !form.term.trim()}
+                            className="btn-secondary text-sm py-1.5 px-3 flex items-center gap-2"
+                            title="KI-Vorschlag für restliche Felder generieren"
+                        >
+                            {generating ? <span className="animate-spin">✨</span> : <Sparkles size={14} />}
+                            <span>Vorschlag für Felder generieren</span>
+                        </button>
+                    </div>
                 </div>
                 <div>
                     <label className="label">🇬🇧 English</label>

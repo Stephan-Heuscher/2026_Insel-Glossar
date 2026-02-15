@@ -258,19 +258,20 @@ export interface TermProposal {
     context: string;
 }
 
-export async function generateTermProposal(term: string, context: string = '', existingContexts: string[] = []): Promise<TermProposal> {
+export async function generateTermProposal(term: string, context: string = '', existingContexts: string[] = [], definitionDe: string = ''): Promise<TermProposal> {
     const contextsToUse = existingContexts;
     const contextList = contextsToUse.join(', ');
 
     const prompt = `
     You are a medical and glossary expert.
     Generate a proposal for the term "${term}"${context ? ` in the context of "${context}"` : ''}.
+    ${definitionDe ? `The user has already provided this German definition: "${definitionDe}". Use this as the basis for the other fields.` : ''}
     
     Existing contexts in the glossary are: ${contextList}.
     If the term fits well into one of these existing contexts, prefer using that one. Otherwise, suggest a new, appropriate context.
 
     Please provide:
-    1. A German definition (definitionDe)
+    1. A German definition (definitionDe) ${definitionDe ? '- use the user provided one, potentially refined if needed, but keep the core meaning.' : ''}
     2. An English definition (definitionEn)
     3. A simple language explanation (einfacheSprache) - VERY SIMPLE, for laypeople.
     4. 3 Mnemonics / Eselsleitern (eselsleitern) - creative and helpful memory aids.

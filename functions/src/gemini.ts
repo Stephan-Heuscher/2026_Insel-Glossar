@@ -99,7 +99,7 @@ Beispiel:
         return parseGeminiResponse(response);
     } catch (error) {
         console.error("Gemini API Error:", error);
-        throw new Error("Fehler bei der KI-Verarbeitung. Bitte versuche es später erneut.");
+        throw new Error(`Fehler bei der KI-Verarbeitung: ${(error as Error).message}`);
     }
 }
 
@@ -174,7 +174,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
         return parseGeminiResponse(geminiResponse);
     } catch (error) {
         console.error("Gemini API Error:", error);
-        throw new Error("Fehler bei der KI-Verarbeitung (Timeout oder Limit).");
+        throw new Error(`Fehler bei der KI-Verarbeitung: ${(error as Error).message}`);
     }
 }
 

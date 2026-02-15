@@ -359,6 +359,7 @@ function PdfImport({ user, profile, addTerm }: PdfImportProps) {
             }
 
         } catch (err: unknown) {
+            console.error("Extraction error:", err);
             const message = err instanceof Error ? err.message : 'Unknown error';
             setError('Fehler bei der Extraktion: ' + message);
         } finally {

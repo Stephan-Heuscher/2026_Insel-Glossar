@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 
 // Initialize Vertex AI with project info
 const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || "insel-glossar";
-const LOCATION = "us-central1";
+const LOCATION = "global";
 
 const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCATION });
 // WARNING: DO NOT DOWNGRADE TO GEMINI 2. GEMINI 3 IS REQUIRED.

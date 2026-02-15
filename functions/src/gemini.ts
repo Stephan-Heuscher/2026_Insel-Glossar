@@ -7,7 +7,7 @@ const LOCATION = "us-central1";
 
 const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCATION });
 // WARNING: DO NOT DOWNGRADE TO GEMINI 2. GEMINI 3 IS REQUIRED.
-const MODEL_NAME = "gemini-3.0-flash";
+const MODEL_NAME = "gemini-3-flash-preview";
 
 /**
  * Helper: Fetch with timeout and retry

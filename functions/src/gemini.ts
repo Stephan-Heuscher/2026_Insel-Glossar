@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 
 
 // Initialize Vertex AI with project info
@@ -6,8 +6,8 @@ const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJEC
 const LOCATION = "global";
 
 const ai = new GoogleGenAI({ vertexai: true, project: PROJECT_ID, location: LOCATION });
-// WARNING: DO NOT DOWNGRADE TO GEMINI 2. GEMINI 3 IS REQUIRED.
-const MODEL_NAME = "gemini-3-flash-preview";
+// Fallback to Pro for difficult extractions but flash is generally fast. Let's use Pro for maximum AI-tolerance.
+const MODEL_NAME = "gemini-3.1-pro";
 
 /**
  * Helper: Fetch with timeout and retry
@@ -48,28 +48,29 @@ WICHTIG: Ordne jeden Begriff einem der folgenden existierenden Kontexte zu, wenn
 ${contextList}
 
 Falls ein Begriff absolut nicht in diese Kategorien passt, darfst du eine neue, passende Kategorie erfinden.
+Extrahiere mindestens alle erkennbaren Fachbegriffe.`;
 
-Für jeden Begriff erstelle einen JSON-Eintrag mit:
-- "term": der Begriff/die Abkürzung
-- "context": der Fachbereich (wähle aus der Liste oben oder neu)
-- "definitionDe": deutsche Definition/Beschreibung  
-- "definitionEn": englische Übersetzung/Definition (falls möglich)
-- "einfacheSprache": Erklärung in einfacher Sprache, die auch Laien verstehen (sehr einfach!)
-- "eselsleitern": Array mit 1-2 kreativen Merkhilfen/Eselsbrücken (falls passend, sonst leeres Array)
-- "source": Quellenangabe aus dem Dokument (z.B. Dokumenttitel oder Seite)
-
-Antworte als JSON-Array. Extrahiere mindestens alle erkennbaren Fachbegriffe.
-
-Beispiel:
-{
-  "term": "Anamnese",
-  "context": "Allgemeinmedizin",
-  "definitionDe": "Die Erhebung der Krankengeschichte eines Patienten im Gespräch.",
-  "definitionEn": "Medical history - the process of gathering a patient's medical background through conversation.",
-  "einfacheSprache": "Das Gespräch, in dem der Arzt fragt, was einem fehlt und welche Krankheiten man früher hatte.",
-  "eselsleitern": ["ANA = Alles Nochmal Abfragen"],
-  "source": "Seite 3"
-}`;
+    const responseSchema = {
+        type: Type.ARRAY,
+        description: "List of extracted glossary terms",
+        items: {
+            type: Type.OBJECT,
+            properties: {
+                term: { type: Type.STRING, description: "Der Begriff oder die Abkürzung" },
+                context: { type: Type.STRING, description: "Der Fachbereich (aus Liste oder neu)" },
+                definitionDe: { type: Type.STRING, description: "Deutsche Definition/Beschreibung" },
+                definitionEn: { type: Type.STRING, description: "Englische Übersetzung (optional)" },
+                einfacheSprache: { type: Type.STRING, description: "Erklärung in sehr einfacher Sprache für Laien" },
+                eselsleitern: {
+                    type: Type.ARRAY,
+                    description: "1-2 kreative Merkhilfen",
+                    items: { type: Type.STRING }
+                },
+                source: { type: Type.STRING, description: "Quellenangabe (z.B. Seite)" }
+            },
+            required: ["term", "context", "definitionDe", "einfacheSprache", "eselsleitern"]
+        }
+    };
 
     if (onProgress) await onProgress('Sende Daten an Gemini...');
 
@@ -80,6 +81,7 @@ Beispiel:
                 temperature: 0.3,
                 maxOutputTokens: 8192,
                 responseMimeType: "application/json",
+                responseSchema,
             },
             contents: [{
                 role: "user",
@@ -117,9 +119,25 @@ Extrahiere alle Fachbegriffe aus dem folgenden Text/Dokument.
 WICHTIG: Ordne jeden Begriff einem der folgenden existierenden Kontexte zu, wenn möglich:
 ${contextList}
 
-Falls keiner passt, wähle einen neuen, präzisen Kontext.
+Falls keiner passt, wähle einen neuen, präzisen Kontext.`;
 
-Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn, einfacheSprache, eselsleitern, source.`;
+    const responseSchema = {
+        type: Type.ARRAY,
+        description: "List of extracted glossary terms",
+        items: {
+            type: Type.OBJECT,
+            properties: {
+                term: { type: Type.STRING },
+                context: { type: Type.STRING },
+                definitionDe: { type: Type.STRING },
+                definitionEn: { type: Type.STRING },
+                einfacheSprache: { type: Type.STRING },
+                eselsleitern: { type: Type.ARRAY, items: { type: Type.STRING } },
+                source: { type: Type.STRING }
+            },
+            required: ["term", "context", "definitionDe", "einfacheSprache", "eselsleitern"]
+        }
+    };
 
     // 1. Fetch the content
     if (onProgress) await onProgress('Lade Inhalte herunter...');
@@ -166,6 +184,7 @@ Antworte als JSON-Array mit Objekten: term, context, definitionDe, definitionEn,
                 temperature: 0.3,
                 maxOutputTokens: 8192,
                 responseMimeType: "application/json",
+                responseSchema,
             },
             contents: [{ role: "user", parts }]
         });

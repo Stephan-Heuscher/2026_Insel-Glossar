@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { Virtuoso } from 'react-virtuoso';
 import { useGlossaryStore } from '@/store/glossaryStore';
 import { useAuthStore } from '@/store/authStore';
 import { Search, Filter, ExternalLink, Plus, Sparkles, ChevronRight } from 'lucide-react';
@@ -156,11 +157,15 @@ export default function HomePage() {
           )}
         </div>
       ) : (
-        <div className="grid gap-3 stagger">
-          {filtered.map((term) => (
-            <TermCard key={term.id} term={term} />
-          ))}
-        </div>
+        <Virtuoso
+          useWindowScroll
+          data={filtered}
+          itemContent={(index, term) => (
+            <div className="pb-3 stagger">
+              <TermCard key={term.id} term={term} />
+            </div>
+          )}
+        />
       )}
     </div>
   );

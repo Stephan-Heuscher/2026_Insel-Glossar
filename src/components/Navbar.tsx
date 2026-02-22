@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useAuthStore } from '@/store/authStore';
 import { AVATARS } from '@/lib/types';
-import { BookOpen, Plus, Brain, User, LogOut, Menu, X } from 'lucide-react';
+import { BookOpen, Plus, Brain, User, LogOut, Menu, X, Share2 } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -42,6 +42,10 @@ export default function Navbar() {
                         <Link href="/quiz" className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all no-underline">
                             <Brain size={16} />
                             Quiz
+                        </Link>
+                        <Link href="/graph" className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all no-underline">
+                            <Share2 size={16} />
+                            Graph
                         </Link>
                     </div>
 
@@ -91,6 +95,9 @@ export default function Navbar() {
                     )}
                     <Link href="/quiz" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 no-underline">
                         <Brain size={16} /> Quiz
+                    </Link>
+                    <Link href="/graph" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 no-underline">
+                        <Share2 size={16} /> Graph
                     </Link>
                     {user ? (
                         <>

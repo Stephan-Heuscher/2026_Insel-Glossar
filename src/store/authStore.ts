@@ -48,16 +48,20 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 // New user — needs verification challenge
                 set({ user: cred.user, needsVerification: true });
             }
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error("Google sign-in error:", err);
             let msg = 'Ein unbekannter Fehler ist aufgetreten.';
 
-            if (err.code === 'auth/popup-closed-by-user') {
-                msg = 'Anmeldung abgebrochen.';
-            } else if (err.code === 'auth/popup-blocked') {
-                msg = 'Popup wurde blockiert. Bitte erlaube Popups für diese Seite.';
-            } else if (err.message) {
-                msg = err.message;
+            if (err instanceof Error) {
+                // Determine if it's a Firebase AuthError by checking `code`
+                const fbErr = err as { code?: string };
+                if (fbErr.code === 'auth/popup-closed-by-user') {
+                    msg = 'Anmeldung abgebrochen.';
+                } else if (fbErr.code === 'auth/popup-blocked') {
+                    msg = 'Popup wurde blockiert. Bitte erlaube Popups für diese Seite.';
+                } else {
+                    msg = err.message;
+                }
             }
 
             set({ error: msg });
@@ -82,7 +86,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 createdAt: new Date(),
             } as unknown as UserProfile;
             set({ profile, needsVerification: false });
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error("Create profile error:", err);
             set({ error: 'Profil konnte nicht erstellt werden.' });
         }

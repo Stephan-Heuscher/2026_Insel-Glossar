@@ -21,7 +21,7 @@ function GoogleLogo({ size = 20 }: { size?: number }) {
 const VALID_NAMES = ['stephan', 'heuscher', 'stephan heuscher'];
 
 export default function LoginPage() {
-    const { signInWithGoogle, createProfile, user, needsVerification, error, clearError, setError } = useAuthStore();
+    const { signInWithGoogle, createProfile, user, needsVerification, error, clearError } = useAuthStore();
     const router = useRouter();
     const [submitting, setSubmitting] = useState(false);
 
